@@ -22,7 +22,7 @@ export default function NavMobile() {
       </div>
       <div
         className={clsx(
-          'absolute top-0 left-0 w-screen h-screen bg-zinc-100 transform transition-transform duration-1000 ease-in-out',
+          'z-50 absolute top-0 left-0 w-screen h-screen bg-zinc-100 transform transition-transform duration-1000 ease-in-out',
           {
             'translate-x-0': isMenuOpen,
             'translate-x-full': !isMenuOpen,

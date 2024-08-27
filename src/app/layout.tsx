@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import Header from '@/components/templates/Header';
-
-const inter = Inter({ subsets: ['latin'] });
+import { raleway } from '@/fonts/fonts';
 
 export const metadata: Metadata = {
   title: 'EKSA',
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={`${raleway.className} bg-zinc-50`}>
         <Header />
         <main>{children}</main>
       </body>

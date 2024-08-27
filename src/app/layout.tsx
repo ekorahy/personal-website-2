@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../styles/globals.css';
 import Header from '@/components/templates/Header';
 import { raleway } from '@/fonts/fonts';
+import Main from '@/components/templates/Main';
 
 export const metadata: Metadata = {
   title: 'EKSA',
@@ -15,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${raleway.className} bg-zinc-50`}>
+      <body className={`${raleway.className} relative bg-zinc-50`}>
         <Header />
-        <main>{children}</main>
+        <Main>{children}</Main>
       </body>
     </html>
   );

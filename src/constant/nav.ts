@@ -5,22 +5,22 @@ export const nav = [
     route: '/',
   },
   {
-    id: 'nav-1',
+    id: 'nav-2',
     title: 'About',
     route: '/',
   },
   {
-    id: 'nav-1',
+    id: 'nav-3',
     title: 'Projects',
     route: '/',
   },
   {
-    id: 'nav-1',
+    id: 'nav-4',
     title: 'Blog',
     route: '/',
   },
   {
-    id: 'nav-1',
+    id: 'nav-5',
     title: 'Contact',
     route: '/',
   },

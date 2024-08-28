@@ -17,8 +17,8 @@ export default function HomeAbout() {
       </div>
       <div className="[&>*]:mb-4 [&>p]:text-xl">
         <div className="flex items-center gap-2">
-          <h2 className="text-5xl font-bold">About</h2>
-          <div className="h-0.5 w-2/4 bg-black" />
+          <h2 className="text-4xl lg:text-5xl font-bold">About</h2>
+          <div className="h-[0.1rem] w-2/4 bg-black" />
         </div>
         <p>
           Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I&apos;m

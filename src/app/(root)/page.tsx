@@ -4,7 +4,7 @@ import HomeAbout from "@/components/templates/HomeAbout";
 
 export default function Home() {
   return (
-    <article className="[&>*]:mb-20">
+    <article className="[&>section]:mb-28">
       <Hero />
       <Features />
       <HomeAbout />

@@ -6,7 +6,7 @@ export default function Hero() {
     <section className='relative flex flex-col-reverse lg:flex-row gap-8 lg:gap-4'>
       <div className='flex flex-col justify-center'>
         <span className='text-xl'>
-          Hi, I'm <span className='text-amber-400 font-bold'>Eksa</span>
+          Hi, I&apos;m <span className='text-amber-400 font-bold'>Eksa</span>
         </span>
         <h2 className='text-7xl font-bold mb-2'>Front-end Engineer</h2>
         <p className='text-xl'>

@@ -15,9 +15,25 @@ const config: Config = {
       },
       container: {
         center: true
+      },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 50s linear infinite',
+        'bounce-up-down': 'bounce-up-down 0.5s ease-in-out'
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' }
+        },
+        'bounce-up-down': {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+          '100%': { transform: 'translateY(0)' }
+        }
       }
     },
   },
   plugins: [],
 };
+
 export default config;

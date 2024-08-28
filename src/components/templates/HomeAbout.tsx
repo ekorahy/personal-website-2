@@ -6,18 +6,25 @@ export default function HomeAbout() {
   return (
     <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
       <div className="group relative mx-auto w-max">
-        <div className="absolute left-0 right-0 top-0 -z-10 mx-auto h-full w-96 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12" />
+        <div className="absolute left-0 right-0 top-0 -z-10 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
         <Image
-          className="mx-auto grayscale group-hover:grayscale-0"
+          className="mx-auto hidden grayscale group-hover:grayscale-0 sm:block"
           src="/about.jpg"
           width={350}
           height={450}
           alt="about image"
         />
+        <Image
+          className="mx-auto grayscale group-hover:grayscale-0 sm:hidden"
+          src="/about.jpg"
+          width={200}
+          height={350}
+          alt="about image"
+        />
       </div>
       <div className="[&>*]:mb-4 [&>p]:text-xl">
         <div className="flex items-center gap-2">
-          <h2 className="text-4xl lg:text-5xl font-bold">About</h2>
+          <h2 className="text-4xl font-bold lg:text-5xl">About</h2>
           <div className="h-[0.1rem] w-2/4 bg-black" />
         </div>
         <p>
@@ -32,7 +39,7 @@ export default function HomeAbout() {
             className="group underline hover:text-amber-400"
           >
             Dicoding Indonesia{" "}
-            <FiArrowUpRight className="group-hover:animate-bounce-up-down inline" />
+            <FiArrowUpRight className="inline group-hover:animate-bounce-up-down" />
           </Link>{" "}
           as an External Code Reviewer and I responsible for providing
           assessments of student project submissions, especially in the

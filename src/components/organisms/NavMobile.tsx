@@ -16,7 +16,7 @@ export default function NavMobile() {
 
   return (
     <div className='lg:hidden'>
-      <div className='flex justify-between p-4'>
+      <div className='flex justify-between'>
         <Logo width={50} height={50} />
         <ButtonDrawer handleMenuOpen={handleMenuOpen} />
       </div>

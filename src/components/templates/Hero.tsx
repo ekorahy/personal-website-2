@@ -20,13 +20,13 @@ export default function Hero() {
         </p>
         <div className="flex items-center gap-4 text-xl">
           <Link
-            className="bg-amber-400 px-5 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
+            className="bg-amber-400 px-4 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
             href="/"
           >
             Contact Me
           </Link>
           <Link
-            className="border border-amber-400 px-5 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
+            className="border border-amber-400 px-4 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
             href="/"
           >
             View Projects

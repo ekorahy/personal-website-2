@@ -22,10 +22,12 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <header
-      className={clsx("fixed top-0 z-20 w-full", { "bg-zinc-50": scrolled })}
+      className={clsx("fixed top-0 z-20 h-max w-full p-4", {
+        "bg-zinc-50": scrolled,
+      })}
     >
       <Navigation />
     </header>

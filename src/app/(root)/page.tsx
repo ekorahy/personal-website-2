@@ -1,6 +1,7 @@
 import Features from "@/components/templates/Features";
 import Hero from "@/components/templates/Hero";
 import HomeAbout from "@/components/templates/HomeAbout";
+import Projects from "@/components/templates/Projects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Features />
       <HomeAbout />
+      <Projects />
     </article>
   );
 }

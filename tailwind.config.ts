@@ -13,9 +13,6 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      container: {
-        center: true
-      },
       animation: {
         'infinite-scroll': 'infinite-scroll 50s linear infinite',
         'bounce-up-down': 'bounce-up-down 0.5s ease-in-out'

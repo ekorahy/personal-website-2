@@ -1,6 +1,7 @@
 import Features from "@/components/templates/Features";
 import Hero from "@/components/templates/Hero";
 import HomeAbout from "@/components/templates/HomeAbout";
+import HomeBlog from "@/components/templates/HomeBlog";
 import Projects from "@/components/templates/Projects";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Features />
       <HomeAbout />
       <Projects />
+      <HomeBlog />
     </article>
   );
 }

@@ -15,7 +15,26 @@ export async function getProjects() {
     const projects = await client.fetch(query);
     return projects;
   } catch (error) {
-    console.error("Failed to fetch projects:", error);
-    return [];
+    throw error;
+  }
+}
+
+export async function getAllBlogs() {
+  try {
+    const query = groq`
+    *[_type == "blog"]{
+      "currentSlug": slug.current,
+      title,
+      "currentImage": image.asset._ref,
+      description,
+      tags,
+      "createdAt": created_at,
+    }
+    `;
+
+    const blog = client.fetch(query)
+    return blog;
+  } catch (error) {
+    throw error;
   }
 }

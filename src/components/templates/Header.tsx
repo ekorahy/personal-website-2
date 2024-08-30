@@ -16,6 +16,8 @@ export default function Header() {
       }
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {

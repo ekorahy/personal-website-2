@@ -1,3 +1,4 @@
+import Emphasis from "@/components/templates/Emphasis";
 import Features from "@/components/templates/Features";
 import Hero from "@/components/templates/Hero";
 import HomeAbout from "@/components/templates/HomeAbout";
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <HomeBlog />
       <Technologies />
+      <Emphasis />
     </article>
   );
 }

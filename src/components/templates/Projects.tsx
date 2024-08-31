@@ -2,7 +2,6 @@ import { getProjects } from "@/sanity/lib/querying";
 import ProjectsList from "../organisms/ProjectsList";
 import Link from "next/link";
 
-export const revalidate = 60;
 
 export default async function Projects() {
   const projects = await getProjects();

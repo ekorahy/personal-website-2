@@ -8,11 +8,11 @@ export async function getProjects() {
       "currentId": id.current,
       name,
       "currentImage": image.asset._ref,
-      demo_link
+      demo_link,
     }
   `;
 
-    const projects = await client.fetch(query);
+    const projects = await client.fetch(query, {}, { cache: 'no-store' })
     return projects;
   } catch (error) {
     throw error;
@@ -32,8 +32,8 @@ export async function getAllBlogs() {
     }
     `;
 
-    const blog = client.fetch(query)
-    return blog;
+    const blog = await client.fetch(query, {}, { cache: 'no-store' })
+    return blog
   } catch (error) {
     throw error;
   }

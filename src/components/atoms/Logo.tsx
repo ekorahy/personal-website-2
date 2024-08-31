@@ -1,16 +1,31 @@
 import { LogoProps } from "@/types/header";
+import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Logo({ width, height }: LogoProps) {
+export default function Logo({
+  width,
+  height,
+  isWithText = true,
+  isDark = false,
+}: LogoProps) {
   return (
-    <div className="flex items-center gap-1">
+    <Link href="/" className="flex items-center gap-1">
       <Image
-        src="/light-logo.png"
+        src={isDark ? "/dark-logo.png" : "/light-logo.png"}
         width={width}
         height={height}
         alt="Logo eksa"
       />
-      <h1 className="text-xl font-bold lg:text-3xl">EKSA</h1>
-    </div>
+      {isWithText && (
+        <h1
+          className={clsx("text-xl font-bold lg:text-3xl", {
+            "text-white": isDark,
+          })}
+        >
+          EKSA
+        </h1>
+      )}
+    </Link>
   );
 }

@@ -7,7 +7,7 @@ import Footer from "@/components/templates/Footer";
 
 export const metadata: Metadata = {
   title: "EKSA",
-  icons: "favicon.png",
+  icons: "light-logo.png",
 };
 
 export default function RootLayout({

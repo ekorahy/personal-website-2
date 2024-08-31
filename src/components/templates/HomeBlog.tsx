@@ -2,10 +2,8 @@ import { getAllBlogs } from "@/sanity/lib/querying";
 import Link from "next/link";
 import BlogList from "../organisms/BlogList";
 
-export const revalidate = 60;
 export default async function HomeBlog() {
   const blog = await getAllBlogs();
-  console.log(blog);
 
   return (
     <section>

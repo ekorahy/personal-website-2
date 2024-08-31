@@ -30,7 +30,7 @@ export default defineType({
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true, // Enables hotspot cropping
+        hotspot: true,
       },
     }),
     defineField({

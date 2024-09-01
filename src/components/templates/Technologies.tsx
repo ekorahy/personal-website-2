@@ -1,11 +1,10 @@
+import TitleSection from "../atoms/TitleSection";
 import TechList from "../organisms/TechList";
 
 export default function Technologies() {
   return (
     <section>
-      <h2 className="mb-8 text-center text-3xl font-bold lg:text-4xl">
-        Technologies
-      </h2>
+      <TitleSection title="Technologies" isWithDash={false} />
       <TechList />
     </section>
   );

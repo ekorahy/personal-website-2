@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} relative bg-zinc-50`}>
+      <body
+        className={`${raleway.className} relative bg-zinc-50 text-zinc-950`}
+      >
         <Header />
         <Main>{children}</Main>
         <Footer />

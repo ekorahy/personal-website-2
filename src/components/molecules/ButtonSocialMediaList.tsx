@@ -3,7 +3,7 @@ import ButtonSocialMediaItem from "../atoms/ButtonSocialMediaItem";
 
 export default function ButtonSocialMediaList() {
   return (
-    <div className="ml-4 mt-4 flex items-center gap-4">
+    <div className="mt-4 flex items-center gap-4">
       {socialMedia.map(({ id, name, link, logo }) => (
         <ButtonSocialMediaItem key={id} name={name} link={link} logo={logo} />
       ))}

@@ -5,7 +5,7 @@ export default function TechItem({ name, logo }: TechItemProps) {
   return (
     <div className="flex items-center gap-2">
       <Image src={logo} width={30} height={30} alt={`${name} icon`} />
-      <p className="text-xl">{name}</p>
+      <p className="text-xl lg:text-lg">{name}</p>
     </div>
   );
 }

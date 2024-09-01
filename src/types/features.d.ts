@@ -1,3 +1,4 @@
 export interface FeatureItemProps {
-  name: string
+  name: string;
+  emoji: string;
 }

@@ -84,4 +84,34 @@ export const tech = [
     name: 'Adobe Photoshop',
     logo: '/tech/ic-adobe-ps.svg',
   },
+  {
+    id: 'tech-18',
+    name: 'Vite',
+    logo: '/tech/ic-vite.svg',
+  },
+  {
+    id: 'tech-19',
+    name: 'Vitest',
+    logo: '/tech/ic-vitest.svg',
+  },
+  {
+    id: 'tech-20',
+    name: 'Jest',
+    logo: '/tech/ic-jest.svg',
+  },
+  {
+    id: 'tech-21',
+    name: 'Cypress',
+    logo: '/tech/ic-cypress.svg',
+  },
+  {
+    id: 'tech-22',
+    name: 'React Hook Form',
+    logo: '/tech/ic-react-hook-form.svg',
+  },
+  {
+    id: 'tech-23',
+    name: 'React Router',
+    logo: '/tech/ic-react-router.svg',
+  },
 ]

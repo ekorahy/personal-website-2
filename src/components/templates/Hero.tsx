@@ -1,39 +1,32 @@
 import Image from "next/image";
 import HeroIcon from "../atoms/HeroIcon";
 import Link from "next/link";
+import Button from "../atoms/Button";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col-reverse gap-8 lg:flex-row lg:gap-4">
-      <div className="flex flex-col justify-center">
+    <section className="relative flex flex-col-reverse gap-8 lg:flex-row">
+      <div className="relative flex flex-col justify-center lg:basis-1/2">
         <div className="flex items-center gap-2">
-          <p className="whitespace-nowrap text-xl">
+          <p className="z-10 whitespace-nowrap text-xl">
             Hi, I&apos;m <span className="font-bold text-amber-400">Eksa</span>
           </p>
-          <div className="h-[0.1rem] w-2/4 bg-black" />
+          <div className="z-10 h-[0.1rem] w-2/4 bg-black" />
         </div>
-        <h2 className="mb-4 text-6xl font-bold">Front-end Engineer</h2>
-        <p className="mb-8 text-xl">
-          Tell me about your <span className="text-amber-400">ideas</span>, I
-          will <span className="text-amber-400">manifest</span> them for you
-          through <span className="text-amber-400">digital reality</span>.
+        <h2 className="z-10 mb-4 text-5xl font-bold">Front-end Engineer</h2>
+        <p className="z-10 mb-8 text-xl lg:text-lg">
+          Let's discuss about your <span className="text-amber-400">ideas</span>{" "}
+          and I will <span className="text-amber-400">manifest</span> them for
+          you through{" "}
+          <span className="text-amber-400">captivating digital reality</span>.
         </p>
-        <div className="flex items-center gap-4 text-xl">
-          <Link
-            className="bg-amber-400 px-4 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
-            href="/"
-          >
-            Contact Me
-          </Link>
-          <Link
-            className="border border-amber-400 px-4 py-3 hover:bg-amber-500 lg:px-8 lg:py-4"
-            href="/"
-          >
-            View Projects
-          </Link>
+        <div className="z-10 flex items-center flex-wrap gap-4">
+          <Button route="mailto:ekorahy@gmail.com" name="Email me" variant="email" />
+          <Button route="/projects" name="View projects" variant="secondary" />
         </div>
+        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-amber-50 transition-transform duration-300 ease-in-out hover:scale-[10] lg:top-12 lg:block xl:top-28" />
       </div>
-      <div className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]">
+      <div className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:basis-1/2 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]">
         <Image
           className="z-10 grayscale transition duration-300 ease-in-out group-hover:grayscale-0"
           src="/hero.png"
@@ -46,7 +39,7 @@ export default function Hero() {
           width={100}
           height={100}
           title="react.js"
-          className="absolute left-4 top-20 group-hover:animate-spin sm:left-16 sm:top-40 lg:left-16 lg:top-48"
+          className="absolute left-4 top-20 group-hover:animate-spin sm:left-16 sm:top-40 lg:left-16 lg:top-36"
         />
         <HeroIcon
           src="/tech/ic-nextjs.svg"

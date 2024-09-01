@@ -6,7 +6,7 @@ export default function NavWeb() {
   return (
     <div className="hidden lg:flex lg:items-center lg:justify-between">
       <div className="flex gap-4 items-center">
-        <Logo width={70} height={70} />
+        <Logo width={60} height={60} />
         <NavList />
       </div>
       <AdditionalFeatures />

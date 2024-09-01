@@ -1,8 +1,8 @@
 export interface LogoProps {
   width: number;
   height: number;
-  isWithText: boolean;
-  isDark: boolean;
+  isWithText?: boolean;
+  isDark?: boolean;
 }
 
 export interface NavItemProps {

@@ -19,7 +19,7 @@ export default function Logo({
       />
       {isWithText && (
         <h1
-          className={clsx("text-xl font-bold lg:text-3xl", {
+          className={clsx("text-xl font-bold lg:text-2xl", {
             "text-white": isDark,
           })}
         >

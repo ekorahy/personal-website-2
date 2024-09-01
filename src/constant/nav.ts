@@ -7,21 +7,21 @@ export const nav = [
   {
     id: 'nav-2',
     title: 'About',
-    route: '/',
+    route: '/about',
   },
   {
     id: 'nav-3',
     title: 'Projects',
-    route: '/',
+    route: '/projects',
   },
   {
     id: 'nav-4',
     title: 'Blog',
-    route: '/',
+    route: '/blog',
   },
   {
     id: 'nav-5',
     title: 'Contact',
-    route: '/',
+    route: '/contact',
   },
 ]

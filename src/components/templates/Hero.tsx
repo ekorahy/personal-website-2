@@ -1,6 +1,5 @@
 import Image from "next/image";
 import HeroIcon from "../atoms/HeroIcon";
-import Link from "next/link";
 import Button from "../atoms/Button";
 
 export default function Hero() {
@@ -15,7 +14,7 @@ export default function Hero() {
         </div>
         <h2 className="z-10 mb-4 text-5xl font-bold">Front-end Engineer</h2>
         <p className="z-10 mb-8 text-xl lg:text-lg">
-          Let's discuss about your <span className="text-amber-400">ideas</span>{" "}
+          Let&apos;s discuss about your <span className="text-amber-400">ideas</span>{" "}
           and I will <span className="text-amber-400">manifest</span> them for
           you through{" "}
           <span className="text-amber-400">captivating digital reality</span>.

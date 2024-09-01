@@ -5,7 +5,7 @@ import { sliceProjects } from "@/utils/sliceProjects";
 export default function ProjectsList({ projects }: ProjectsListProps) {
   const slicedProjects = sliceProjects(projects);
   return (
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       {slicedProjects.map(({ currentId, name, currentImage, demo_link }) => (
         <ProjectItem
           key={currentId}

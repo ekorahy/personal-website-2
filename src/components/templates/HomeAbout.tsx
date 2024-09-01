@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import TitleSection from "../atoms/TitleSection";
+import Button from "../atoms/Button";
+import ButtonLink from "../atoms/ButtonLink";
 
 export default function HomeAbout() {
   return (
@@ -22,39 +25,29 @@ export default function HomeAbout() {
           alt="about image"
         />
       </div>
-      <div className="[&>*]:mb-4 [&>p]:text-xl">
-        <div className="flex items-center gap-2">
-          <h2 className="text-4xl font-bold lg:text-5xl">About</h2>
-          <div className="h-[0.1rem] w-2/4 bg-black" />
-        </div>
+      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-xl [&>p]:lg:text-lg">
+        <TitleSection title="About" />
         <p>
-          Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I&apos;m
-          Front-end Engineer based in Indonesia with over a year of experiences
-          building website using React Ecosystem.
+          Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
+          Engineer based in Indonesia with more than a year of experience
+          building websites using React Ecosystem.
         </p>
         <p>
-          Now I am actively contribute to{" "}
-          <Link
-            href="https://www.dicoding.com/users/ekorahayu/academies"
-            className="group underline hover:text-amber-400"
-          >
-            Dicoding Indonesia{" "}
-            <FiArrowUpRight className="inline group-hover:animate-bounce-up-down" />
-          </Link>{" "}
-          as an External Code Reviewer and I responsible for providing
-          assessments of student project submissions, especially in the
-          Front-end Web and React.js learning paths, as well as some basic
-          classes of several other learning paths, besides providing assessments
-          I also provide advice regarding best practices in writing code based
-          on the technology used with the aim to improving the quality and
+          I currently actively contribute to{" "}
+          <ButtonLink
+            title="Dicoding Indonesia"
+            route="https://www.dicoding.com/users/ekorahayu/academies"
+            variant="paragraf"
+          />{" "}
+          as an External Code Reviewer and responsible for providing assessments
+          of projects submitted by students, especially in the Front-end Web and
+          React.js learning paths, as well as some basic classes from several
+          other learning paths, in addition to providing assessments I also
+          provide advice regarding best practices in writing code based on the
+          technology used by students with the aim to improve the quality and
           efficiency of the code written.
         </p>
-        <Link
-          className="inline-block bg-amber-400 px-8 py-3 text-xl hover:bg-amber-500"
-          href="/about"
-        >
-          Read More
-        </Link>
+        <Button name="Read more" route="/about" variant="primary" />
       </div>
     </section>
   );

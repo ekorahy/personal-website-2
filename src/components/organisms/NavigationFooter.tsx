@@ -4,9 +4,11 @@ import NavigationFooterList from "../molecules/NavigationFooterList";
 export default function NavigationFooter() {
   const [{ navigation, features, others }] = footerNavigation;
   return (
-    <div className="flex gap-8 lg:gap-16">
+    <div className="flex flex-col gap-8 md:flex-row lg:gap-16">
       <section>
-        <h2 className="mb-4 text-xl font-bold text-amber-400">Navigation</h2>
+        <h2 className="mb-4 text-xl font-bold text-amber-400 lg:text-lg">
+          Navigation
+        </h2>
         <NavigationFooterList items={navigation} />
       </section>
       <section>

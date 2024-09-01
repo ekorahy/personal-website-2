@@ -1,33 +1,28 @@
-import {
-  SlSocialGithub,
-  SlSocialInstagram,
-  SlSocialLinkedin,
-  SlSocialYoutube,
-} from "react-icons/sl";
+import { FaGithub, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export const socialMedia = [
   {
     id: "sosmed-1",
     name: "Instagram",
     link: "https://instagram.com/eksa.dev",
-    logo: <SlSocialInstagram />,
+    logo: <FaInstagram />,
   },
   {
     id: "sosmed-2",
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/eksa",
-    logo: <SlSocialLinkedin />,
+    logo: <FaLinkedin />,
   },
   {
     id: "sosmed-3",
     name: "Github",
     link: "https://github.com/eksa",
-    logo: <SlSocialGithub />,
+    logo: <FaGithub />,
   },
   {
     id: "sosmed-4",
     name: "Youtube",
     link: "https://www.youtube.com/@eksa",
-    logo: <SlSocialYoutube />,
+    logo: <FaYoutube />,
   },
 ];

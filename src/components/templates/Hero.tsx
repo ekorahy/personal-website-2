@@ -14,16 +14,20 @@ export default function Hero() {
         </div>
         <h2 className="z-10 mb-4 text-5xl font-bold">Front-end Engineer</h2>
         <p className="z-10 mb-8 text-xl lg:text-lg">
-          Let&apos;s discuss about your <span className="text-amber-400">ideas</span>{" "}
-          and I will <span className="text-amber-400">manifest</span> them for
-          you through{" "}
+          Let&apos;s discuss about your{" "}
+          <span className="text-amber-400">ideas</span> and I will{" "}
+          <span className="text-amber-400">manifest</span> them for you through{" "}
           <span className="text-amber-400">captivating digital reality</span>.
         </p>
-        <div className="z-10 flex items-center flex-wrap gap-4">
-          <Button route="mailto:ekorahy@gmail.com" name="Email me" variant="email" />
+        <div className="z-10 flex flex-wrap items-center gap-4">
+          <Button
+            route="mailto:ekorahy@gmail.com"
+            name="Email me"
+            variant="email-primary"
+          />
           <Button route="/projects" name="View projects" variant="secondary" />
         </div>
-        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-amber-50 transition-transform duration-300 ease-in-out hover:scale-[10] lg:top-12 lg:block xl:top-28" />
+        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100/60 transition-transform duration-300 ease-in-out hover:scale-[10] lg:top-12 lg:block xl:top-28" />
       </div>
       <div className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:basis-1/2 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]">
         <Image
@@ -49,8 +53,8 @@ export default function Hero() {
         />
         <HeroIcon
           src="/tech/ic-figma.svg"
-          width={50}
-          height={20}
+          width={100}
+          height={100}
           title="figma"
           className="absolute right-20 top-20 rotate-12"
         />

@@ -15,9 +15,7 @@ export default function BlogItem({
 }: BlogItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
-      <section
-        className="cursor-pointer border-b-4 border-amber-400 shadow" // Set onClick to handle navigation
-      >
+      <section className="h-full transform cursor-pointer border-b-4 border-amber-400 shadow transition-transform duration-300 hover:scale-105">
         <div className="relative h-max">
           <Image
             className="h-60 w-full object-cover"
@@ -26,14 +24,15 @@ export default function BlogItem({
             height={400}
             alt={`${title} image`}
           />
-          <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-white backdrop-blur">
+          <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-xl text-white backdrop-blur lg:text-lg">
             {formattedDate(createdAt)}
           </span>
         </div>
         <div className="p-4">
-          <h3 className="text-xl font-bold">{title}</h3>
-          <p className="mb-4 line-clamp-3">{description}</p>
-          <TagsList tags={tags} />
+          <h3 className="mb-2 mt-2 line-clamp-3 text-2xl font-bold lg:text-xl">
+            {title}
+          </h3>
+          <p className="mb-4 line-clamp-3 text-xl lg:text-lg">{description}</p>
         </div>
       </section>
     </Link>

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { features } from "@/constant/features";
 import FeatureItem from "../atoms/FeatureItem";
 
-const FeaturesList: React.FC = () => {
+export default function FeaturesList() {
   const containerRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -18,20 +18,10 @@ const FeaturesList: React.FC = () => {
     clonedList.setAttribute("aria-hidden", "true");
     container.appendChild(clonedList);
 
-    const scrollSpeed = 0.5;
-    let startX = 0;
-
     let animationFrameId: number;
 
     function animate() {
       if (!list || !clonedList) return;
-
-      startX -= scrollSpeed;
-      if (startX <= -list.offsetWidth) {
-        startX = 0;
-      }
-      list.style.transform = `translateX(${startX}px)`;
-      clonedList.style.transform = `translateX(${startX + list.offsetWidth}px)`;
 
       animationFrameId = requestAnimationFrame(animate);
     }
@@ -54,14 +44,12 @@ const FeaturesList: React.FC = () => {
     >
       <ul
         ref={listRef}
-        className="animate-infinite-scroll flex items-center justify-center gap-4 whitespace-nowrap"
+        className="flex animate-infinite-scroll items-center justify-center gap-4 whitespace-nowrap"
       >
-        {features.map(({ id, name }) => (
-          <FeatureItem key={id} name={name} />
+        {features.map(({ id, name, emoji }) => (
+          <FeatureItem key={id} name={name} emoji={emoji} />
         ))}
       </ul>
     </div>
   );
-};
-
-export default FeaturesList;
+}

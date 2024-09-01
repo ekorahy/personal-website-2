@@ -1,26 +1,32 @@
 export const features = [
   {
     id: 'feature-1',
-    name: 'Responsive Design'
+    name: 'Responsive Design',
+    emoji: '📱'
   },
   {
     id: 'feature-2',
-    name: 'SEO Friendly'
+    name: 'SEO Optimization',
+    emoji: '🔍'
   },
   {
     id: 'feature-3',
-    name: 'Performance'
+    name: 'High Performance',
+    emoji: '⚡'
   },
   {
     id: 'feature-4',
-    name: 'Accessibility'
+    name: 'Accessibility Compliance',
+    emoji: '♿'
   },
   {
     id: 'feature-5',
-    name: 'Optimization'
+    name: 'Code Optimization',
+    emoji: '🛠️'
   },
   {
     id: 'feature-6',
-    name: 'Secure'
+    name: 'Security Enhancements',
+    emoji: '🔒'
   },
-]
+];

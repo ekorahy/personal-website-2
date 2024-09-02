@@ -38,3 +38,23 @@ export async function getAllBlogs() {
     throw error;
   }
 }
+
+export async function getProjectDetail(projectId: string) {
+  try {
+    const query = groq`
+    *[_type == "projects" && id.current == $projectId]{
+      "currentId": id.current,
+      name,
+      technologies,
+      "currentImage": image.asset._ref,
+      demo_link,
+      body,
+    }[0]
+  `;
+
+    const projectDetail = await client.fetch(query, { projectId }, { cache: 'no-store' })
+    return projectDetail;
+  } catch (error) {
+    throw error;
+  }
+}

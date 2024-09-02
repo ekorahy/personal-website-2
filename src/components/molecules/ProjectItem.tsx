@@ -23,7 +23,7 @@ export default function ProjectItem({
         />
         <Link
           className="absolute bottom-0 left-0 right-0 top-0 hidden items-center justify-center group-hover:flex"
-          href={`/project/${id}`}
+          href={`/projects/${id}`}
         >
           <h3 className="group/title flex items-center gap-2 overflow-hidden rounded-full bg-zinc-950/40 px-8 py-4 text-xl font-bold text-zinc-50 backdrop-blur">
             <PiGlobeThin className="text-2xl transition-transform duration-300 ease-in-out group-hover/title:scale-[5] group-hover/title:text-zinc-50/20" />
@@ -32,7 +32,7 @@ export default function ProjectItem({
         </Link>
       </div>
       <div className="flex items-center gap-4 [&>*]:text-xl">
-        <ButtonLink title="Detail" route={`/project/${id}`} variant="default" />
+        <ButtonLink title="Detail" route={`/projects/${id}`} variant="default" />
         <ButtonLink title="Visit Website" route={demoLink} variant="default" />
       </div>
     </section>

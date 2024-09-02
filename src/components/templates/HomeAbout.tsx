@@ -26,7 +26,7 @@ export default function HomeAbout() {
         />
       </div>
       <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-xl [&>p]:lg:text-lg">
-        <TitleSection title="About" />
+        <TitleSection title="About me" />
         <p>
           Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
           Engineer based in Indonesia with more than a year of experience

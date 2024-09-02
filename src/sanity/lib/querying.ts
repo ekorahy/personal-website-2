@@ -58,3 +58,24 @@ export async function getProjectDetail(projectId: string) {
     throw error;
   }
 }
+
+export async function getBlogDetail(slug: string) {
+  try {
+    const query = groq`
+      *[_type == "blog" && slug.current == $slug]{
+        "currentSlug": slug.current,
+        title,
+        "currentImage": image.asset._ref,
+        description,
+        tags,
+        "createdAt": created_at,
+        body,
+      }[0]
+    `;
+
+    const blogDetail = await client.fetch(query, { slug }, { cache: 'no-store' })
+    return blogDetail;
+  } catch (error) {
+    throw error;
+  }
+}

@@ -24,7 +24,7 @@ export default async function DetailProject({
   return (
     <article className="mt-20">
       <section className="[&>*]:mb-4">
-        <TitleSection title={name} />
+        <TitleSection title={name} variant="primary" />
         <StackList stack={technologies} />
         <Image
           className="mx-auto h-[25rem] w-full overflow-hidden object-cover lg:w-3/4"

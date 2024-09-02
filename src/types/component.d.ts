@@ -2,6 +2,9 @@ import React from "react";
 
 type ButtonVariants = 'primary' | 'primary-border' | 'email-primary' | 'email-secondary' | 'secondary' | 'secondary-border';
 type ButtonLinkVariants = 'primary' | 'secondary' | 'tertiary' | 'paragraf' | 'default';
+type TitleSectionVariants = 'primary' | 'secondary';
+type TitleSectionSizes = '2xl' | '3xl';
+type TitleSectionAlignment = 'left' | 'center';
 
 export interface ButtonProps {
   route: string;
@@ -12,6 +15,9 @@ export interface ButtonProps {
 export interface TitleSectionProps {
   title: string;
   isWithDash?: boolean;
+  variant?: TitleSectionVariants;
+  size?: TitleSectionSizes;
+  alignment?: TitleSectionAlignment;
 }
 
 export interface ButtonLinkProps {

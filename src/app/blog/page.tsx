@@ -7,7 +7,7 @@ export default async function Blog() {
   return (
     <article className="mt-20">
       <section className="[&>*]:mb-8">
-        <TitleSection title="Blog" isWithDash={true} />
+        <TitleSection title="Blog" />
         {blog.length > 0 ? <BlogList blog={blog} /> : <p>Blog is empty.</p>}
       </section>
     </article>

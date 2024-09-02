@@ -6,7 +6,7 @@ export default function About() {
   return (
     <article className="mt-20">
       <section className="[&>*]:mb-8">
-        <TitleSection title="About me" isWithDash={true} />
+        <TitleSection title="About me" />
         <div className="group relative mx-auto w-max">
           <div className="absolute left-0 right-0 top-0 -z-0 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
           <Image

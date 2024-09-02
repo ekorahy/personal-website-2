@@ -7,6 +7,8 @@ export default function Features() {
       <TitleSection
         title="Dedication to building websites with"
         isWithDash={false}
+        size="2xl"
+        alignment="center"
       />
       <div>
         <FeaturesList />

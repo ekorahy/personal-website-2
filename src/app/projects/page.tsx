@@ -8,7 +8,7 @@ export default async function Projects() {
   return (
     <article className="mt-20">
       <section className="[&>*]:mb-8">
-        <TitleSection title="Projects" isWithDash={true} />
+        <TitleSection title="Projects" />
         {
           projects.length > 0 ? (
             <ProjectsList projects={projects} />

@@ -15,3 +15,11 @@ export interface ProjectItemProps {
   image: string;
   demoLink: string;
 }
+
+export interface StackListProps {
+  stack: string[];
+}
+
+export interface StackItemProps {
+  item: string;
+}

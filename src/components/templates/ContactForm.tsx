@@ -22,12 +22,9 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full lg:w-4/5 [&>*]:mb-4"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full [&>*]:mb-4">
       <div className="md:flex md:gap-4">
-        <div className="flex flex-col md:basis-1/2">
+        <div className="mb-4 flex flex-col md:basis-1/2 lg:mb-0">
           <label className="mb-1 text-xl lg:text-lg" htmlFor="name">
             Name*
           </label>

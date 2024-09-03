@@ -30,6 +30,7 @@ export interface ButtonLinkProps {
 export interface TitleWithDescriptionProps {
   title: string;
   description: string;
-  variant: TitleWithDescriptionVariants;
+  titleVariant: TitleWithDescriptionVariants;
+  descriptionVariant: TitleWithDescriptionVariants;
   isWithDash?: boolean;
 }

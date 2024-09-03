@@ -34,7 +34,7 @@ export default async function DetailBlog({
         </p>
         <TagsList tags={tags} />
         <Image
-          className="mx-auto my-8 h-[25rem] w-full overflow-hidden object-cover lg:w-3/4"
+          className="mx-auto my-8 h-[20rem] lg:h-[25rem] w-full overflow-hidden object-cover lg:w-3/4"
           src={urlFor(currentImage).url()}
           width={500}
           height={500}

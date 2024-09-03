@@ -15,7 +15,7 @@ export default function ProjectItem({
     <section className="">
       <div className="group relative mb-4">
         <Image
-          className="w-full object-cover"
+          className="h-60 w-full object-cover sm:h-80 md:h-96 lg:h-80 xl:h-96"
           src={urlFor(image).url()}
           width={560}
           height={448}
@@ -32,7 +32,11 @@ export default function ProjectItem({
         </Link>
       </div>
       <div className="flex items-center gap-4 [&>*]:text-xl">
-        <ButtonLink title="Detail" route={`/projects/${id}`} variant="default" />
+        <ButtonLink
+          title="Detail"
+          route={`/projects/${id}`}
+          variant="default"
+        />
         <ButtonLink title="Visit Website" route={demoLink} variant="default" />
       </div>
     </section>

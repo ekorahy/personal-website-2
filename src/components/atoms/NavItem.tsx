@@ -13,7 +13,7 @@ export default function NavItem({ title, route }: NavItemProps) {
     <Link
       href={route}
       className={clsx(
-        "group relative mx-auto w-max py-3 text-center text-2xl lg:mx-4 lg:w-full lg:text-lg",
+        "group relative mx-auto w-max py-3 text-center text-2xl hover:text-amber-400 lg:mx-4 lg:w-full lg:text-lg",
         { "font-bold text-amber-400": isActive },
       )}
     >

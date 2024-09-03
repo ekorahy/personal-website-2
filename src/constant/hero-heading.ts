@@ -1,0 +1,1 @@
+export const heroHeading = ["Front-end Engineer", "Tech Enthusiast", "Lifelong Learner"];

@@ -1,28 +1,37 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
 import TitleSection from "@/components/atoms/TitleSection";
+import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import Image from "next/image";
 
 export default function About() {
   return (
-    <article className="mt-20">
+    <article className="my-20">
       <section className="[&>*]:mb-8">
-        <TitleSection title="About me" />
-        <div className="group relative mx-auto w-max">
-          <div className="absolute left-0 right-0 top-0 -z-0 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
-          <Image
-            className="mx-auto hidden grayscale group-hover:grayscale-0 sm:block"
-            src="/about.jpg"
-            width={350}
-            height={450}
-            alt="about image"
-          />
-          <Image
-            className="mx-auto grayscale group-hover:grayscale-0 sm:hidden"
-            src="/about.jpg"
-            width={200}
-            height={350}
-            alt="about image"
-          />
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
+          <div className="flex flex-col justify-center">
+            <TitleWithDescriptionSection
+              title="About"
+              description="Short story about me."
+              variant="primary"
+            />
+          </div>
+          <div className="group relative mx-auto w-max">
+            <div className="absolute left-0 right-0 top-0 -z-0 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
+            <Image
+              className="mx-auto hidden grayscale group-hover:grayscale-0 sm:block"
+              src="/about.jpg"
+              width={350}
+              height={450}
+              alt="about image"
+            />
+            <Image
+              className="mx-auto grayscale group-hover:grayscale-0 sm:hidden"
+              src="/about.jpg"
+              width={200}
+              height={350}
+              alt="about image"
+            />
+          </div>
         </div>
         <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-xl [&>p]:lg:text-lg">
           <p>

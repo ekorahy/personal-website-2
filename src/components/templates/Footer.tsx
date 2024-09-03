@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="md:flex md:flex-col md:items-center">
           <Logo width={120} height={120} isWithText={false} isDark={true} />
           <p className="mt-4 text-sm text-zinc-50">
-            Let's Connect and Grow Together!
+            Let&apos;s Connect and Grow Together!
           </p>
           <ButtonSocialMediaList />
         </div>

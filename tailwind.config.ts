@@ -15,7 +15,7 @@ const config: Config = {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 50s linear infinite',
-        'bounce-up-down': 'bounce-up-down 0.5s ease-in-out'
+        'bounce-up-down': 'bounce-up-down 0.5s ease-in-out',
       },
       keyframes: {
         'infinite-scroll': {
@@ -26,7 +26,7 @@ const config: Config = {
           '0%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
           '100%': { transform: 'translateY(0)' }
-        }
+        },
       }
     },
   },

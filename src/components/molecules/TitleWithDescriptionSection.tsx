@@ -35,7 +35,7 @@ export default function TitleWithDescriptionSection({
           />
         )}
       </h2>
-      <p className={clsx("text-xl: lg:text-lg", descriptionVarianClass)}>
+      <p className={clsx("text-xl lg:text-lg", descriptionVarianClass)}>
         {description}
       </p>
     </>

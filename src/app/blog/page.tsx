@@ -6,7 +6,7 @@ import { getAllBlogs } from "@/sanity/lib/querying";
 export default async function Blog() {
   const blog = await getAllBlogs();
   return (
-    <article className="mt-20">
+    <article className="my-20">
       <section className="[&>*]:mb-8">
         <div className="mb-4">
           <TitleWithDescriptionSection

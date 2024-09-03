@@ -12,7 +12,8 @@ export default function About() {
             <TitleWithDescriptionSection
               title="About"
               description="Short story about me."
-              variant="primary"
+              titleVariant="secondary"
+              descriptionVariant="primary"
             />
           </div>
           <div className="group relative mx-auto w-max">

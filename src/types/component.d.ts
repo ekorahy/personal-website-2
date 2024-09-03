@@ -5,6 +5,7 @@ type ButtonLinkVariants = 'primary' | 'secondary' | 'tertiary' | 'paragraf' | 'd
 type TitleSectionVariants = 'primary' | 'secondary';
 type TitleSectionSizes = '2xl' | '3xl';
 type TitleSectionAlignment = 'left' | 'center';
+type TitleWithDescriptionVariants = 'primary' | 'secondary';
 
 export interface ButtonProps {
   route: string;
@@ -24,4 +25,11 @@ export interface ButtonLinkProps {
   title: string;
   route: string;
   variant: ButtonLinkVariants;
+}
+
+export interface TitleWithDescriptionProps {
+  title: string;
+  description: string;
+  variant: TitleWithDescriptionVariants;
+  isWithDash?: boolean;
 }

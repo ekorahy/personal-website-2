@@ -1,10 +1,10 @@
-import TitleSection from "@/components/atoms/TitleSection";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
-import ProjectsList from "@/components/organisms/ProjectsList";
+import ProjectsSection from "@/components/templates/ProjectsSection";
 import { getProjects } from "@/sanity/lib/querying";
 
 export default async function Projects() {
   const projects = await getProjects();
+  console.log(projects);
 
   return (
     <article className="my-20">
@@ -17,11 +17,7 @@ export default async function Projects() {
             descriptionVariant="primary"
           />
         </div>
-        {projects.length > 0 ? (
-          <ProjectsList projects={projects} />
-        ) : (
-          <p>Projects is empty.</p>
-        )}
+        <ProjectsSection initialData={projects} />
       </section>
     </article>
   );

@@ -23,3 +23,21 @@ export interface StackListProps {
 export interface StackItemProps {
   item: string;
 }
+
+export interface FullProjectsProps {
+  currentId: string;
+  name: string;
+  technologies: string[];
+  currentImage: string;
+  demo_link: string;
+}
+
+export interface ProjectSectionProps {
+  initialData: FullProjectsProps[];
+}
+
+export interface TechnologiesFilterProps {
+  technologies: string[];
+  selectedTech: string;
+  onTechChange: (tech: string) => void;
+}

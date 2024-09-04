@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import BlogList from "../organisms/BlogList";
 import SearchBar from "../molecules/SearchBar";
 import TagsFilter from "../molecules/TagsFilter";
+import EmptyDataImage from "../atoms/EmptyDataImage";
 
 export default function BlogSection({ initialData }: BlogSectionProps) {
   const [blog, setBlog] = useState<BlogProps[]>(initialData);
@@ -90,7 +91,7 @@ export default function BlogSection({ initialData }: BlogSectionProps) {
       {filteredBlog.length > 0 ? (
         <BlogList blog={filteredBlog} />
       ) : (
-        <p>Blog is empty.</p>
+        <EmptyDataImage />
       )}
     </div>
   );

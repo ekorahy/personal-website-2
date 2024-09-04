@@ -4,6 +4,7 @@ import Header from "@/components/templates/Header";
 import { raleway } from "@/fonts/fonts";
 import Main from "@/components/templates/Main";
 import Footer from "@/components/templates/Footer";
+import { ThemeProvider } from "@/components/atoms/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "EKSA",
@@ -20,9 +21,16 @@ export default function RootLayout({
       <body
         className={`${raleway.className} relative bg-zinc-50 text-zinc-950`}
       >
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <Main>{children}</Main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

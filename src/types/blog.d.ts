@@ -27,3 +27,19 @@ export interface TagListProps {
 export interface TagItemProps {
   tag: string;
 }
+
+export interface BlogSectionProps {
+  initialData: BlogProps[];
+}
+
+export interface SearchBarProps {
+  keyword: string;
+  keywordChange: (newKeyword: string) => void;
+  removeKeyword: () => void;
+}
+
+export interface TagsFilterProps {
+  keyword: string;
+  tags: string[];
+  onTagHandler: (tag: string) => void;
+}

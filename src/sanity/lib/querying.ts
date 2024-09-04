@@ -9,6 +9,7 @@ export async function getProjects() {
       name,
       "currentImage": image.asset._ref,
       demo_link,
+      technologies,
     }
   `;
 

@@ -1,10 +1,12 @@
 import TitleSection from "@/components/atoms/TitleSection";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import BlogList from "@/components/organisms/BlogList";
+import BlogSection from "@/components/templates/BlogSection";
 import { getAllBlogs } from "@/sanity/lib/querying";
 
 export default async function Blog() {
   const blog = await getAllBlogs();
+
   return (
     <article className="my-20">
       <section className="[&>*]:mb-8">
@@ -16,7 +18,7 @@ export default async function Blog() {
             descriptionVariant="primary"
           />
         </div>
-        {blog.length > 0 ? <BlogList blog={blog} /> : <p>Blog is empty.</p>}
+        <BlogSection initialData={blog} />
       </section>
     </article>
   );

@@ -8,6 +8,7 @@ import ProjectsList from "../organisms/ProjectsList";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import TechnologiesFilter from "../molecules/TechnologiesFilter";
+import EmptyDataImage from "../atoms/EmptyDataImage";
 
 export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   const [projects] = useState<FullProjectsProps[]>(initialData);
@@ -61,7 +62,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       {filteredProjects.length > 0 ? (
         <ProjectsList projects={filteredProjects} />
       ) : (
-        <p>Projects is empty.</p>
+        <EmptyDataImage />
       )}
     </div>
   );

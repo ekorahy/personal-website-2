@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  FullProjectsProps,
-  ProjectSectionProps,
-} from "@/types/projects";
+import { FullProjectsProps, ProjectSectionProps } from "@/types/projects";
 import ProjectsList from "../organisms/ProjectsList";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -51,7 +48,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
 
   return (
     <div>
-      <h3 className="mb-2 text-center text-xl font-bold lg:text-lg">
+      <h3 className="mb-4 text-center text-xl font-bold lg:text-lg">
         Filtered by
       </h3>
       <TechnologiesFilter

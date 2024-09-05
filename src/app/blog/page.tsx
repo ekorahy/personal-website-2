@@ -1,6 +1,4 @@
-import TitleSection from "@/components/atoms/TitleSection";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
-import BlogList from "@/components/organisms/BlogList";
 import BlogSection from "@/components/templates/BlogSection";
 import { getAllBlogs } from "@/sanity/lib/querying";
 

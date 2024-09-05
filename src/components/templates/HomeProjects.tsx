@@ -3,6 +3,7 @@ import ProjectsList from "../organisms/ProjectsList";
 import TitleSection from "../atoms/TitleSection";
 import ButtonLink from "../atoms/ButtonLink";
 import { sliceProjects } from "@/utils/sliceProjects";
+import EmptyDataImage from "../atoms/EmptyDataImage";
 
 export default async function HomeProjects() {
   const projects = await getProjects();
@@ -17,7 +18,7 @@ export default async function HomeProjects() {
         </div>
       </div>
       {projects.length === 0 ? (
-        <p>Projects is Empty.</p>
+        <EmptyDataImage />
       ) : (
         <ProjectsList projects={slicedProjects} />
       )}

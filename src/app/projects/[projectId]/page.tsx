@@ -1,5 +1,4 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
-import TitleSection from "@/components/atoms/TitleSection";
 import StackList from "@/components/molecules/StackList";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import { urlFor } from "@/sanity/lib/image";

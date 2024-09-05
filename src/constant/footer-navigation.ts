@@ -9,22 +9,22 @@ export const footerNavigation = [
       {
         id: 'nav-2',
         name: 'About',
-        route: '/'
+        route: '/about'
       },
       {
         id: 'nav-3',
         name: 'Projects',
-        route: '/'
+        route: '/projects'
       },
       {
         id: 'nav-4',
         name: 'Blog',
-        route: '/'
+        route: '/blog'
       },
       {
         id: 'nav-5',
         name: 'Contact',
-        route: '/'
+        route: '/contact'
       },
     ],
     "features": [

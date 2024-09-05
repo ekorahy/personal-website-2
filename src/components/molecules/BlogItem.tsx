@@ -24,15 +24,13 @@ export default function BlogItem({
             height={400}
             alt={`${title} image`}
           />
-          <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-xl text-white backdrop-blur lg:text-lg">
+          <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-lg text-white backdrop-blur">
             {formattedDate(createdAt)}
           </span>
         </div>
         <div className="p-4">
-          <h3 className="mb-2 mt-2 line-clamp-3 text-2xl font-bold lg:text-xl">
-            {title}
-          </h3>
-          <p className="mb-4 line-clamp-3 text-xl lg:text-lg">{description}</p>
+          <h3 className="mb-2 mt-2 line-clamp-3 text-xl font-bold">{title}</h3>
+          <p className="mb-4 line-clamp-3 text-lg">{description}</p>
         </div>
       </section>
     </Link>

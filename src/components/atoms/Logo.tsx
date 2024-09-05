@@ -15,7 +15,7 @@ export default function Logo({
   const { theme } = useTheme();
 
   const imageSource =
-    theme === "light"
+    theme === "light" || theme === undefined
       ? isDark
         ? "/dark-logo.png"
         : "/light-logo.png"

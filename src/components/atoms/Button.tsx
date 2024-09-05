@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Link from "next/link";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { GoArrowUpRight } from "react-icons/go";
 
 export default function Button({ route, name, variant }: ButtonProps) {
   let buttonStyles = "";
@@ -44,7 +43,7 @@ export default function Button({ route, name, variant }: ButtonProps) {
     <Link
       href={route}
       className={clsx(
-        "group flex items-center gap-2 overflow-hidden p-4 text-xl sm:px-8 sm:py-4 lg:text-lg",
+        "group flex items-center gap-2 overflow-hidden p-4 text-lg sm:px-8 sm:py-4",
         buttonStyles,
       )}
     >

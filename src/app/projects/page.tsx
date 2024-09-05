@@ -4,7 +4,6 @@ import { getProjects } from "@/sanity/lib/querying";
 
 export default async function Projects() {
   const projects = await getProjects();
-  console.log(projects);
 
   return (
     <article className="my-20">

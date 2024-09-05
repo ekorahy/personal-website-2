@@ -1,6 +1,5 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
 import PageNotFoundImage from "@/components/atoms/PageNotFoundImage";
-import Image from "next/image";
 
 export default function NotFound() {
   return (

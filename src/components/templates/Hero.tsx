@@ -14,7 +14,7 @@ export default function Hero() {
           <div className="z-10 h-[0.1rem] w-2/4 bg-black" />
         </div>
         <HeadingAnimation />
-        <p className="z-10 mb-8 text-xl lg:text-lg">
+        <p className="z-10 mb-8 text-lg">
           Let&apos;s discuss about your{" "}
           <span className="text-amber-400">ideas</span> and I will{" "}
           <span className="text-amber-400">manifest</span> them for you through{" "}

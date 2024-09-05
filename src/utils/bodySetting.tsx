@@ -69,9 +69,7 @@ export const bodySetting = {
       </h6>
     ),
     normal: ({ children }: any) => (
-      <p className="mt-2 text-xl text-zinc-950 dark:text-zinc-50 lg:text-lg">
-        {children}
-      </p>
+      <p className="mt-2 text-lg text-zinc-950 dark:text-zinc-50">{children}</p>
     ),
   },
   list: {
@@ -88,12 +86,12 @@ export const bodySetting = {
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="mb-1 text-xl text-zinc-950 dark:text-zinc-50 lg:text-lg">
+      <li className="mb-1 text-lg text-zinc-950 dark:text-zinc-50">
         {children}
       </li>
     ),
     number: ({ children }: any) => (
-      <li className="mb-1 text-xl text-zinc-950 dark:text-zinc-50 lg:text-lg">
+      <li className="mb-1 text-lg text-zinc-950 dark:text-zinc-50">
         {children}
       </li>
     ),

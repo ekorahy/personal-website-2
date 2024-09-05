@@ -25,7 +25,7 @@ export default function HomeAbout() {
           alt="about image"
         />
       </div>
-      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-xl [&>p]:lg:text-lg">
+      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-lg">
         <TitleSection title="About me" />
         <p>
           Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I am a Front-end

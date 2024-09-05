@@ -12,29 +12,32 @@ export default function Button({ route, name, variant }: ButtonProps) {
   switch (variant) {
     case "primary":
       buttonStyles = "bg-amber-400 w-max";
-      iconStyles = "group-hover:text-zinc-50";
+      iconStyles = "group-hover:text-zinc-50 group-hover:dark:text-zinc-950";
       break;
     case "primary-border":
       buttonStyles = "border border-amber-400 hover:text-amber-400";
       break;
     case "email-primary":
       buttonStyles = "bg-amber-400 hover:bg-amber-500";
-      iconStyles = "group-hover:text-zinc-50";
+      iconStyles = "group-hover:text-zinc-50 group-hover:dark:text-zinc-950";
       break;
     case "email-secondary":
-      buttonStyles = "w-full sm:w-max bg-zinc-950 text-zinc-50";
+      buttonStyles =
+        "w-full sm:w-max bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950";
       iconStyles = "group-hover:text-amber-400";
       break;
     case "secondary":
-      buttonStyles = "bg-zinc-950 text-zinc-50";
+      buttonStyles =
+        "bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950";
       iconStyles = "group-hover:text-amber-400";
       break;
     case "secondary-border":
       buttonStyles = "w-full sm:w-max border border-zinc-950 text-zinc-50";
-      iconStyles = "group-hover:text-zinc-950";
+      iconStyles = "group-hover:text-zinc-950 group-hover:dark:text-zinc-950";
       break;
     default:
-      buttonStyles = "bg-gray-300 text-black px-4 py-2 rounded";
+      buttonStyles =
+        "bg-zinc-300 dark:bg-zinc-700 text-zinc-950 dark:text-zinc-50 px-4 py-2 rounded";
   }
 
   return (

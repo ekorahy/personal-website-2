@@ -8,7 +8,7 @@ export default function ButtonSocialMediaItem({
 }: ButtonSocialMediaItemProps) {
   return (
     <Link
-      className="text-3xl text-zinc-50 hover:text-amber-400"
+      className="text-3xl text-zinc-50 hover:text-amber-400 dark:text-zinc-950"
       href={link}
       title={name}
     >

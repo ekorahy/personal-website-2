@@ -14,17 +14,15 @@ export default function NavMobile() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Use effect to handle body overflow
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Disable scroll on body
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Enable scroll on body
+      document.body.style.overflow = "";
     }
 
-    // Cleanup effect
     return () => {
-      document.body.style.overflow = ""; // Reset on component unmount
+      document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
 
@@ -36,7 +34,7 @@ export default function NavMobile() {
       </div>
       <div
         className={clsx(
-          "fixed bottom-0 left-0 right-0 top-0 z-20 h-full w-full transform bg-zinc-50 transition-transform duration-1000 ease-in-out",
+          "fixed bottom-0 left-0 right-0 top-0 z-20 h-full w-full transform bg-zinc-50 transition-transform duration-1000 ease-in-out dark:bg-zinc-950",
           {
             "-translate-x-0": isMenuOpen,
             "translate-x-full": !isMenuOpen,

@@ -10,12 +10,12 @@ export default function TitleWithDescriptionSection({
 }: TitleWithDescriptionProps) {
   const titleVariantClass = {
     primary: "text-amber-400",
-    secondary: "text-zinc-950",
+    secondary: "text-zinc-950 dark:text-zinc-50",
   }[titleVariant];
 
   const descriptionVarianClass = {
     primary: "text-amber-400",
-    secondary: "text-zinc-950",
+    secondary: "text-zinc-950 dark:text-zinc-50",
   }[descriptionVariant];
 
   return (
@@ -29,7 +29,7 @@ export default function TitleWithDescriptionSection({
         {isWithDash && (
           <span
             className={clsx("h-[0.1rem] w-2/4 rounded-full", {
-              "bg-zinc-950": titleVariant === "secondary",
+              "bg-zinc-950 dark:bg-zinc-50": titleVariant === "secondary",
               "bg-amber-400": titleVariant === "primary",
             })}
           />

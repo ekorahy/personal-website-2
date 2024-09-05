@@ -7,7 +7,7 @@ export default function NavigationFooterItem({
 }: NavigationFooterItemProps) {
   return (
     <Link
-      className="text-zinc-50 hover:text-amber-400"
+      className="text-zinc-50 hover:text-amber-400 dark:text-zinc-950 hover:dark:text-amber-400"
       href={route}
     >
       {name}

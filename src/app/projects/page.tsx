@@ -14,7 +14,7 @@ export default async function Projects() {
             title="Projects"
             description="Showcasing my works."
             titleVariant="secondary"
-            descriptionVariant="primary"
+            descriptionVariant="secondary"
           />
         </div>
         <ProjectsSection initialData={projects} />

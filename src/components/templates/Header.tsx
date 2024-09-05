@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header
       className={clsx("fixed top-0 z-20 h-max w-full p-4 lg:px-8", {
-        "bg-zinc-50": scrolled,
+        "bg-zinc-50 dark:bg-zinc-950": scrolled,
       })}
     >
       <Navigation />

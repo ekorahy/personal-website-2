@@ -28,7 +28,7 @@ export default function Hero() {
           />
           <Button route="/projects" name="View projects" variant="secondary" />
         </div>
-        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100/60 transition-transform duration-300 ease-in-out hover:scale-[10] lg:top-12 lg:block xl:top-28" />
+        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100/60 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900/60 lg:top-12 lg:block xl:top-28" />
       </div>
       <div className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:basis-1/2 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]">
         <Image

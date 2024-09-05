@@ -16,10 +16,11 @@ export default function TagsFilter({
           <button
             key={tag}
             className={clsx(
-              "whitespace-nowrap rounded-full px-8 py-2 shadow hover:bg-amber-300",
+              "whitespace-nowrap rounded-full px-8 py-2 hover:bg-amber-300 hover:dark:bg-amber-300 hover:dark:text-zinc-950",
               {
                 "bg-amber-400": keyword.toLowerCase() === tag.toLowerCase(),
-                "bg-zinc-50": keyword.toLowerCase() !== tag.toLowerCase(),
+                "border border-zinc-950 bg-white dark:border-zinc-50 dark:bg-black":
+                  keyword.toLowerCase() !== tag.toLowerCase(),
               },
             )}
             onClick={() => onTagHandler(tag)}

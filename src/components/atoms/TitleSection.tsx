@@ -10,7 +10,7 @@ export default function TitleSection({
 }: TitleSectionProps) {
   const titleVariantClass = {
     primary: "text-amber-400",
-    secondary: "text-zinc-950",
+    secondary: "text-zinc-950 dark:text-zinc-50",
   }[variant];
 
   const titleSizeClass = {
@@ -33,7 +33,7 @@ export default function TitleSection({
       {isWithDash && (
         <span
           className={clsx("h-[0.1rem] w-2/4 rounded-full", {
-            "bg-zinc-950": variant === "secondary",
+            "bg-zinc-950 dark:bg-zinc-50": variant === "secondary",
             "bg-amber-400": variant === "primary",
           })}
         />

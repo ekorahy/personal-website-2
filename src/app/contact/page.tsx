@@ -11,7 +11,7 @@ export default function Contact() {
             title="Contact"
             description="Feel free to contact me if you need any insights on web development, especially with frontend tasks. Whether it’s for advice, a discussion, or just to say hello, I will be delighted to assist you."
             titleVariant="secondary"
-            descriptionVariant="primary"
+            descriptionVariant="secondary"
           />
         </div>
         <ContactForm />

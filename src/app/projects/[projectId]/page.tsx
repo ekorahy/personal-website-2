@@ -33,7 +33,7 @@ export default async function DetailProject({
               titleVariant="secondary"
               descriptionVariant="primary"
             />
-            <h3 className="my-4 text-center text-2xl font-bold text-amber-400 lg:text-xl lg:text-zinc-950">
+            <h3 className="my-4 text-center text-2xl font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50">
               Build with
             </h3>
             <StackList stack={technologies} />

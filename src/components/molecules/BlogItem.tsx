@@ -15,7 +15,7 @@ export default function BlogItem({
 }: BlogItemProps) {
   return (
     <Link href={`/blog/${slug}`}>
-      <section className="h-full transform cursor-pointer border-b-4 border-amber-400 shadow transition-transform duration-300 hover:scale-105">
+      <section className="h-full transform cursor-pointer border-b-4 border-amber-400 bg-white shadow-2xl shadow-zinc-100 transition-transform duration-300 hover:scale-105 dark:bg-black dark:shadow-zinc-900">
         <div className="relative h-max">
           <Image
             className="h-60 w-full object-cover"

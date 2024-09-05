@@ -15,7 +15,7 @@ export default async function Blog() {
             title="Blog"
             description="Share my thoughts, personal stories, tips, tricks, tech reviews, tutorials, etc."
             titleVariant="secondary"
-            descriptionVariant="primary"
+            descriptionVariant="secondary"
           />
         </div>
         <BlogSection initialData={blog} />

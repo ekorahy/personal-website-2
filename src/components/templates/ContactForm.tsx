@@ -29,7 +29,7 @@ export default function ContactForm() {
             Name*
           </label>
           <input
-            className="mb-2 border border-zinc-950 bg-white px-4 py-3 text-xl outline-none lg:text-lg"
+            className="mb-2 border border-zinc-950 px-4 py-3 text-xl outline-none dark:border-zinc-50 lg:text-lg"
             type="text"
             id="name"
             {...register("name", { required: "Name is required" })}
@@ -45,7 +45,7 @@ export default function ContactForm() {
             Email*
           </label>
           <input
-            className="mb-2 border border-zinc-950 bg-white px-4 py-3 text-xl outline-none lg:text-lg"
+            className="mb-2 border border-zinc-950 px-4 py-3 text-xl outline-none dark:border-zinc-50 lg:text-lg"
             type="email"
             id="email"
             {...register("email", {
@@ -68,7 +68,7 @@ export default function ContactForm() {
           Subject*
         </label>
         <input
-          className="mb-2 border border-zinc-950 bg-white px-4 py-3 text-xl outline-none lg:text-lg"
+          className="mb-2 border border-zinc-950 px-4 py-3 text-xl outline-none dark:border-zinc-50 lg:text-lg"
           type="text"
           id="subject"
           {...register("subject", { required: "Subject is required" })}
@@ -84,7 +84,7 @@ export default function ContactForm() {
           Message*
         </label>
         <textarea
-          className="mb-2 min-h-40 border border-zinc-950 bg-white px-4 py-3 text-xl outline-none lg:text-lg"
+          className="mb-2 min-h-40 border border-zinc-950 px-4 py-3 text-xl outline-none dark:border-zinc-50 lg:text-lg"
           id="message"
           {...register("message", { required: "Message is required" })}
         />
@@ -99,7 +99,7 @@ export default function ContactForm() {
         type="submit"
       >
         <span className="z-10">Send Message</span>
-        <IoMdSend className="duration-300 ease-in-out group-hover:-rotate-45 group-hover:scale-[10] group-hover:text-zinc-50" />
+        <IoMdSend className="duration-300 ease-in-out group-hover:-rotate-45 group-hover:scale-[10] group-hover:text-zinc-50 group-hover:dark:text-zinc-950" />
       </button>
     </form>
   );

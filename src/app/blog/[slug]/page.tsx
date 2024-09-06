@@ -6,6 +6,7 @@ import { bodySetting } from "@/utils/bodySetting";
 import formattedDate from "@/utils/formattedDate";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import { IoMdEye, IoMdTime } from "react-icons/io";
 
 export default async function DetailBlog({
   params,
@@ -18,8 +19,15 @@ export default async function DetailBlog({
     return <p>Blog not found!</p>;
   }
 
-  const { title, currentImage, description, tags, createdAt, body } =
-    detailBlog;
+  const {
+    title,
+    currentImage,
+    tags,
+    createdAt,
+    body,
+    estimatedReadingTime,
+    views,
+  } = detailBlog;
   return (
     <article className="my-20">
       <section className="[&>h2]:mb-2">
@@ -29,6 +37,17 @@ export default async function DetailBlog({
           variant="secondary"
           alignment="center"
         />
+        <div className="mx-auto w-max p-4">
+          <div className="flex items-center gap-4">
+            <p className="flex items-center gap-2 bg-amber-400 px-2">
+              <IoMdTime />
+              {estimatedReadingTime} min read
+            </p>
+            <p className="flex items-center gap-2 bg-amber-400 px-2">
+              <IoMdEye /> {views} views
+            </p>
+          </div>
+        </div>
         <p className="mb-4 text-center text-amber-400">
           Written on {formattedDate(createdAt)} by Eksa
         </p>

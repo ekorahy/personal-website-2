@@ -43,6 +43,12 @@ export default defineField({
       of: [{ type: 'string' }]
     }),
     defineField({
+      name: "views",
+      title: "Views",
+      type: "number",
+      initialValue: 0,
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'array',

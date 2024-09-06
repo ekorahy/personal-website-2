@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { client } from "./client";
+import { client, writeClient } from "./client";
 
 export async function getProjects() {
   try {
@@ -10,6 +10,7 @@ export async function getProjects() {
       "currentImage": image.asset._ref,
       demo_link,
       technologies,
+      description,
     }
   `;
 
@@ -25,11 +26,14 @@ export async function getAllBlogs() {
     const query = groq`
     *[_type == "blog"]{
       "currentSlug": slug.current,
+      _id,
       title,
       "currentImage": image.asset._ref,
       description,
       tags,
       "createdAt": created_at,
+      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+      views,
     }
     `;
 
@@ -50,6 +54,7 @@ export async function getProjectDetail(projectId: string) {
       "currentImage": image.asset._ref,
       demo_link,
       body,
+      description,
     }[0]
   `;
 
@@ -71,6 +76,8 @@ export async function getBlogDetail(slug: string) {
         tags,
         "createdAt": created_at,
         body,
+        "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+        views,
       }[0]
     `;
 
@@ -80,3 +87,12 @@ export async function getBlogDetail(slug: string) {
     throw error;
   }
 }
+
+export async function incrementViews(blogId: string) {
+  try {
+    await writeClient.patch(blogId).inc({ views: 1 }).commit();
+  } catch (error) {
+    throw error;
+  }
+}
+

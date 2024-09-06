@@ -1,10 +1,13 @@
 export interface BlogProps {
   currentSlug: string;
+  _id: string;
   title: string;
   currentImage: string;
   tags: string[];
   description: string;
   createdAt: string;
+  estimatedReadingTime: number;
+  views: number;
 }
 
 export interface BlogListProps {
@@ -12,12 +15,14 @@ export interface BlogListProps {
 }
 
 export interface BlogItemProps {
+  id: string;
   slug: string;
   title: string;
   image: string;
-  tags: string[];
   description: string;
   createdAt: string;
+  estimatedReadingTime: number;
+  views: number;
 }
 
 export interface TagListProps {

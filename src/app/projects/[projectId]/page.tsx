@@ -1,4 +1,5 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
+import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import StackList from "@/components/molecules/StackList";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import { urlFor } from "@/sanity/lib/image";
@@ -13,7 +14,6 @@ export default async function DetailProject({
   params: { projectId: string };
 }) {
   const projectDetail = await getProjectDetail(params.projectId);
-  console.log(projectDetail);
 
   if (!projectDetail) {
     return <p>Data not found!</p>;
@@ -26,6 +26,7 @@ export default async function DetailProject({
       <section className="[&>*]:mb-4">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col justify-center">
+            <ButtonArrowBack title="projects" route="/projects" />
             <TitleWithDescriptionSection
               title={name}
               description="Web App"

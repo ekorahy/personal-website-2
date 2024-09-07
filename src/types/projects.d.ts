@@ -30,14 +30,15 @@ export interface FullProjectsProps {
   technologies: string[];
   currentImage: string;
   demo_link: string;
+  category: string;
 }
 
 export interface ProjectSectionProps {
   initialData: FullProjectsProps[];
 }
 
-export interface TechnologiesFilterProps {
-  technologies: string[];
-  selectedTech: string;
-  onTechChange: (tech: string) => void;
+export interface CategoryFilterProps {
+  category: string[];
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
 }

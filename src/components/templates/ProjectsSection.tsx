@@ -6,17 +6,21 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import TechnologiesFilter from "../molecules/CategoryFilter";
 import EmptyDataImage from "../atoms/EmptyDataImage";
+import ButtonPagination from "../atoms/ButtonPagination";
 
 export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   const [projects] = useState<FullProjectsProps[]>(initialData);
   const [filteredProjects, setFilteredProjects] =
     useState<FullProjectsProps[]>(initialData);
+  const [currentPage, setCurrentPage] = useState(1);
+  const maxProjectsPerPage = 4;
 
   const searchParams = useSearchParams();
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>(
-    searchParams.get("filteredBy") || "All",
+    searchParams.get("filteredBy") || "All"
   );
+  const pageFromParams = parseInt(searchParams.get("page") || "1", 10);
 
   useEffect(() => {
     const category = searchParams.get("filteredBy") || "All";
@@ -26,10 +30,14 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.category.includes(category)),
+        projects.filter((project) => project.category.includes(category))
       );
     }
   }, [searchParams, projects]);
+
+  useEffect(() => {
+    setCurrentPage(pageFromParams);
+  }, [pageFromParams]);
 
   const categoryList = [
     "All",
@@ -43,8 +51,35 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
     } else {
       params.delete("filteredBy");
     }
+    params.set("page", "1");
     router.push(`?${params.toString()}`);
   };
+
+  const handlePageChange = (page: number) => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("page", page.toString());
+    router.push(`?${params.toString()}`);
+    setCurrentPage(page);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      handlePageChange(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      handlePageChange(currentPage + 1);
+    }
+  };
+
+  const totalPages = Math.ceil(filteredProjects.length / maxProjectsPerPage);
+
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * maxProjectsPerPage,
+    currentPage * maxProjectsPerPage
+  );
 
   return (
     <div>
@@ -56,8 +91,33 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
       />
-      {filteredProjects.length > 0 ? (
-        <ProjectsList projects={filteredProjects} />
+      {paginatedProjects.length > 0 ? (
+        <>
+          <ProjectsList projects={paginatedProjects} />
+          <div className="flex justify-center mt-8">
+            <ButtonPagination
+              variant="left"
+              disabled={currentPage === 1}
+              onClick={handlePreviousPage}
+            />
+            <div className="flex items-center">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <ButtonPagination
+                  key={index + 1}
+                  variant="value"
+                  value={index + 1}
+                  active={currentPage === index + 1}
+                  onClick={() => handlePageChange(index + 1)}
+                />
+              ))}
+            </div>
+            <ButtonPagination
+              variant="next"
+              disabled={currentPage === totalPages}
+              onClick={handleNextPage}
+            />
+          </div>
+        </>
       ) : (
         <EmptyDataImage />
       )}

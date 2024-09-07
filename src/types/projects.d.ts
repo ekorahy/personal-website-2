@@ -42,3 +42,11 @@ export interface CategoryFilterProps {
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
 }
+
+export interface ButtonPaginationProps {
+  variant: "left" | "value" | "next";
+  value?: number;
+  disabled?: boolean;
+  active?: boolean;
+  onClick: () => void;
+};

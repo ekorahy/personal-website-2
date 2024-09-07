@@ -7,7 +7,7 @@ export default function CategoryFilter({
   onCategoryChange,
 }: CategoryFilterProps) {
   return (
-    <div className="mb-4 flex flex-wrap items-center justify-center gap-4">
+    <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
       {category.map((item) => (
         <button
           key={item}

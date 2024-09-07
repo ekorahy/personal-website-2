@@ -1,10 +1,13 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
+import TitleSection from "@/components/atoms/TitleSection";
 import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import StackList from "@/components/molecules/StackList";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
+import ProjectsList from "@/components/organisms/ProjectsList";
 import { urlFor } from "@/sanity/lib/image";
-import { getProjectDetail } from "@/sanity/lib/querying";
+import { getProjectDetail, getProjects } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
+import { getOtherProjects } from "@/utils/otherProjects";
 import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
@@ -35,12 +38,14 @@ export default async function DetailProject({
   params: { projectId: string };
 }) {
   const projectDetail = await getProjectDetail(params.projectId);
+  const projects = await getProjects();
 
   if (!projectDetail) {
     return <p>Data not found!</p>;
   }
 
-  const { name, technologies, currentImage, demo_link, body } = projectDetail;
+  const { name, category, technologies, currentImage, demo_link, body } = projectDetail;
+  const otherProjects = getOtherProjects(projects, name);
 
   return (
     <article className="my-20">
@@ -50,7 +55,7 @@ export default async function DetailProject({
             <ButtonArrowBack title="projects" route="/projects" />
             <TitleWithDescriptionSection
               title={name}
-              description="Web App"
+              description={category}
               titleVariant="secondary"
               descriptionVariant="primary"
             />
@@ -80,6 +85,11 @@ export default async function DetailProject({
         <div className="prose max-w-none">
           <PortableText value={body} components={bodySetting} />
         </div>
+
+        <section className="mt-20">
+          <TitleSection title="Other projects" variant="secondary" isWithDash={false} alignment="center"/>
+          <ProjectsList projects={otherProjects} />
+        </section>
       </section>
     </article>
   );

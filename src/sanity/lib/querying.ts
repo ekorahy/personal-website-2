@@ -11,6 +11,7 @@ export async function getProjects() {
       demo_link,
       technologies,
       description,
+      category,
     }
   `;
 
@@ -55,6 +56,7 @@ export async function getProjectDetail(projectId: string) {
       demo_link,
       body,
       description,
+      category,
     }[0]
   `;
 

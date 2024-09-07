@@ -39,6 +39,11 @@ export default defineType({
       type: 'string'
     }),
     defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string'
+    }),
+    defineField({
       name: 'created_at',
       title: 'Created At',
       type: 'datetime',

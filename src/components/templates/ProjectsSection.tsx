@@ -4,7 +4,7 @@ import { FullProjectsProps, ProjectSectionProps } from "@/types/projects";
 import ProjectsList from "../organisms/ProjectsList";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import TechnologiesFilter from "../molecules/TechnologiesFilter";
+import TechnologiesFilter from "../molecules/CategoryFilter";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 
 export default function ProjectsSection({ initialData }: ProjectSectionProps) {
@@ -14,32 +14,32 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
 
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [selectedTech, setSelectedTech] = useState<string>(
+  const [selectedCategory, setSelectedCategory] = useState<string>(
     searchParams.get("filteredBy") || "All",
   );
 
   useEffect(() => {
-    const tech = searchParams.get("filteredBy") || "All";
-    setSelectedTech(tech);
+    const category = searchParams.get("filteredBy") || "All";
+    setSelectedCategory(category);
 
-    if (tech === "All") {
+    if (category === "All") {
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.technologies.includes(tech)),
+        projects.filter((project) => project.category.includes(category)),
       );
     }
   }, [searchParams, projects]);
 
-  const technologies = [
+  const categoryList = [
     "All",
-    ...Array.from(new Set(projects.flatMap((project) => project.technologies))),
+    ...Array.from(new Set(projects.flatMap((project) => project.category))),
   ];
 
-  const handleTechChange = (tech: string) => {
+  const handleCategoryChange = (category: string) => {
     const params = new URLSearchParams(window.location.search);
-    if (tech !== "All") {
-      params.set("filteredBy", tech);
+    if (category !== "All") {
+      params.set("filteredBy", category);
     } else {
       params.delete("filteredBy");
     }
@@ -52,9 +52,9 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
         Filtered by
       </h3>
       <TechnologiesFilter
-        technologies={technologies}
-        selectedTech={selectedTech}
-        onTechChange={handleTechChange}
+        category={categoryList}
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
       />
       {filteredProjects.length > 0 ? (
         <ProjectsList projects={filteredProjects} />

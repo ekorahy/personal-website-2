@@ -34,3 +34,8 @@ export interface TitleWithDescriptionProps {
   descriptionVariant: TitleWithDescriptionVariants;
   isWithDash?: boolean;
 }
+
+export interface ButtonArrowBackProps {
+  title: string;
+  route: string;
+}

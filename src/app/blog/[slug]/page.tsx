@@ -1,4 +1,5 @@
 import TitleSection from "@/components/atoms/TitleSection";
+import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import TagsList from "@/components/molecules/TagsList";
 import { urlFor } from "@/sanity/lib/image";
 import { getBlogDetail } from "@/sanity/lib/querying";
@@ -31,6 +32,7 @@ export default async function DetailBlog({
   return (
     <article className="my-20">
       <section className="[&>h2]:mb-2">
+        <ButtonArrowBack title="blog" route="/blog" />
         <TitleSection
           title={title}
           isWithDash={false}

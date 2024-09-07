@@ -1,9 +1,6 @@
-"use client";
-
 import { urlFor } from "@/sanity/lib/image";
 import { BlogItemProps } from "@/types/blog";
 import Image from "next/image";
-import TagsList from "./TagsList";
 import Link from "next/link";
 import formattedDate from "@/utils/formattedDate";
 import { IoMdEye, IoMdTime } from "react-icons/io";

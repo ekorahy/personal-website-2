@@ -1,10 +1,12 @@
 import TitleSection from "@/components/atoms/TitleSection";
 import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import TagsList from "@/components/molecules/TagsList";
+import BlogList from "@/components/organisms/BlogList";
 import { urlFor } from "@/sanity/lib/image";
-import { getBlogDetail } from "@/sanity/lib/querying";
+import { getAllBlogs, getBlogDetail } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
 import formattedDate from "@/utils/formattedDate";
+import { getOtherBlog } from "@/utils/otherBlog";
 import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
@@ -36,6 +38,7 @@ export default async function DetailBlog({
   params: { slug: string };
 }) {
   const detailBlog = await getBlogDetail(params.slug);
+  const blog = await getAllBlogs();
 
   if (!detailBlog) {
     return <p>Blog not found!</p>;
@@ -50,6 +53,8 @@ export default async function DetailBlog({
     estimatedReadingTime,
     views,
   } = detailBlog;
+  const otherBlog = getOtherBlog(blog, title);
+
   return (
     <article className="my-20">
       <section className="[&>h2]:mb-2">
@@ -85,6 +90,14 @@ export default async function DetailBlog({
         <div className="prose max-w-none">
           <PortableText value={body} components={bodySetting} />
         </div>
+      </section>
+      <section className="mt-20">
+        <TitleSection
+          title="Other blog"
+          variant="secondary"
+          alignment="center"
+        />
+        <BlogList blog={otherBlog} />
       </section>
     </article>
   );

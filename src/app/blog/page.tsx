@@ -1,6 +1,30 @@
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import BlogSection from "@/components/templates/BlogSection";
 import { getAllBlogs } from "@/sanity/lib/querying";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Share my thoughts, personal stories, tips, tricks, tech reviews, tutorials, etc.",
+  keywords: [
+    "blog",
+    "personal stories",
+    "thoughts",
+    "tips and tricks",
+    "tech reviews",
+    "tutorials",
+    "web development",
+    "programming",
+    "JavaScript",
+    "React",
+    "front-end development",
+    "software engineering",
+    "Eksa",
+    "Eko Rahayu Widodo",
+    "technology",
+  ],
+};
 
 export default async function Blog() {
   const blog = await getAllBlogs();

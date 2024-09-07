@@ -7,7 +7,10 @@ import Footer from "@/components/templates/Footer";
 import { ThemeProvider } from "@/components/atoms/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "EKSA",
+  title: {
+    template: "%s | EKSA",
+    default: "EKSA | Personal Website",
+  },
   icons: "light-logo.png",
 };
 

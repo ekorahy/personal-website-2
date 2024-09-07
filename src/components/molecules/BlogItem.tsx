@@ -1,3 +1,5 @@
+"use client";
+
 import { urlFor } from "@/sanity/lib/image";
 import { BlogItemProps } from "@/types/blog";
 import Image from "next/image";
@@ -41,11 +43,11 @@ export default function BlogItem({
           </div>
           <div className="p-4">
             <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 px-2 bg-amber-400">
+              <p className="flex items-center gap-2 bg-amber-400 px-2">
                 <IoMdTime />
                 {estimatedReadingTime} min read
               </p>
-              <p className="flex items-center gap-2 px-2 bg-amber-400">
+              <p className="flex items-center gap-2 bg-amber-400 px-2">
                 <IoMdEye /> {views} views
               </p>
             </div>

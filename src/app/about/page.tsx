@@ -1,7 +1,32 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
-import TitleSection from "@/components/atoms/TitleSection";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn more about Eko Rahayu Widodo, also known as Eksa, a passionate Front-end Engineer from Indonesia with experience in building websites using the React Ecosystem. Discover his professional journey, contributions as an External Code Reviewer, and his transition from being a generalist developer to specializing in front-end web applications.",
+  keywords: [
+    "Eksa",
+    "Eko Rahayu Widodo",
+    "Front-end Engineer",
+    "About",
+    "React",
+    "JavaScript",
+    "Dicoding Indonesia",
+    "Web Development",
+    "Software Engineering",
+    "Code Reviewer",
+    "Java",
+    "PHP",
+    "Kotlin",
+    "Flutter",
+    "Machine Learning",
+    "Python",
+    "TensorFlow",
+  ],
+};
 
 export default function About() {
   return (

@@ -5,8 +5,29 @@ import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescrip
 import { urlFor } from "@/sanity/lib/image";
 import { getProjectDetail } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
+import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { projectId: string };
+}): Promise<Metadata> {
+  const projectDetail = await getProjectDetail(params.projectId);
+
+  if (!projectDetail) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: `${projectDetail.name} - Project`,
+    description: projectDetail.description,
+    keywords: projectDetail.technologies.join(", "),
+  };
+}
 
 export default async function DetailProject({
   params,

@@ -5,9 +5,30 @@ import { urlFor } from "@/sanity/lib/image";
 import { getBlogDetail } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
 import formattedDate from "@/utils/formattedDate";
+import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { IoMdEye, IoMdTime } from "react-icons/io";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const blogDetail = await getBlogDetail(params.slug);
+
+  if (!blogDetail) {
+    return {
+      title: "Blog Not Found",
+    };
+  }
+
+  return {
+    title: `${blogDetail.title} - Blog`,
+    description: blogDetail.description,
+    keywords: blogDetail.tags.join(", "),
+  };
+}
 
 export default async function DetailBlog({
   params,

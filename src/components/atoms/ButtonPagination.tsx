@@ -1,5 +1,6 @@
 import { ButtonPaginationProps } from "@/types/projects";
 import React from "react";
+import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 
 export default function ButtonPagination({
   variant,
@@ -29,8 +30,8 @@ export default function ButtonPagination({
       {variant === "value" && value
         ? value
         : variant === "left"
-          ? "Back"
-          : "Next"}
+          ? <IoMdArrowBack />
+          : <IoMdArrowForward />}
     </button>
   );
 }

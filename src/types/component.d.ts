@@ -39,3 +39,7 @@ export interface ButtonArrowBackProps {
   title: string;
   route: string;
 }
+
+export interface EmphasisProps {
+  isWithProjectsButton?: boolean;
+}

@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import TechnologiesFilter from "../molecules/CategoryFilter";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 import ButtonPagination from "../atoms/ButtonPagination";
+import Emphasis from "./Emphasis";
 
 export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   const [projects] = useState<FullProjectsProps[]>(initialData);
@@ -121,6 +122,9 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       ) : (
         <EmptyDataImage />
       )}
+      <div className="mt-16">
+      <Emphasis isWithProjectsButton={false} />
+      </div>
     </div>
   );
 }

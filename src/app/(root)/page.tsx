@@ -1,6 +1,7 @@
 import Emphasis from "@/components/templates/Emphasis";
 import Features from "@/components/templates/Features";
 import Hero from "@/components/templates/Hero";
+import HireMeSection from "@/components/templates/HireMeSection";
 import HomeAbout from "@/components/templates/HomeAbout";
 import HomeBlog from "@/components/templates/HomeBlog";
 import HomeProjects from "@/components/templates/HomeProjects";
@@ -41,6 +42,7 @@ export default function Home() {
       <HomeBlog />
       <Technologies />
       <Emphasis />
+      <HireMeSection />
     </article>
   );
 }

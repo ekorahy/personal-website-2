@@ -43,7 +43,7 @@ export default function Button({ route, name, variant }: ButtonProps) {
     <Link
       href={route}
       className={clsx(
-        "group flex items-center gap-2 overflow-hidden p-4 text-lg sm:px-8 sm:py-4",
+        "group flex items-center gap-2 overflow-hidden p-4 sm:px-8 sm:py-4 lg:text-lg",
         buttonStyles,
       )}
     >

@@ -84,7 +84,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
 
   return (
     <div>
-      <h3 className="mb-4 text-center text-xl font-bold lg:text-lg">
+      <h3 className="mb-2 lg:mb-4 text-center font-bold text-lg">
         Filtered by
       </h3>
       <TechnologiesFilter
@@ -95,7 +95,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       {paginatedProjects.length > 0 ? (
         <>
           <ProjectsList projects={paginatedProjects} />
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center flex-wrap mt-8">
             <ButtonPagination
               variant="left"
               disabled={currentPage === 1}

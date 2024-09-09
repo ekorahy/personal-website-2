@@ -44,7 +44,8 @@ export default async function DetailProject({
     return <p>Data not found!</p>;
   }
 
-  const { name, category, technologies, currentImage, demo_link, body } = projectDetail;
+  const { name, category, technologies, currentImage, demo_link, body } =
+    projectDetail;
   const otherProjects = getOtherProjects(projects, name);
 
   return (
@@ -59,7 +60,7 @@ export default async function DetailProject({
               titleVariant="secondary"
               descriptionVariant="primary"
             />
-            <h3 className="my-4 text-center text-2xl font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50">
+            <h3 className="my-4 text-center text-lg font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50">
               Build with
             </h3>
             <StackList stack={technologies} />
@@ -87,8 +88,10 @@ export default async function DetailProject({
         </div>
 
         <section className="mt-20">
-          <TitleSection title="Other projects" variant="secondary" isWithDash={false} alignment="center"/>
-          <ProjectsList projects={otherProjects} />
+          <TitleSection title="Other projects" variant="secondary" size="2xl" />
+          <div className="mt-4">
+            <ProjectsList projects={otherProjects} />
+          </div>
         </section>
       </section>
     </article>

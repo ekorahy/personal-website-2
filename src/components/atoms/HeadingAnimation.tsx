@@ -23,7 +23,7 @@ export default function HeadingAnimation() {
 
   return (
     <h2
-      className={`z-10 mb-4 mt-2 text-5xl font-bold transition-opacity duration-1000 ease-in-out ${isFading ? "opacity-0" : "opacity-100"}`}
+      className={`z-10 mb-4 mt-2 text-4xl font-bold transition-opacity duration-1000 ease-in-out lg:text-5xl ${isFading ? "opacity-0" : "opacity-100"}`}
     >
       {heroHeading[currentHeadingIndex]}
     </h2>

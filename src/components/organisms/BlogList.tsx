@@ -13,10 +13,10 @@ export default function BlogList({ blog }: BlogListProps) {
           description,
           createdAt,
           estimatedReadingTime,
-          views
+          views,
         }) => (
           <BlogItem
-          id={_id}
+            id={_id}
             key={currentSlug}
             slug={currentSlug}
             title={title}

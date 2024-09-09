@@ -64,19 +64,25 @@ export default async function DetailBlog({
           isWithDash={false}
           variant="secondary"
           alignment="center"
+          size="2xl"
         />
-        <div className="mx-auto w-max p-4">
+        <div className="mx-auto my-4 w-max">
           <div className="flex items-center gap-4">
-            <p className="flex items-center gap-2 bg-amber-400 px-2">
+            <p className="flex items-center gap-2">
               <IoMdTime />
-              {estimatedReadingTime} min read
+              <span className="bg-amber-400 px-2">
+                {estimatedReadingTime} min read
+              </span>
             </p>
-            <p className="flex items-center gap-2 bg-amber-400 px-2">
-              <IoMdEye /> {views} views
+            <p className="flex items-center gap-2 px-2">
+              <IoMdEye />{" "}
+              <span className="bg-amber-400 px-2">
+                {views} views
+              </span>
             </p>
           </div>
         </div>
-        <p className="mb-4 text-center text-amber-400">
+        <p className="mb-4 text-center">
           Written on {formattedDate(createdAt)} by Eksa
         </p>
         <TagsList tags={tags} />
@@ -96,6 +102,7 @@ export default async function DetailBlog({
           title="Other blog"
           variant="secondary"
           alignment="center"
+          size="2xl"
         />
         <BlogList blog={otherBlog} />
       </section>

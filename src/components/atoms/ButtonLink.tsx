@@ -8,15 +8,15 @@ export default function ButtonLink({ title, route, variant }: ButtonLinkProps) {
 
   switch (variant) {
     case "primary":
-      buttonStyles = "bg-amber-400 rounded-full px-4 py-2 text-lg gap-2";
+      buttonStyles = "bg-amber-400 rounded-full px-4 py-2 gap-2";
       break;
     case "secondary":
       buttonStyles =
-        "bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 rounded-full px-4 py-2 text-lg gap-2";
+        "bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 rounded-full px-4 py-2 gap-2";
       break;
     case "tertiary":
       buttonStyles =
-        "bg-zinc-100 dark:bg-zinc-900 rounded-full px-4 py-2 text-lg gap-2";
+        "bg-zinc-100 dark:bg-zinc-900 rounded-full px-4 py-2 gap-2";
       break;
     case "paragraf":
       buttonStyles =
@@ -24,7 +24,7 @@ export default function ButtonLink({ title, route, variant }: ButtonLinkProps) {
       break;
     default:
       buttonStyles =
-        "hover:text-amber-400 rounded-full px-4 py-2 text-lg gap-2";
+        "hover:text-amber-400 rounded-full px-4 py-2 gap-2";
       break;
   }
 
@@ -32,7 +32,7 @@ export default function ButtonLink({ title, route, variant }: ButtonLinkProps) {
     <Link
       href={route}
       className={clsx(
-        "group flex items-center overflow-hidden whitespace-nowrap",
+        "group flex items-center overflow-hidden whitespace-nowrap text-base lg:text-lg",
         buttonStyles,
       )}
     >

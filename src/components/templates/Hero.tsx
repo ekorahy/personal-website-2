@@ -8,13 +8,13 @@ export default function Hero() {
     <section className="relative flex flex-col-reverse gap-8 lg:flex-row">
       <div className="relative flex flex-col justify-center lg:basis-1/2">
         <div className="flex items-center gap-2">
-          <p className="z-10 whitespace-nowrap text-xl">
+          <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
             Hi, I&apos;m <span className="font-bold text-amber-400">Eksa</span>
           </p>
           <div className="z-10 h-[0.1rem] w-2/4 bg-black" />
         </div>
         <HeadingAnimation />
-        <p className="z-10 mb-8 text-lg">
+        <p className="z-10 mb-8 lg:text-lg">
           Let&apos;s discuss about your{" "}
           <span className="text-amber-400">ideas</span> and I will{" "}
           <span className="text-amber-400">manifest</span> them for you through{" "}

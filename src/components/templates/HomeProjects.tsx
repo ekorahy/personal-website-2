@@ -12,7 +12,7 @@ export default async function HomeProjects() {
   return (
     <section>
       <div className="mb-8 flex items-center justify-between">
-        <TitleSection title="Latest Projects" />
+        <TitleSection title="Latest Projects" size="2xl" />
         <div className="hidden lg:block">
           <ButtonLink title="View More" route="/projects" variant="tertiary" />
         </div>

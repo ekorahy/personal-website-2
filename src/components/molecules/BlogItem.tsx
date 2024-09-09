@@ -37,24 +37,29 @@ export default function BlogItem({
               height={400}
               alt={`${title} image`}
             />
-            <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-xl text-white backdrop-blur lg:text-lg">
+            <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-sm text-white backdrop-blur lg:text-base">
               {formattedDate(createdAt)}
             </span>
           </div>
           <div className="p-4">
             <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 bg-amber-400 px-2">
+              <p className="flex items-center gap-2">
                 <IoMdTime />
-                {estimatedReadingTime} min read
+                <span className="bg-amber-400 px-2 text-sm lg:text-base">
+                  {estimatedReadingTime} min read
+                </span>
               </p>
-              <p className="flex items-center gap-2 bg-amber-400 px-2">
-                <IoMdEye /> {views} views
+              <p className="flex items-center gap-2 px-2">
+                <IoMdEye />{" "}
+                <span className="bg-amber-400 px-2 text-sm lg:text-base">
+                  {views} views
+                </span>
               </p>
             </div>
-            <h3 className="mb-2 mt-4 line-clamp-3 text-2xl font-bold lg:text-xl">
+            <h3 className="my-2 line-clamp-3 text-base font-bold lg:text-lg">
               {title}
             </h3>
-            <p className="mb-4 line-clamp-3 text-xl lg:text-lg">
+            <p className="mb-4 line-clamp-3 text-justify text-base lg:text-lg">
               {description}
             </p>
           </div>

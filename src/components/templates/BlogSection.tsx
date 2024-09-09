@@ -127,7 +127,7 @@ export default function BlogSection({ initialData }: BlogSectionProps) {
       {paginatedBlog.length > 0 ? (
         <>
           <BlogList blog={paginatedBlog} />
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-wrap justify-center">
             <ButtonPagination
               variant="left"
               disabled={currentPage === 1}

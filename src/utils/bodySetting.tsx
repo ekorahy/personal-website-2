@@ -49,7 +49,7 @@ export const bodySetting = {
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="mt-4 text-xl font-semibold text-zinc-950 dark:text-zinc-50">
+      <h3 className="mt-4 text-lg lg:text-xl font-semibold text-zinc-950 dark:text-zinc-50">
         {children}
       </h3>
     ),
@@ -69,7 +69,7 @@ export const bodySetting = {
       </h6>
     ),
     normal: ({ children }: any) => (
-      <p className="mt-2 text-lg text-zinc-950 dark:text-zinc-50">{children}</p>
+      <p className="mt-2 lg:text-lg text-zinc-950 dark:text-zinc-50">{children}</p>
     ),
   },
   list: {

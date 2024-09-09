@@ -59,7 +59,7 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-lg">
+        <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
           <p>
             Hi, I&apos;m Eko Rahayu Widodo, you can call me Eksa. I am a
             Front-end Engineer based in Indonesia with more than a year of

@@ -21,7 +21,7 @@ export default function TitleWithDescriptionSection({
   return (
     <>
       <h2
-        className={clsx(titleVariantClass, "text-3xl", {
+        className={clsx(titleVariantClass, "text-2xl", {
           "flex w-full items-center gap-2 whitespace-nowrap": isWithDash,
         })}
       >
@@ -35,7 +35,7 @@ export default function TitleWithDescriptionSection({
           />
         )}
       </h2>
-      <p className={clsx("text-lg", descriptionVarianClass)}>{description}</p>
+      <p className={clsx("text-base lg:text-lg", descriptionVarianClass)}>{description}</p>
     </>
   );
 }

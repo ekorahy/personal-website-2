@@ -8,7 +8,7 @@ export default function ButtonArrowBack({
 }: ButtonArrowBackProps) {
   return (
     <Link
-      className="mb-8 flex w-max items-center gap-2 text-lg hover:text-amber-400 hover:dark:text-amber-400"
+      className="mb-8 flex w-max items-center gap-2 lg:text-lg hover:text-amber-400 hover:dark:text-amber-400"
       href={route}
     >
       <IoMdArrowBack />

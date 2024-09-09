@@ -22,30 +22,30 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full [&>*]:mb-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full [&>*]:mb-4 [&>*]:text-base [&>*]:lg:text-lg">
       <div className="md:flex md:gap-4">
         <div className="mb-4 flex flex-col md:basis-1/2 lg:mb-0">
-          <label className="mb-1 text-lg" htmlFor="name">
+          <label className="mb-1" htmlFor="name">
             Name*
           </label>
           <input
-            className="mb-2 border border-zinc-950 px-4 py-3 text-lg outline-none dark:border-zinc-50"
+            className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
             type="text"
             id="name"
             {...register("name", { required: "Name is required" })}
           />
           {errors.name && (
-            <p className="text-base text-red-400 lg:text-sm">
+            <p className="text-red-400">
               {errors.name.message}
             </p>
           )}
         </div>
         <div className="flex flex-col md:basis-1/2">
-          <label className="mb-1 text-lg" htmlFor="email">
+          <label className="mb-1" htmlFor="email">
             Email*
           </label>
           <input
-            className="mb-2 border border-zinc-950 px-4 py-3 text-lg outline-none dark:border-zinc-50"
+            className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
             type="email"
             id="email"
             {...register("email", {
@@ -57,45 +57,45 @@ export default function ContactForm() {
             })}
           />
           {errors.email && (
-            <p className="text-base text-red-400 lg:text-sm">
+            <p className="text-red-400">
               {errors.email.message}
             </p>
           )}
         </div>
       </div>
       <div className="flex flex-col">
-        <label className="mb-1 text-lg" htmlFor="subject">
+        <label className="mb-1" htmlFor="subject">
           Subject*
         </label>
         <input
-          className="mb-2 border border-zinc-950 px-4 py-3 text-lg outline-none dark:border-zinc-50"
+          className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
           type="text"
           id="subject"
           {...register("subject", { required: "Subject is required" })}
         />
         {errors.subject && (
-          <p className="text-base text-red-400 lg:text-sm">
+          <p className="text-red-400">
             {errors.subject.message}
           </p>
         )}
       </div>
       <div className="flex flex-col lg:basis-1/2">
-        <label className="mb-1 text-lg" htmlFor="message">
+        <label className="mb-1" htmlFor="message">
           Message*
         </label>
         <textarea
-          className="mb-2 min-h-40 border border-zinc-950 px-4 py-3 text-lg outline-none dark:border-zinc-50"
+          className="mb-2 min-h-40 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
           id="message"
           {...register("message", { required: "Message is required" })}
         />
         {errors.message && (
-          <p className="text-base text-red-400 lg:text-sm">
+          <p className="text-red-400">
             {errors.message.message}
           </p>
         )}
       </div>
       <button
-        className="group mx-auto flex items-center gap-2 overflow-hidden bg-amber-400 px-8 py-3 text-lg"
+        className="group mx-auto flex items-center gap-2 overflow-hidden bg-amber-400 px-8 py-3"
         type="submit"
       >
         <span className="z-10">Send Message</span>

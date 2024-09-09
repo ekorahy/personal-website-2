@@ -13,14 +13,18 @@ export default async function HomeBlog() {
     <section>
       <div className="mb-8 flex items-center justify-between">
         <TitleSection title="Latest Blog" size="2xl" />
-        <div className="hidden lg:block">
-          <ButtonLink title="View More" route="/blog" variant="tertiary" />
-        </div>
+        {blog.length !== 0 && (
+          <div className="hidden lg:block">
+            <ButtonLink title="View More" route="/blog" variant="tertiary" />
+          </div>
+        )}
       </div>
       {blog.length === 0 ? <EmptyDataImage /> : <BlogList blog={slicedBlog} />}
-      <div className="mt-8 flex justify-center lg:hidden">
-        <ButtonLink title="View More" route="/blog" variant="tertiary" />
-      </div>
+      {blog.length !== 0 && (
+        <div className="mt-8 flex justify-center lg:hidden">
+          <ButtonLink title="View More" route="/blog" variant="tertiary" />
+        </div>
+      )}
     </section>
   );
 }

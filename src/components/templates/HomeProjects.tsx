@@ -13,18 +13,26 @@ export default async function HomeProjects() {
     <section>
       <div className="mb-8 flex items-center justify-between">
         <TitleSection title="Latest Projects" size="2xl" />
-        <div className="hidden lg:block">
-          <ButtonLink title="View More" route="/projects" variant="tertiary" />
-        </div>
+        {projects.length !== 0 && (
+          <div className="hidden lg:block">
+            <ButtonLink
+              title="View More"
+              route="/projects"
+              variant="tertiary"
+            />
+          </div>
+        )}
       </div>
       {projects.length === 0 ? (
         <EmptyDataImage />
       ) : (
         <ProjectsList projects={slicedProjects} />
       )}
-      <div className="mt-8 flex justify-center lg:hidden">
-        <ButtonLink title="View More" route="/projects" variant="tertiary" />
-      </div>
+      {projects.length !== 0 && (
+        <div className="mt-8 flex justify-center lg:hidden">
+          <ButtonLink title="View More" route="/projects" variant="tertiary" />
+        </div>
+      )}
     </section>
   );
 }

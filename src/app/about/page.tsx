@@ -1,5 +1,6 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
+import ArticleSection from "@/components/templates/ArticleSection";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <article className="my-20">
+    <ArticleSection>
       <section className="[&>*]:mb-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
           <div className="flex flex-col justify-center">
@@ -114,6 +115,6 @@ export default function About() {
           </p>
         </div>
       </section>
-    </article>
+    </ArticleSection>
   );
 }

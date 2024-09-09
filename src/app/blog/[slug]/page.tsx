@@ -2,6 +2,7 @@ import TitleSection from "@/components/atoms/TitleSection";
 import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import TagsList from "@/components/molecules/TagsList";
 import BlogList from "@/components/organisms/BlogList";
+import ArticleSection from "@/components/templates/ArticleSection";
 import { urlFor } from "@/sanity/lib/image";
 import { getAllBlogs, getBlogDetail } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
@@ -56,7 +57,7 @@ export default async function DetailBlog({
   const otherBlog = getOtherBlog(blog, title);
 
   return (
-    <article className="my-20">
+    <ArticleSection>
       <section className="[&>h2]:mb-2">
         <ButtonArrowBack title="blog" route="/blog" />
         <TitleSection
@@ -76,9 +77,7 @@ export default async function DetailBlog({
             </p>
             <p className="flex items-center gap-2 px-2">
               <IoMdEye />{" "}
-              <span className="bg-amber-400 px-2">
-                {views} views
-              </span>
+              <span className="bg-amber-400 px-2">{views} views</span>
             </p>
           </div>
         </div>
@@ -106,6 +105,6 @@ export default async function DetailBlog({
         />
         <BlogList blog={otherBlog} />
       </section>
-    </article>
+    </ArticleSection>
   );
 }

@@ -4,6 +4,7 @@ import ButtonArrowBack from "@/components/molecules/ButtonArrowBack";
 import StackList from "@/components/molecules/StackList";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import ProjectsList from "@/components/organisms/ProjectsList";
+import ArticleSection from "@/components/templates/ArticleSection";
 import { urlFor } from "@/sanity/lib/image";
 import { getProjectDetail, getProjects } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
@@ -49,7 +50,7 @@ export default async function DetailProject({
   const otherProjects = getOtherProjects(projects, name);
 
   return (
-    <article className="my-20">
+    <ArticleSection>
       <section className="[&>*]:mb-4">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col justify-center">
@@ -94,6 +95,6 @@ export default async function DetailProject({
           </div>
         </section>
       </section>
-    </article>
+    </ArticleSection>
   );
 }

@@ -1,4 +1,5 @@
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
+import ArticleSection from "@/components/templates/ArticleSection";
 import ProjectsSection from "@/components/templates/ProjectsSection";
 import { getProjects } from "@/sanity/lib/querying";
 import { Metadata } from "next";
@@ -30,7 +31,7 @@ export default async function Projects() {
   const projects = await getProjects();
 
   return (
-    <article className="my-20">
+    <ArticleSection>
       <section>
         <div className="mb-4">
           <TitleWithDescriptionSection
@@ -42,6 +43,6 @@ export default async function Projects() {
         </div>
         <ProjectsSection initialData={projects} />
       </section>
-    </article>
+    </ArticleSection>
   );
 }

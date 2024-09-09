@@ -1,4 +1,5 @@
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
+import ArticleSection from "@/components/templates/ArticleSection";
 import ContactForm from "@/components/templates/ContactForm";
 import { Metadata } from "next";
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <article className="my-20">
+    <ArticleSection>
       <section>
         <div className="mb-4">
           <TitleWithDescriptionSection
@@ -36,6 +37,6 @@ export default function Contact() {
         </div>
         <ContactForm />
       </section>
-    </article>
+    </ArticleSection>
   );
 }

@@ -2,12 +2,16 @@
 
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function EmptyDataImage() {
   const { theme } = useTheme();
+  const [sourceImage, setSourceImage] = useState("/light-empty-data.png");
 
-  const sourceImage =
-    theme === "light" ? "/light-empty-data.png" : "/dark-empty-data.png";
+  useEffect(() => {
+    setSourceImage(theme === "light" || theme === undefined ? "/light-empty-data.png" : "/dark-empty-data.png");
+  }, [theme]);
+
   return (
     <Image
       className="mx-auto mt-16"

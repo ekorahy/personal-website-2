@@ -1,4 +1,5 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
+import Feedbacks from "@/components/molecules/Feedbacks";
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import ArticleSection from "@/components/templates/ArticleSection";
 import { Metadata } from "next";
@@ -81,6 +82,7 @@ export default function About() {
             writing code based on the technology used by students with the aim
             to improve the quality and efficiency of the code written.
           </p>
+          <Feedbacks />
           <p>
             I am a graduate of the Informatics study program at one of the
             universities in Jakarta, Indonesia. During my study, I learn many

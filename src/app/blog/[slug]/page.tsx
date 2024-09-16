@@ -96,15 +96,17 @@ export default async function DetailBlog({
           <PortableText value={body} components={bodySetting} />
         </div>
       </section>
-      <section className="mt-20">
-        <TitleSection
-          title="Other blog"
-          variant="secondary"
-          alignment="center"
-          size="2xl"
-        />
-        <BlogList blog={otherBlog} />
-      </section>
+      {blog.length > 1 && (
+        <section className="mt-20">
+          <TitleSection
+            title="Other blog"
+            variant="secondary"
+            alignment="center"
+            size="2xl"
+          />
+          <BlogList blog={otherBlog} />
+        </section>
+      )}
     </ArticleSection>
   );
 }

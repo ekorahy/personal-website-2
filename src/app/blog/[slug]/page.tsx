@@ -64,10 +64,10 @@ export default async function DetailBlog({
           title={title}
           isWithDash={false}
           variant="secondary"
-          alignment="center"
+          alignment="left"
           size="2xl"
         />
-        <div className="mx-auto my-4 w-max">
+        <div className="my-4 w-max">
           <div className="flex items-center gap-4">
             <p className="flex items-center gap-2">
               <IoMdTime />
@@ -81,17 +81,17 @@ export default async function DetailBlog({
             </p>
           </div>
         </div>
-        <p className="mb-4 text-center">
-          Written on {formattedDate(createdAt)} by Eksa
-        </p>
-        <TagsList tags={tags} />
-        <Image
-          className="mx-auto my-8 h-[20rem] w-full overflow-hidden object-cover lg:h-[25rem] lg:w-3/4"
-          src={urlFor(currentImage).url()}
-          width={500}
-          height={500}
-          alt={`${title} image`}
-        />
+        <p className="mb-4">Written on {formattedDate(createdAt)} by Eksa</p>
+        <div className="relative">
+          <TagsList tags={tags} />
+          <Image
+            className="my-8 h-[20rem] w-full rounded-2xl object-cover lg:h-[35rem]"
+            src={urlFor(currentImage).url()}
+            width={500}
+            height={500}
+            alt={`${title} image`}
+          />
+        </div>
         <div className="prose max-w-none">
           <PortableText value={body} components={bodySetting} />
         </div>

@@ -10,7 +10,7 @@ export const bodySetting = {
         alt={value.alt || "Project Image"}
         width={800}
         height={600}
-        className="mx-auto my-4 rounded-xl"
+        className="mx-auto my-4 rounded-2xl"
       />
     ),
   },
@@ -19,7 +19,7 @@ export const bodySetting = {
       <ButtonLink title={children} route={value.href} variant="paragraf" />
     ),
     strong: ({ children }: any) => (
-      <strong className="font-bold text-zinc-950 dark:text-zinc-50">
+      <strong className="font-semibold text-zinc-950 dark:text-zinc-50">
         {children}
       </strong>
     ),
@@ -49,7 +49,7 @@ export const bodySetting = {
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="mt-4 text-lg lg:text-xl font-semibold text-zinc-950 dark:text-zinc-50">
+      <h3 className="mt-4 text-lg font-bold text-zinc-950 dark:text-zinc-50 lg:text-xl">
         {children}
       </h3>
     ),
@@ -69,7 +69,9 @@ export const bodySetting = {
       </h6>
     ),
     normal: ({ children }: any) => (
-      <p className="mt-2 lg:text-lg text-zinc-950 dark:text-zinc-50">{children}</p>
+      <p className="mt-2 text-zinc-950 dark:text-zinc-50 lg:text-lg">
+        {children}
+      </p>
     ),
   },
   list: {
@@ -86,12 +88,12 @@ export const bodySetting = {
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="mb-1 text-lg text-zinc-950 dark:text-zinc-50">
+      <li className="mb-1 text-zinc-950 dark:text-zinc-50 lg:text-lg">
         {children}
       </li>
     ),
     number: ({ children }: any) => (
-      <li className="mb-1 text-lg text-zinc-950 dark:text-zinc-50">
+      <li className="mb-1 text-zinc-950 dark:text-zinc-50 lg:text-lg">
         {children}
       </li>
     ),

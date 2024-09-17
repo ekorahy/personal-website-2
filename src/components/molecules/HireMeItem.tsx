@@ -6,7 +6,7 @@ export default function HireMeItem({
   icon,
 }: HireMeItemProps) {
   return (
-    <div className="flex flex-col bg-white px-4 py-12 text-center shadow-2xl shadow-zinc-100 dark:bg-black dark:shadow-zinc-900">
+    <div className="flex flex-col bg-white px-4 py-12 text-center shadow-2xl shadow-zinc-100 hover:shadow hover:shadow-amber-400 dark:bg-black dark:shadow-zinc-900 hover:dark:shadow-amber-400">
       <span className="mx-auto mb-2 w-max rounded-full border border-amber-400 p-3 text-2xl text-amber-400">
         {icon}
       </span>

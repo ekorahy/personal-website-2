@@ -42,7 +42,7 @@ export default function Logo({
   }, [theme, isDark]);
 
   return (
-    <Link href="/" className="flex items-center gap-1">
+    <Link href="/" className="flex w-max items-center gap-1">
       <Image src={imageSource} width={width} height={height} alt="Logo eksa" />
       {isWithText && (
         <h1 className={clsx("text-xl font-bold lg:text-2xl", textStyles)}>

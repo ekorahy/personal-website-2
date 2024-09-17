@@ -37,7 +37,7 @@ export default function BlogItem({
               height={400}
               alt={`${title} image`}
             />
-            <span className="absolute bottom-0 right-0 bg-black/30 px-4 py-1 text-sm text-white backdrop-blur lg:text-base">
+            <span className="absolute bottom-4 right-4 rounded-full bg-black/30 px-4 py-1 text-white backdrop-blur">
               {formattedDate(createdAt)}
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function BlogItem({
                 </span>
               </p>
             </div>
-            <h3 className="my-2 line-clamp-3 text-base font-bold lg:text-lg">
+            <h3 className="my-2 line-clamp-3 text-lg font-bold lg:text-xl">
               {title}
             </h3>
             <p className="mb-4 line-clamp-3 text-justify text-base lg:text-lg">

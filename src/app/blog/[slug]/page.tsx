@@ -85,7 +85,7 @@ export default async function DetailBlog({
         <div className="relative">
           <TagsList tags={tags} />
           <Image
-            className="my-8 h-[20rem] w-full rounded-2xl object-cover lg:h-[35rem]"
+            className="my-8 h-[16rem] w-full rounded-2xl object-cover lg:h-[35rem]"
             src={urlFor(currentImage).url()}
             width={500}
             height={500}

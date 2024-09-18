@@ -14,7 +14,6 @@ export default function HomeAbout() {
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.6,
         }}
         className="group relative mx-auto w-max"
       >

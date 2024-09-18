@@ -14,6 +14,7 @@ export interface ProjectItemProps {
   name: string;
   image: string;
   demoLink: string;
+  index: number;
 }
 
 export interface StackListProps {

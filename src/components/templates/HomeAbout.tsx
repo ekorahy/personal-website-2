@@ -2,11 +2,22 @@ import Image from "next/image";
 import TitleSection from "../atoms/TitleSection";
 import Button from "../atoms/Button";
 import ButtonLink from "../atoms/ButtonLink";
+import * as motion from "framer-motion/client";
 
 export default function HomeAbout() {
   return (
     <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
-      <div className="group relative mx-auto w-max">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+          delay: 0.6,
+        }}
+        className="group relative mx-auto w-max"
+      >
         <div className="absolute left-0 right-0 top-0 -z-10 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
         <Image
           className="mx-auto hidden grayscale group-hover:grayscale-0 sm:block"
@@ -22,8 +33,18 @@ export default function HomeAbout() {
           height={350}
           alt="about image"
         />
-      </div>
-      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
+      </motion.div>
+      <motion.div
+        initial={{ x: 50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+          delay: 1,
+        }}
+        className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg"
+      >
         <TitleSection title="About me" size="2xl" />
         <p>
           Hi, I am Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
@@ -46,7 +67,7 @@ export default function HomeAbout() {
           efficiency of the code written.
         </p>
         <Button name="Read more" route="/about" variant="primary" />
-      </div>
+      </motion.div>
     </section>
   );
 }

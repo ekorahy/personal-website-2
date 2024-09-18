@@ -2,42 +2,111 @@ import Image from "next/image";
 import HeroIcon from "../atoms/HeroIcon";
 import Button from "../atoms/Button";
 import HeadingAnimation from "../atoms/HeadingAnimation";
+import * as motion from "framer-motion/client";
 
 export default function Hero() {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.3,
+        delayChildren: 1.8,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <section className="relative flex flex-col-reverse gap-8 lg:flex-row">
       <div className="relative flex flex-col justify-center lg:basis-1/2">
-        <div className="flex items-center gap-2">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 2.1,
+          }}
+          className="flex items-center gap-2"
+        >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
             Hi, I&apos;m <span className="font-bold text-amber-400">Eksa</span>
           </p>
-          <div className="z-10 h-[0.1rem] w-2/4 bg-black" />
-        </div>
+          <div className="z-10 h-[0.1rem] w-2/4 bg-black dark:bg-white" />
+        </motion.div>
         <HeadingAnimation />
-        <p className="z-10 mb-8 text-lg lg:text-xl">
+        <motion.p
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 2.7,
+          }}
+          className="z-10 mb-8 text-lg lg:text-xl"
+        >
           Let&apos;s discuss about your{" "}
           <span className="text-amber-400">ideas</span> and I will{" "}
           <span className="text-amber-400">manifest</span> them for you through{" "}
           <span className="text-amber-400">captivating digital reality</span>.
-        </p>
-        <div className="z-10 flex flex-wrap items-center gap-4">
+        </motion.p>
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 3,
+          }}
+          className="z-10 flex flex-wrap items-center gap-4"
+        >
           <Button
             route="mailto:ekorahy@gmail.com"
             name="Email me"
             variant="email-primary"
           />
           <Button route="/projects" name="View projects" variant="secondary" />
-        </div>
-        <div className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100/60 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900/60 lg:top-12 lg:block xl:top-28" />
-      </div>
-      <div className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:basis-1/2 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]">
-        <Image
-          className="z-10 grayscale transition duration-300 ease-in-out group-hover:grayscale-0"
-          src="/hero.png"
-          height={600}
-          width={600}
-          alt="Hero image"
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 3.3,
+          }}
+          className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-12 lg:block xl:top-28"
         />
+      </div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="group relative z-10 mx-auto h-full overflow-hidden rounded-br-[8rem] rounded-tl-[8rem] bg-amber-400 hover:grayscale-0 lg:basis-1/2 lg:rounded-br-[14rem] lg:rounded-tl-[14rem]"
+      >
+        <motion.div variants={item}>
+          <Image
+            className="z-10 grayscale transition duration-300 ease-in-out group-hover:grayscale-0"
+            src="/hero.png"
+            height={600}
+            width={600}
+            alt="Hero image"
+          />
+        </motion.div>
         <HeroIcon
           src="/tech/ic-react.svg"
           width={100}
@@ -115,7 +184,7 @@ export default function Hero() {
           title="redux"
           className="absolute -left-12 top-40 sm:left-0 sm:top-80 lg:-left-4 lg:top-24"
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

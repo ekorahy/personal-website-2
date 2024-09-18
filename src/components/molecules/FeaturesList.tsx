@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { features } from "@/constant/features";
 import FeatureItem from "../atoms/FeatureItem";
+import { motion } from "framer-motion";
 
 export default function FeaturesList() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -34,7 +35,15 @@ export default function FeaturesList() {
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "linear",
+        stiffness: 300,
+        damping: 25,
+        delay: 0.6,
+      }}
       ref={containerRef}
       className="inline-flex w-full flex-nowrap overflow-hidden"
       style={{
@@ -50,6 +59,6 @@ export default function FeaturesList() {
           <FeatureItem key={id} name={name} emoji={emoji} />
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }

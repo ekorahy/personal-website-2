@@ -1,5 +1,6 @@
 import { TitleSectionProps } from "@/types/component";
 import clsx from "clsx";
+import * as motion from "framer-motion/client";
 
 export default function TitleSection({
   title,
@@ -24,7 +25,15 @@ export default function TitleSection({
   }[alignment];
 
   return (
-    <h2
+    <motion.h2
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{
+        duration: 0.4,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
       className={clsx(titleVariantClass, titleSizeClass, titleAlignmentClass, {
         "flex w-full items-center gap-2 whitespace-nowrap": isWithDash,
       })}
@@ -38,6 +47,6 @@ export default function TitleSection({
           })}
         />
       )}
-    </h2>
+    </motion.h2>
   );
 }

@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Logo({
   width,
@@ -43,11 +44,37 @@ export default function Logo({
 
   return (
     <Link href="/" className="flex w-max items-center gap-1">
-      <Image src={imageSource} width={width} height={height} alt="Logo eksa" />
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ rotate: 360, scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+          delay: 0.9,
+        }}
+      >
+        <Image
+          src={imageSource}
+          width={width}
+          height={height}
+          alt="Logo eksa"
+        />
+      </motion.div>
       {isWithText && (
-        <h1 className={clsx("text-xl font-bold lg:text-2xl", textStyles)}>
+        <motion.h1
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.6,
+          }}
+          className={clsx("text-xl font-bold lg:text-2xl", textStyles)}
+        >
           EKSA
-        </h1>
+        </motion.h1>
       )}
     </Link>
   );

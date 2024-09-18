@@ -18,7 +18,6 @@ export default function NavItem({ title, route }: NavItemProps) {
       )}
     >
       {title}
-      {/* Span element for underline effect */}
       <span
         className={clsx(
           "absolute bottom-0 left-0 h-[2px] rounded-full bg-amber-400 transition-all duration-300 lg:bottom-1.5",

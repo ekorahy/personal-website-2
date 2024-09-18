@@ -4,15 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonLink from "../atoms/ButtonLink";
 import { PiGlobeThin } from "react-icons/pi";
+import * as motion from "framer-motion/client";
 
 export default function ProjectItem({
   id,
   name,
   image,
   demoLink,
+  index,
 }: ProjectItemProps) {
   return (
-    <section className="">
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        delay: 0.6 + (index + 1) * 0.3,
+      }}
+    >
       <div className="group relative mb-2">
         <Image
           className="h-60 w-full object-cover sm:h-80 md:h-96 lg:h-80 xl:h-96"
@@ -39,6 +50,6 @@ export default function ProjectItem({
         />
         <ButtonLink title="Visit Website" route={demoLink} variant="default" />
       </div>
-    </section>
+    </motion.section>
   );
 }

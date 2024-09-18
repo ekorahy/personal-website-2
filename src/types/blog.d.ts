@@ -23,6 +23,7 @@ export interface BlogItemProps {
   createdAt: string;
   estimatedReadingTime: number;
   views: number;
+  index: number;
 }
 
 export interface TagListProps {

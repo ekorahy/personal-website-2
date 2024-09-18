@@ -7,6 +7,7 @@ import Link from "next/link";
 import formattedDate from "@/utils/formattedDate";
 import { IoMdEye, IoMdTime } from "react-icons/io";
 import { incrementViews } from "@/sanity/lib/querying";
+import { motion } from "framer-motion";
 
 export default function BlogItem({
   id,
@@ -17,6 +18,7 @@ export default function BlogItem({
   createdAt,
   estimatedReadingTime,
   views,
+  index,
 }: BlogItemProps) {
   const handleItemClick = async () => {
     try {
@@ -26,7 +28,17 @@ export default function BlogItem({
     }
   };
   return (
-    <li onClick={handleItemClick}>
+    <motion.li
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        delay: 0.6 + (index + 1) * 0.3,
+      }}
+      onClick={handleItemClick}
+    >
       <Link href={`/blog/${slug}`}>
         <section className="h-full transform cursor-pointer border-b-4 border-amber-400 shadow transition-transform duration-300 hover:scale-105">
           <div className="relative h-max">
@@ -65,6 +77,6 @@ export default function BlogItem({
           </div>
         </section>
       </Link>
-    </li>
+    </motion.li>
   );
 }

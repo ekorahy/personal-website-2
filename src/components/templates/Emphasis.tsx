@@ -1,11 +1,23 @@
 import Button from "../atoms/Button";
 import { EmphasisProps } from "@/types/component";
+import * as motion from "framer-motion/client";
 
 export default function Emphasis({
   isWithProjectsButton = true,
 }: EmphasisProps) {
   return (
-    <section className="flex flex-col items-center justify-between gap-8 bg-amber-400 px-8 py-12 md:flex-row">
+    <motion.section
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        delay: 0.6,
+        duration: 2,
+      }}
+      className="flex flex-col items-center justify-between gap-8 bg-amber-400 px-8 py-12 md:flex-row"
+    >
       <h2 className="text-2xl font-bold lg:text-3xl">
         Interested working with me?
       </h2>
@@ -23,6 +35,6 @@ export default function Emphasis({
           variant="email-secondary"
         />
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -41,7 +41,8 @@ export default function Hero() {
           className="flex items-center gap-2"
         >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
-            Hi, I&apos;m <span className="font-bold text-amber-400">Eksa</span>
+            Hi, I&apos;m{" "}
+            <span className="font-bold text-amber-400">Eko</span>
           </p>
           <div className="z-10 h-[0.1rem] w-2/4 bg-black dark:bg-white" />
         </motion.div>

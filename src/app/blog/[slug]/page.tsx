@@ -103,7 +103,7 @@ export default async function DetailBlog({
           }}
           className="mb-4"
         >
-          Written on {formattedDate(createdAt)} by Eksa
+          Written on {formattedDate(createdAt)} by Ekorahy
         </motion.p>
         <div className="relative">
           <TagsList tags={tags} />

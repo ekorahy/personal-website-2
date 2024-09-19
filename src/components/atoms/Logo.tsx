@@ -58,7 +58,7 @@ export default function Logo({
           src={imageSource}
           width={width}
           height={height}
-          alt="Logo eksa"
+          alt="Logo Ekorahy"
         />
       </motion.div>
       {isWithText && (
@@ -73,7 +73,7 @@ export default function Logo({
           }}
           className={clsx("text-xl font-bold lg:text-2xl", textStyles)}
         >
-          EKSA
+          Ekorahy
         </motion.h1>
       )}
     </Link>

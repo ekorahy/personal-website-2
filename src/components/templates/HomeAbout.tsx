@@ -45,18 +45,20 @@ export default function HomeAbout() {
             delay: 0.3,
           }}
         >
-          Hi, I am Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
+          Hi, I am Eko Rahayu Widodo, you can call me Eko. I am a Front-end
           Engineer based in Indonesia with more than a year of experience
           building websites using React Ecosystem.
         </motion.p>
-        <motion.p initial={{ y: 50, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 25,
-        delay: 0.6,
-      }}>
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 0.6,
+          }}
+        >
           I currently actively contribute to{" "}
           <ButtonLink
             title="Dicoding Indonesia"

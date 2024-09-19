@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "programming",
     "front-end development",
-    "Eksa",
+    "Ekorahy",
     "Eko Rahayu Widodo",
   ],
 };

@@ -21,7 +21,7 @@ export default function Emphasis({
       <h2 className="text-2xl font-bold lg:text-3xl">
         Interested working with me?
       </h2>
-      <div className="flex w-full flex-col items-center gap-4 sm:w-max sm:flex-row">
+      <div className="flex w-full flex-col items-center gap-4 sm:w-max sm:flex-row [&>*]:w-full">
         {isWithProjectsButton && (
           <Button
             route="/projects"

@@ -8,6 +8,7 @@ import SearchBar from "../molecules/SearchBar";
 import TagsFilter from "../molecules/TagsFilter";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 import ButtonPagination from "../atoms/ButtonPagination";
+import { motion } from "framer-motion";
 
 export default function BlogSection({ initialData }: BlogSectionProps) {
   const [blog, setBlog] = useState<BlogProps[]>(initialData);
@@ -127,7 +128,17 @@ export default function BlogSection({ initialData }: BlogSectionProps) {
       {paginatedBlog.length > 0 ? (
         <>
           <BlogList blog={paginatedBlog} />
-          <div className="mt-8 flex flex-wrap justify-center">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+              delay: 0.3,
+            }}
+            className="mt-8 flex flex-wrap justify-center"
+          >
             <ButtonPagination
               variant="left"
               disabled={currentPage === 1}
@@ -149,7 +160,7 @@ export default function BlogSection({ initialData }: BlogSectionProps) {
               disabled={currentPage === totalPages}
               onClick={handleNextPage}
             />
-          </div>
+          </motion.div>
         </>
       ) : (
         <EmptyDataImage />

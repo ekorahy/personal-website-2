@@ -12,6 +12,7 @@ import { getOtherProjects } from "@/utils/otherProjects";
 import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import * as motion from "framer-motion/client";
 
 export async function generateMetadata({
   params,
@@ -61,19 +62,49 @@ export default async function DetailProject({
               titleVariant="secondary"
               descriptionVariant="primary"
             />
-            <h3 className="my-4 text-center text-lg font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50">
+            <motion.h3
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 25,
+                delay: 0.3,
+              }}
+              className="my-4 text-center text-lg font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50"
+            >
               Build with
-            </h3>
+            </motion.h3>
             <StackList stack={technologies} />
-            <div className="mx-auto my-8 w-max">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 25,
+                delay: 0.9,
+              }}
+              className="mx-auto my-8 w-max"
+            >
               <ButtonLink
                 title="Visit website"
                 variant="primary"
                 route={demo_link}
               />
-            </div>
+            </motion.div>
           </div>
-          <div className="relative mb-4 lg:flex lg:items-center">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+              delay: 0.3,
+            }}
+            className="relative mb-4 lg:flex lg:items-center"
+          >
             <Image
               className="mx-auto h-60 w-full overflow-hidden rounded-xl object-cover shadow sm:h-80 md:h-96 lg:h-64 lg:w-3/4"
               src={urlFor(currentImage).url()}
@@ -82,11 +113,21 @@ export default async function DetailProject({
               alt={`${name} image`}
             />
             <div className="absolute right-8 top-0 -z-10 mx-auto hidden h-60 w-full rounded-xl bg-amber-400 shadow sm:h-80 md:h-96 lg:block lg:h-64 lg:w-3/4" />
-          </div>
+          </motion.div>
         </div>
-        <div className="prose max-w-none">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 1,
+          }}
+          className="prose max-w-none"
+        >
           <PortableText value={body} components={bodySetting} />
-        </div>
+        </motion.div>
 
         <section className="mt-20">
           <TitleSection title="Other projects" variant="secondary" size="2xl" />

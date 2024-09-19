@@ -4,6 +4,7 @@ import TitleSection from "../atoms/TitleSection";
 import ButtonLink from "../atoms/ButtonLink";
 import { sliceBlog } from "@/utils/sliceProjects";
 import EmptyDataImage from "../atoms/EmptyDataImage";
+import * as motion from "framer-motion/client";
 
 export default async function HomeBlog() {
   const blog = await getAllBlogs();
@@ -14,16 +15,36 @@ export default async function HomeBlog() {
       <div className="mb-8 flex items-center justify-between">
         <TitleSection title="Latest Blog" size="2xl" />
         {blog.length !== 0 && (
-          <div className="hidden lg:block">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+              delay: 0.6,
+            }}
+            className="hidden lg:block"
+          >
             <ButtonLink title="View More" route="/blog" variant="tertiary" />
-          </div>
+          </motion.div>
         )}
       </div>
       {blog.length === 0 ? <EmptyDataImage /> : <BlogList blog={slicedBlog} />}
       {blog.length !== 0 && (
-        <div className="mt-8 flex justify-center lg:hidden">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 0.6,
+          }}
+          className="mt-8 flex justify-center lg:hidden"
+        >
           <ButtonLink title="View More" route="/blog" variant="tertiary" />
-        </div>
+        </motion.div>
       )}
     </section>
   );

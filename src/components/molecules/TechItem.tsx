@@ -11,7 +11,7 @@ export default function TechItem({ name, logo, index }: TechItemProps) {
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6 + (index + 1) * 0.3,
+        delay: 0.6 + (index + 1) * 0.1,
       }}
       className="flex items-center gap-2"
     >

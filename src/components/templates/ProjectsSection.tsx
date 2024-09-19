@@ -8,6 +8,7 @@ import TechnologiesFilter from "../molecules/CategoryFilter";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 import ButtonPagination from "../atoms/ButtonPagination";
 import Emphasis from "./Emphasis";
+import { motion } from "framer-motion";
 
 export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   const [projects] = useState<FullProjectsProps[]>(initialData);
@@ -19,7 +20,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>(
-    searchParams.get("filteredBy") || "All"
+    searchParams.get("filteredBy") || "All",
   );
   const pageFromParams = parseInt(searchParams.get("page") || "1", 10);
 
@@ -31,7 +32,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.category.includes(category))
+        projects.filter((project) => project.category.includes(category)),
       );
     }
   }, [searchParams, projects]);
@@ -79,14 +80,24 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
 
   const paginatedProjects = filteredProjects.slice(
     (currentPage - 1) * maxProjectsPerPage,
-    currentPage * maxProjectsPerPage
+    currentPage * maxProjectsPerPage,
   );
 
   return (
     <div>
-      <h3 className="mb-2 lg:mb-4 text-center font-bold text-lg">
+      <motion.h3
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+          delay: 0.6,
+        }}
+        className="mb-2 text-center text-lg font-bold lg:mb-4"
+      >
         Filtered by
-      </h3>
+      </motion.h3>
       <TechnologiesFilter
         category={categoryList}
         selectedCategory={selectedCategory}
@@ -95,7 +106,17 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       {paginatedProjects.length > 0 ? (
         <>
           <ProjectsList projects={paginatedProjects} />
-          <div className="flex justify-center flex-wrap mt-8">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+              delay: 0.3,
+            }}
+            className="mt-8 flex flex-wrap justify-center"
+          >
             <ButtonPagination
               variant="left"
               disabled={currentPage === 1}
@@ -117,13 +138,13 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
               disabled={currentPage === totalPages}
               onClick={handleNextPage}
             />
-          </div>
+          </motion.div>
         </>
       ) : (
         <EmptyDataImage />
       )}
       <div className="mt-16">
-      <Emphasis isWithProjectsButton={false} />
+        <Emphasis isWithProjectsButton={false} />
       </div>
     </div>
   );

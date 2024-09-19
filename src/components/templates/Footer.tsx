@@ -37,7 +37,8 @@ export default function Footer() {
         }}
         className="mx-auto max-w-7xl px-4 py-6 text-zinc-50 dark:text-zinc-950 lg:px-8"
       >
-        © 2024, Made with ☕ & ❤️ by <span className="font-bold">EKSA</span>.
+        © 2024, Made with ☕ & ❤️ by <span className="font-bold">Ekorahy</span>
+        .
       </motion.p>
     </footer>
   );

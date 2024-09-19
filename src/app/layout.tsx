@@ -8,8 +8,8 @@ import { ThemeProvider } from "@/components/atoms/ThemeProvider";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | EKSA",
-    default: "EKSA | Personal Website",
+    template: "%s | Ekorahy",
+    default: "Ekorahy | Personal Website",
   },
   icons: "light-logo.png",
 };

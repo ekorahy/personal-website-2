@@ -4,6 +4,7 @@ export interface ButtonSocialMediaItemProps {
   name: string;
   link: string;
   logo: React.ReactNode;
+  index: number;
 }
 
 export interface NavigationFooterItemProps {

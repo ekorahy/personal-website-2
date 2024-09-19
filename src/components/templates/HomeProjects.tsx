@@ -4,6 +4,7 @@ import TitleSection from "../atoms/TitleSection";
 import ButtonLink from "../atoms/ButtonLink";
 import { sliceProjects } from "@/utils/sliceProjects";
 import EmptyDataImage from "../atoms/EmptyDataImage";
+import * as motion from "framer-motion/client";
 
 export default async function HomeProjects() {
   const projects = await getProjects();
@@ -14,13 +15,23 @@ export default async function HomeProjects() {
       <div className="mb-8 flex items-center justify-between">
         <TitleSection title="Latest Projects" size="2xl" />
         {projects.length !== 0 && (
-          <div className="hidden lg:block">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+              delay: 0.6,
+            }}
+            className="hidden lg:block"
+          >
             <ButtonLink
               title="View More"
               route="/projects"
               variant="tertiary"
             />
-          </div>
+          </motion.div>
         )}
       </div>
       {projects.length === 0 ? (
@@ -29,9 +40,19 @@ export default async function HomeProjects() {
         <ProjectsList projects={slicedProjects} />
       )}
       {projects.length !== 0 && (
-        <div className="mt-8 flex justify-center lg:hidden">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            delay: 0.6,
+          }}
+          className="mt-8 flex justify-center lg:hidden"
+        >
           <ButtonLink title="View More" route="/projects" variant="tertiary" />
-        </div>
+        </motion.div>
       )}
     </section>
   );

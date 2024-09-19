@@ -4,6 +4,7 @@ import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescrip
 import ArticleSection from "@/components/templates/ArticleSection";
 import { Metadata } from "next";
 import Image from "next/image";
+import * as motion from "framer-motion/client";
 
 export const metadata: Metadata = {
   title: "About",
@@ -43,7 +44,16 @@ export default function About() {
               descriptionVariant="primary"
             />
           </div>
-          <div className="group relative mx-auto w-max">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+            className="group relative mx-auto w-max"
+          >
             <div className="absolute left-0 right-0 top-0 -z-0 mx-auto h-full w-56 transform border-2 border-amber-400 transition duration-300 ease-in-out group-hover:rotate-12 sm:w-96" />
             <Image
               className="mx-auto hidden grayscale group-hover:grayscale-0 sm:block"
@@ -59,15 +69,31 @@ export default function About() {
               height={350}
               alt="about image"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
-          <p>
-            Hi, I am Eko Rahayu Widodo, you can call me Eksa. I am a
-            Front-end Engineer based in Indonesia with more than a year of
-            experience building websites using React Ecosystem.
-          </p>
-          <p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
+            Hi, I am Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
+            Engineer based in Indonesia with more than a year of experience
+            building websites using React Ecosystem.
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
             I currently actively contribute to{" "}
             <ButtonLink
               title="Dicoding Indonesia"
@@ -81,9 +107,17 @@ export default function About() {
             assessments I also provide advice regarding best practices in
             writing code based on the technology used by students with the aim
             to improve the quality and efficiency of the code written.
-          </p>
+          </motion.p>
           <Feedbacks />
-          <p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
             I am a graduate of the Informatics study program at one of the
             universities in Jakarta, Indonesia. During my study, I learn many
             things, especially in the discipline of software engineering. I have
@@ -93,8 +127,16 @@ export default function About() {
             experience in developing mobile applications with Flutter
             (multi-platform) and Kotlin (Android native), as well as developing
             machine learning models using Python and TensorFlow.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
             I learned some of the above technologies but not too deeply, and I
             decided to choose one area that I wanted to work on, in the past few
             years, I have decided to move from being a generalist to
@@ -108,13 +150,21 @@ export default function About() {
             and innovative technical solutions. Also due to my passion for
             visual aspects, I thoroughly enjoy working and progressing in this
             field.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
             I learn and deepen my knowledge of front-end development through
             courses, tech documentation, blogs, and YouTube. I combine insights
             from these learning sources to form the foundation for developing
             applications.
-          </p>
+          </motion.p>
         </div>
       </section>
     </ArticleSection>

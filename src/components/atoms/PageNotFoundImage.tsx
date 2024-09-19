@@ -2,21 +2,40 @@
 
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function PageNotFoundImage() {
   const { theme } = useTheme();
 
-  const sourceImage =
-    theme === "light"
-      ? "/light-page-not-found.png"
-      : "/dark-page-not-found.png";
+  const [sourceImage, setSourceImage] = useState("/light-page-not-found.png");
+
+  useEffect(() => {
+    setSourceImage(
+      theme === "light" || theme === undefined
+        ? "/light-page-not-found.png"
+        : "/dark-page-not-found.png",
+    );
+  }, [theme]);
+
   return (
-    <Image
-      className="mx-auto"
-      src={sourceImage}
-      height={300}
-      width={300}
-      alt="Illustration image for page not found"
-    />
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        delay: 0.6,
+      }}
+    >
+      <Image
+        className="mx-auto"
+        src={sourceImage}
+        height={300}
+        width={300}
+        alt="Illustration image for page not found"
+      />
+    </motion.div>
   );
 }

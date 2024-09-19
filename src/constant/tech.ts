@@ -114,4 +114,24 @@ export const tech = [
     name: 'React Router',
     logo: '/tech/ic-react-router.svg',
   },
+  {
+    id: 'tech-24',
+    name: 'ESLint',
+    logo: '/tech/ic-eslint.svg',
+  },
+  {
+    id: 'tech-25',
+    name: 'Shadcn UI',
+    logo: '/tech/ic-shadcn.svg',
+  },
+  {
+    id: 'tech-26',
+    name: 'Storybook',
+    logo: '/tech/ic-storybook.svg',
+  },
+  {
+    id: 'tech-27',
+    name: 'Framer Motion',
+    logo: '/tech/ic-framermotion.svg',
+  },
 ]

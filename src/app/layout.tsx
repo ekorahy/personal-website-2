@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${raleway.className} relative bg-zinc-50 text-zinc-950 transition-all duration-1000 ease-in-out dark:bg-zinc-950 dark:text-zinc-50`}
+        className={`${raleway.className} scrollbar relative bg-zinc-50 text-zinc-950 transition-all duration-1000 ease-in-out dark:bg-zinc-950 dark:text-zinc-50`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />

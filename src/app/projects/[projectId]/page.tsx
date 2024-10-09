@@ -129,12 +129,18 @@ export default async function DetailProject({
           <PortableText value={body} components={bodySetting} />
         </motion.div>
 
-        <section className="mt-20">
-          <TitleSection title="Other projects" variant="secondary" size="2xl" />
-          <div className="mt-4">
-            <ProjectsList projects={otherProjects} />
-          </div>
-        </section>
+        {projects.length > 1 && (
+          <section className="mt-20">
+            <TitleSection
+              title="Other projects"
+              variant="secondary"
+              size="2xl"
+            />
+            <div className="mt-4">
+              <ProjectsList projects={otherProjects} />
+            </div>
+          </section>
+        )}
       </section>
     </ArticleSection>
   );

@@ -25,12 +25,12 @@ export default function HeadingAnimation() {
   return (
     <motion.h2
       initial={{ x: -50, scale: 0 }}
-      animate={{ x: 0, scale: 1 }}
+      whileInView={{ x: 0, scale: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 2.4,
       }}
       className={`z-10 mb-4 mt-2 text-4xl font-bold transition-opacity duration-1000 ease-in-out lg:text-5xl ${isFading ? "opacity-0" : "opacity-100"}`}
     >

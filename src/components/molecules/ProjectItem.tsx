@@ -17,11 +17,12 @@ export default function ProjectItem({
     <motion.section
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6 + (index + 1) * 0.3,
+        delay: (index + 1) / 10,
       }}
     >
       <div className="group relative mb-2">

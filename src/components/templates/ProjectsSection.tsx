@@ -88,11 +88,11 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
       <motion.h3
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.6,
         }}
         className="mb-2 text-center text-lg font-bold lg:mb-4"
       >
@@ -109,11 +109,11 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 0.3,
             }}
             className="mt-8 flex flex-wrap justify-center"
           >

@@ -65,11 +65,11 @@ export default async function DetailProject({
             <motion.h3
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 25,
-                delay: 0.3,
               }}
               className="my-4 text-center text-lg font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50"
             >
@@ -79,11 +79,11 @@ export default async function DetailProject({
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 25,
-                delay: 0.9,
               }}
               className="mx-auto my-8 w-max"
             >
@@ -97,11 +97,11 @@ export default async function DetailProject({
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 0.3,
             }}
             className="relative mb-4 lg:flex lg:items-center"
           >
@@ -118,11 +118,11 @@ export default async function DetailProject({
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 1,
           }}
           className="prose max-w-none"
         >

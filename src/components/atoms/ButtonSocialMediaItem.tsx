@@ -12,11 +12,12 @@ export default function ButtonSocialMediaItem({
     <motion.div
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 1.2 + (index + 1) * 0.3,
+        delay: (index + 1) * 0.3,
       }}
     >
       <Link

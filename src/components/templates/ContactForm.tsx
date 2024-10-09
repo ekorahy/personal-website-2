@@ -31,11 +31,11 @@ export default function ContactForm() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.6,
           }}
           className="mb-4 flex flex-col md:basis-1/2 lg:mb-0"
         >
@@ -53,11 +53,11 @@ export default function ContactForm() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.7,
           }}
           className="flex flex-col md:basis-1/2"
         >
@@ -84,11 +84,11 @@ export default function ContactForm() {
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.8,
         }}
         className="flex flex-col"
       >
@@ -108,11 +108,11 @@ export default function ContactForm() {
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.9,
         }}
         className="flex flex-col lg:basis-1/2"
       >
@@ -131,11 +131,11 @@ export default function ContactForm() {
       <motion.button
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 1,
         }}
         className="group mx-auto flex items-center gap-2 overflow-hidden bg-amber-400 px-8 py-3"
         type="submit"

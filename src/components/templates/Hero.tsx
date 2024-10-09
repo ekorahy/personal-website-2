@@ -11,32 +11,35 @@ export default function Hero() {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 0.3,
-        delayChildren: 1.8,
+        delayChildren: 2,
         staggerChildren: 0.2,
       },
     },
   };
-
+  
   const item = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
+      transition: {
+        duration: 0.6,
+      },
     },
   };
+  
 
   return (
     <section className="relative flex flex-col-reverse gap-8 lg:flex-row">
       <div className="relative flex flex-col justify-center lg:basis-1/2">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 2.1,
           }}
           className="flex items-center gap-2"
         >
@@ -49,12 +52,12 @@ export default function Hero() {
         <HeadingAnimation />
         <motion.p
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 2.7,
           }}
           className="z-10 mb-8 text-lg lg:text-xl"
         >
@@ -65,12 +68,12 @@ export default function Hero() {
         </motion.p>
         <motion.div
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 3,
           }}
           className="z-10 flex flex-wrap items-center gap-4"
         >
@@ -83,12 +86,12 @@ export default function Hero() {
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 3.3,
           }}
           className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-12 lg:block xl:top-28"
         />

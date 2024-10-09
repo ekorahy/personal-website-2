@@ -28,8 +28,8 @@ export default function TitleSection({
     <motion.h2
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
       transition={{
-        duration: 0.4,
         type: "spring",
         stiffness: 260,
         damping: 20,

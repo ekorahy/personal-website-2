@@ -11,6 +11,7 @@ export default function HireMeItem({
     <motion.div
       initial={{ rotate: 180, scale: 0 }}
       whileInView={{ rotate: 0, scale: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,

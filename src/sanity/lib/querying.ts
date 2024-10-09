@@ -4,7 +4,7 @@ import { client, writeClient } from "./client";
 export async function getProjects() {
   try {
     const query = groq`
-    *[_type == "projects"]{
+    *[_type == "projects"] | order(_createdAt asc) {
       "currentId": id.current,
       name,
       "currentImage": image.asset._ref,

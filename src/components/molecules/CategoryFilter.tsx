@@ -23,11 +23,10 @@ export default function CategoryFilter({
         <button
           key={item}
           className={clsx(
-            "whitespace-nowrap rounded-full px-8 py-2 text-base duration-300 ease-in-out hover:scale-110 hover:bg-amber-300 hover:dark:bg-amber-300 hover:dark:text-zinc-950",
+            "whitespace-nowrap rounded-full px-8 py-2 text-base duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:dark:bg-amber-400 hover:dark:text-zinc-950",
             {
               "bg-amber-400": selectedCategory === item,
-              "border border-zinc-950 bg-white dark:border-zinc-50 dark:bg-black":
-                selectedCategory !== item,
+              "bg-zinc-100 dark:bg-zinc-900": selectedCategory !== item,
             },
           )}
           onClick={() => onCategoryChange(item)}

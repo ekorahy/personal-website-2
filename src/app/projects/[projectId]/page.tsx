@@ -13,6 +13,7 @@ import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
+import formattedDate from "@/utils/formattedDate";
 
 export async function generateMetadata({
   params,
@@ -46,8 +47,15 @@ export default async function DetailProject({
     return <p>Data not found!</p>;
   }
 
-  const { name, category, technologies, currentImage, demo_link, body } =
-    projectDetail;
+  const {
+    name,
+    category,
+    technologies,
+    currentImage,
+    demo_link,
+    body,
+    created_at,
+  } = projectDetail;
   const otherProjects = getOtherProjects(projects, name);
 
   return (
@@ -58,7 +66,7 @@ export default async function DetailProject({
             <ButtonArrowBack title="projects" route="/projects" />
             <TitleWithDescriptionSection
               title={name}
-              description={category}
+              description={`${category} | ${formattedDate(created_at)}`}
               titleVariant="secondary"
               descriptionVariant="primary"
             />
@@ -71,7 +79,7 @@ export default async function DetailProject({
                 stiffness: 300,
                 damping: 25,
               }}
-              className="my-4 text-center text-lg font-bold text-amber-400 lg:text-xl lg:text-zinc-950 lg:dark:text-zinc-50"
+              className="my-8 mb-4 text-center text-lg font-bold lg:text-xl lg:dark:text-zinc-50"
             >
               Build with
             </motion.h3>
@@ -103,10 +111,10 @@ export default async function DetailProject({
               stiffness: 300,
               damping: 25,
             }}
-            className="relative mb-4 lg:flex lg:items-center"
+            className="relative mb-4"
           >
             <Image
-              className="mx-auto h-60 w-full overflow-hidden rounded-xl object-cover shadow sm:h-80 md:h-96 lg:h-64 lg:w-3/4"
+              className="mx-auto h-60 w-full overflow-hidden rounded-xl object-cover shadow sm:h-80 md:h-96 lg:mt-10 lg:h-64 lg:w-3/4"
               src={urlFor(currentImage).url()}
               width={500}
               height={500}

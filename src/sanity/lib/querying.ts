@@ -57,6 +57,7 @@ export async function getProjectDetail(projectId: string) {
       body,
       description,
       category,
+      created_at,
     }[0]
   `;
 

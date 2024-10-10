@@ -14,10 +14,10 @@ export default function TechItem({ name, logo, index }: TechItemProps) {
         damping: 25,
         delay: (index + 1) / 10,
       }}
-      className="flex items-center gap-2 rounded-full bg-white px-6 py-2"
+      className="flex items-center gap-2 rounded-full bg-zinc-100 px-6 py-2 dark:bg-zinc-900"
     >
       <Image src={logo} width={25} height={25} alt={`${name} icon`} />
-      <p className="text-base dark:text-zinc-950 lg:text-lg">{name}</p>
+      <p className="text-base lg:text-lg">{name}</p>
     </motion.div>
   );
 }

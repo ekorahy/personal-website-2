@@ -28,10 +28,10 @@ export default function TagsFilter({
           <button
             key={tag}
             className={clsx(
-              "whitespace-nowrap rounded-full px-8 py-2 text-base hover:bg-amber-300 hover:dark:bg-amber-300 hover:dark:text-zinc-950",
+              "whitespace-nowrap rounded-full px-8 py-2 text-base hover:bg-amber-400 hover:dark:bg-amber-400 hover:dark:text-zinc-950",
               {
                 "bg-amber-400": keyword.toLowerCase() === tag.toLowerCase(),
-                "border border-zinc-950 bg-white dark:border-zinc-50 dark:bg-black":
+                "bg-zinc-100 dark:bg-zinc-900":
                   keyword.toLowerCase() !== tag.toLowerCase(),
               },
             )}

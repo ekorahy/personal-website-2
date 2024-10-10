@@ -16,7 +16,7 @@ export default function ContactForm() {
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
     const mailtoUrl = `mailto:ekorahy@gmail.com?subject=${encodeURIComponent(
-      subject,
+      subject
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoUrl;
@@ -43,7 +43,7 @@ export default function ContactForm() {
             Name*
           </label>
           <input
-            className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
+            className="mb-2 bg-zinc-100 px-4 py-3 outline-none dark:bg-zinc-900"
             type="text"
             id="name"
             {...register("name", { required: "Name is required" })}
@@ -65,7 +65,7 @@ export default function ContactForm() {
             Email*
           </label>
           <input
-            className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
+            className="mb-2 bg-zinc-100 px-4 py-3 outline-none dark:bg-zinc-900"
             type="email"
             id="email"
             {...register("email", {
@@ -96,7 +96,7 @@ export default function ContactForm() {
           Subject*
         </label>
         <input
-          className="mb-2 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
+          className="mb-2 bg-zinc-100 px-4 py-3 outline-none dark:bg-zinc-900"
           type="text"
           id="subject"
           {...register("subject", { required: "Subject is required" })}
@@ -120,7 +120,7 @@ export default function ContactForm() {
           Message*
         </label>
         <textarea
-          className="mb-2 min-h-40 border border-zinc-950 px-4 py-3 outline-none dark:border-zinc-50"
+          className="mb-2 min-h-40 bg-zinc-100 px-4 py-3 outline-none dark:bg-zinc-900"
           id="message"
           {...register("message", { required: "Message is required" })}
         />

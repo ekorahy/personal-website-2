@@ -21,3 +21,9 @@ export interface NavigationFooterItem {
 export interface NavigationFooterListProps {
   items: NavigationFooterItem[];
 }
+
+interface CustomAlertProps {
+  message: string;
+  isOpen: boolean;
+  onClose: () => void;
+}

@@ -31,29 +31,29 @@ export const footerNavigation = [
       {
         id: 'feature-1',
         name: 'Guestbook',
-        route: '/'
+        route: 'dev'
       },
       {
         id: 'feature-2',
         name: 'Subscribe',
-        route: '/'
+        route: 'dev'
       }
     ],
     "others": [
       {
         id: 'other-1',
         name: 'Privacy Policy',
-        route: '/'
+        route: 'dev'
       },
       {
         id: 'other-2',
         name: 'Site Maps',
-        route: '/'
+        route: 'dev'
       },
       {
         id: 'other-1',
         name: 'RSS',
-        route: '/'
+        route: 'dev'
       }
     ]
   }

@@ -24,6 +24,7 @@ export default function TitleWithDescriptionSection({
       <motion.h2
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
@@ -46,11 +47,11 @@ export default function TitleWithDescriptionSection({
       <motion.p
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.3,
         }}
         className={clsx("text-base lg:text-lg", descriptionVarianClass)}
       >

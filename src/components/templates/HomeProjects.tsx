@@ -18,11 +18,11 @@ export default async function HomeProjects() {
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 0.6,
             }}
             className="hidden lg:block"
           >
@@ -43,11 +43,11 @@ export default async function HomeProjects() {
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.6,
           }}
           className="mt-8 flex justify-center lg:hidden"
         >

@@ -131,11 +131,11 @@ export default function BlogSection({ initialData }: BlogSectionProps) {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 0.3,
             }}
             className="mt-8 flex flex-wrap justify-center"
           >

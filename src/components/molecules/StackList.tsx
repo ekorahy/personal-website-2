@@ -7,11 +7,11 @@ export default function StackList({ stack }: StackListProps) {
     <motion.ul
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6,
       }}
       className="flex flex-wrap items-center justify-center gap-2"
     >

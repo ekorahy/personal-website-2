@@ -47,6 +47,7 @@ export default function About() {
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 260,
@@ -75,6 +76,7 @@ export default function About() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
@@ -88,6 +90,7 @@ export default function About() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
@@ -112,6 +115,7 @@ export default function About() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
@@ -131,6 +135,7 @@ export default function About() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
@@ -150,6 +155,7 @@ export default function About() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,

@@ -38,11 +38,11 @@ export default function FeaturesList() {
     <motion.div
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "linear",
         stiffness: 300,
         damping: 25,
-        delay: 0.6,
       }}
       ref={containerRef}
       className="inline-flex w-full flex-nowrap overflow-hidden"

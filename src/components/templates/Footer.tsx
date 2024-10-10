@@ -12,11 +12,11 @@ export default function Footer() {
           <motion.p
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 1.2,
             }}
             className="mt-4 text-sm text-zinc-50 dark:text-zinc-950"
           >
@@ -27,13 +27,13 @@ export default function Footer() {
         <NavigationFooter />
       </div>
       <motion.p
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 1.8,
         }}
         className="mx-auto max-w-7xl px-4 py-6 text-zinc-50 dark:text-zinc-950 lg:px-8"
       >

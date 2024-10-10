@@ -12,11 +12,11 @@ export default function TagsFilter({
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.9,
       }}
       className="mb-4 flex flex-col gap-2 sm:flex-row lg:gap-4"
     >

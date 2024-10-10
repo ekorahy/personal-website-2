@@ -71,11 +71,11 @@ export default async function DetailBlog({
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.3,
           }}
           className="my-4 w-max"
         >
@@ -95,11 +95,11 @@ export default async function DetailBlog({
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.6,
           }}
           className="mb-4"
         >
@@ -110,11 +110,11 @@ export default async function DetailBlog({
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 25,
-              delay: 1,
             }}
           >
             <Image
@@ -129,6 +129,7 @@ export default async function DetailBlog({
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,

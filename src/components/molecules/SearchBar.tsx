@@ -12,11 +12,11 @@ export default function SearchBar({
     <motion.form
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6,
       }}
       className="relative mb-4 block w-full border border-zinc-950 focus:outline-none dark:border-zinc-50"
     >

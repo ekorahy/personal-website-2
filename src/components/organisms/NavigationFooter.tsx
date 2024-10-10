@@ -9,11 +9,11 @@ export default function NavigationFooter() {
       <motion.section
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 1.2,
         }}
       >
         <h2 className="mb-4 font-bold text-amber-400">Navigation</h2>
@@ -22,11 +22,11 @@ export default function NavigationFooter() {
       <motion.section
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 1.4,
         }}
       >
         <h2 className="mb-4 font-bold text-amber-400">Features</h2>
@@ -35,11 +35,11 @@ export default function NavigationFooter() {
       <motion.section
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 1.6,
         }}
       >
         <h2 className="mb-4 font-bold text-amber-400">Others</h2>

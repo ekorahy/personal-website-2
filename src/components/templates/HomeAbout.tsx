@@ -10,6 +10,7 @@ export default function HomeAbout() {
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
@@ -38,11 +39,11 @@ export default function HomeAbout() {
         <motion.p
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.3,
           }}
         >
           Hi, I am Eko Rahayu Widodo, you can call me Eko. I am a Front-end
@@ -52,11 +53,11 @@ export default function HomeAbout() {
         <motion.p
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 300,
             damping: 25,
-            delay: 0.6,
           }}
         >
           I currently actively contribute to{" "}

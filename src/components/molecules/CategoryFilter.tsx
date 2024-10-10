@@ -11,11 +11,11 @@ export default function CategoryFilter({
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.9,
       }}
       className="mb-8 flex flex-wrap items-center justify-center gap-2 lg:gap-4"
     >

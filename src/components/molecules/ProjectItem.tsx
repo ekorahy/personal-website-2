@@ -29,7 +29,7 @@ export default function ProjectItem({
     >
       <div className="group relative mb-2">
         <Image
-          className="h-60 w-full object-cover sm:h-80 md:h-96 lg:h-80 xl:h-96"
+          className="h-60 w-full object-cover sm:h-80 md:h-[30rem] lg:h-80 xl:h-96"
           src={urlFor(image).url()}
           width={560}
           height={448}

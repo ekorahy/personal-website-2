@@ -84,7 +84,7 @@ export default function ProjectsSection({ initialData }: ProjectSectionProps) {
   );
 
   return (
-    <div>
+    <div className="mt-8">
       <motion.h3
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

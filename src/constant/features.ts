@@ -6,7 +6,7 @@ export const features = [
   },
   {
     id: 'feature-2',
-    name: 'SEO Optimization',
+    name: 'SEO Optimization (Web Platform)',
     emoji: '🔍'
   },
   {

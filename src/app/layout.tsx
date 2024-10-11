@@ -29,7 +29,7 @@ export default function RootLayout({
           <Header />
           <Main>{children}</Main>
           <Footer />
-          <ButtonScrollToTop />
+          
         </ThemeProvider>
       </body>
     </html>

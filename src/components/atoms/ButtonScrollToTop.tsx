@@ -8,7 +8,7 @@ export default function ButtonScrollToTop() {
   const { scrollYProgress } = useScroll();
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 0) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -23,7 +23,7 @@ export default function ButtonScrollToTop() {
   };
 
   useEffect(() => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 0) {
       setIsVisible(true);
     }
 
@@ -34,42 +34,44 @@ export default function ButtonScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 lg:bottom-8 lg:right-8 xl:bottom-16 xl:right-16">
+    <div className="fixed bottom-4 left-0 right-0 mx-auto max-w-7xl px-4">
       {isVisible && (
-        <div className="relative flex items-center justify-center">
-          <svg className="h-12 w-12 lg:h-16 lg:w-16">
-            <circle
-              cx="50%"
-              cy="50%"
-              r="22"
-              stroke="lightgray"
-              strokeWidth="4"
-              fill="transparent"
-              className="pointer-events-none"
-            />
-            <motion.circle
-              cx="50%"
-              cy="50%"
-              r="22"
-              stroke="currentColor"
-              strokeWidth="4"
-              strokeLinecap="round"
-              fill="transparent"
-              style={{
-                pathLength: scrollYProgress,
-                pointerEvents: "none",
-              }}
-              className="text-amber-400"
-            />
-          </svg>
+        <div className="relative">
+          <div className="absolute bottom-0 right-0 flex h-[6rem] w-[6rem] items-center justify-center">
+            <svg className="absolute">
+              <circle
+                cx="50%"
+                cy="50%"
+                r="34"
+                stroke="lightgray"
+                strokeWidth="4"
+                fill="transparent"
+                className="pointer-events-none"
+              />
+              <motion.circle
+                cx="50%"
+                cy="50%"
+                r="34"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+                fill="transparent"
+                style={{
+                  pathLength: scrollYProgress,
+                  pointerEvents: "none",
+                }}
+                className="text-amber-400"
+              />
+            </svg>
 
-          <button
-            title="Scroll to Top"
-            onClick={scrollToTop}
-            className="absolute z-10 flex transform items-center justify-center rounded-full bg-zinc-100 p-2 text-lg shadow-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-zinc-200 dark:bg-zinc-900 hover:dark:bg-zinc-800 lg:text-lg"
-          >
-            <FaArrowUp className="h-6 w-6 text-amber-400" />
-          </button>
+            <button
+              title="Scroll to Top"
+              onClick={scrollToTop}
+              className="z-10 flex transform items-center justify-center rounded-full bg-zinc-100 p-4 text-lg shadow-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-zinc-200 dark:bg-zinc-900 hover:dark:bg-zinc-800"
+            >
+              <FaArrowUp className="text-xl text-amber-400" />
+            </button>
+          </div>
         </div>
       )}
     </div>

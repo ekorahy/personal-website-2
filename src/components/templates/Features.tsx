@@ -5,7 +5,7 @@ export default function Features() {
   return (
     <section>
       <TitleSection
-        title="Dedication to building websites with"
+        title="Dedication to building applications with"
         isWithDash={false}
         size="2xl"
         alignment="center"

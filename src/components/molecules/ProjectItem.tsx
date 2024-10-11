@@ -5,12 +5,14 @@ import Link from "next/link";
 import ButtonLink from "../atoms/ButtonLink";
 import { PiGlobeThin } from "react-icons/pi";
 import * as motion from "framer-motion/client";
+import { AiOutlineAndroid } from "react-icons/ai";
 
 export default function ProjectItem({
   id,
   name,
   image,
   demoLink,
+  category,
   index,
 }: ProjectItemProps) {
   return (
@@ -38,7 +40,11 @@ export default function ProjectItem({
           href={`/projects/${id}`}
         >
           <h3 className="group/title line-clamp-1 flex items-center gap-2 overflow-hidden rounded-full bg-zinc-950/40 px-8 py-4 text-xl font-bold text-zinc-50 backdrop-blur">
-            <PiGlobeThin className="text-xl transition-transform duration-300 ease-in-out group-hover/title:scale-[5] group-hover/title:text-zinc-50/20 lg:text-2xl" />
+            {category === "Android App" ? (
+              <AiOutlineAndroid className="text-xl transition-transform duration-300 ease-in-out group-hover/title:scale-[5] group-hover/title:text-zinc-50/20 lg:text-2xl" />
+            ) : (
+              <PiGlobeThin className="text-xl transition-transform duration-300 ease-in-out group-hover/title:scale-[5] group-hover/title:text-zinc-50/20 lg:text-2xl" />
+            )}
             <span>{name}</span>
           </h3>
         </Link>
@@ -49,7 +55,11 @@ export default function ProjectItem({
           route={`/projects/${id}`}
           variant="default"
         />
-        <ButtonLink title="Visit Website" route={demoLink} variant="default" />
+        <ButtonLink
+          title={category === "Android App" ? "Visit" : "Visit Website"}
+          route={demoLink}
+          variant="default"
+        />
       </div>
     </motion.section>
   );

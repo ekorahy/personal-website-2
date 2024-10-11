@@ -81,7 +81,7 @@ export default async function DetailProject({
               }}
               className="my-8 mb-4 text-center text-lg font-bold lg:text-xl lg:dark:text-zinc-50"
             >
-              Build with
+              Built using
             </motion.h3>
             <StackList stack={technologies} />
             <motion.div
@@ -96,7 +96,7 @@ export default async function DetailProject({
               className="mx-auto my-8 w-max"
             >
               <ButtonLink
-                title="Visit website"
+                title={category === "Android App" ? "Visit" : "Visit website"}
                 variant="primary"
                 route={demo_link}
               />

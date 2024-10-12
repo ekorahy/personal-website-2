@@ -1,4 +1,3 @@
-import { CategoryFilterProps } from "@/types/projects";
 import clsx from "clsx";
 import * as motion from "framer-motion/client";
 

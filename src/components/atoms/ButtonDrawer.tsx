@@ -1,4 +1,3 @@
-import { ButtonDrawerProps } from "@/types/header";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import * as motion from "framer-motion/client";
 

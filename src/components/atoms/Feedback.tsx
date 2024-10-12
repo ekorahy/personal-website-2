@@ -1,4 +1,3 @@
-import { FeedbackProps } from "@/types/about";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { BlogProps, BlogSectionProps } from "@/types/blog";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import BlogList from "../organisms/BlogList";

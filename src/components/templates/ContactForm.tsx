@@ -1,6 +1,5 @@
 "use client";
 
-import { FormData } from "@/types/contact";
 import { useForm } from "react-hook-form";
 import { IoMdSend } from "react-icons/io";
 import { motion } from "framer-motion";

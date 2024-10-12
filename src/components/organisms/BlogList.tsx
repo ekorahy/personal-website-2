@@ -1,4 +1,3 @@
-import { BlogListProps } from "@/types/blog";
 import BlogItem from "../molecules/BlogItem";
 
 export default function BlogList({ blog }: BlogListProps) {

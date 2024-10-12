@@ -1,4 +1,3 @@
-import { TechItemProps } from "@/types/tech";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
 

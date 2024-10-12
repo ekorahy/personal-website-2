@@ -1,4 +1,3 @@
-import { StackListProps } from "@/types/projects";
 import StackItem from "../atoms/StackItem";
 import * as motion from "framer-motion/client";
 

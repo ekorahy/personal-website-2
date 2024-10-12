@@ -1,4 +1,3 @@
-import { HeroIconProps } from "@/types/hero";
 import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "framer-motion/client";

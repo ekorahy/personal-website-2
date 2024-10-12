@@ -1,4 +1,3 @@
-import { SearchBarProps } from "@/types/blog";
 import { CiSearch } from "react-icons/ci";
 import { MdClear } from "react-icons/md";
 import * as motion from "framer-motion/client";

@@ -51,7 +51,7 @@ export const footerNavigation = [
         route: 'dev'
       },
       {
-        id: 'other-1',
+        id: 'other-3',
         name: 'RSS',
         route: 'dev'
       }

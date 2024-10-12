@@ -1,6 +1,3 @@
-import { BlogProps } from "@/types/blog";
-import { ProjectsProps } from "@/types/projects";
-
 export function sliceProjects(projects: ProjectsProps[]) {
   if (projects.length > 2) {
     return projects.slice(0, 2);

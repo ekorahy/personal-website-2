@@ -12,6 +12,7 @@ import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { IoMdEye, IoMdTime } from "react-icons/io";
+import * as motion from "framer-motion/client";
 
 export async function generateMetadata({
   params,
@@ -67,7 +68,17 @@ export default async function DetailBlog({
           alignment="left"
           size="2xl"
         />
-        <div className="my-4 w-max">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+          }}
+          className="my-4 w-max"
+        >
           <div className="flex items-center gap-4">
             <p className="flex items-center gap-2">
               <IoMdTime />
@@ -80,21 +91,54 @@ export default async function DetailBlog({
               <span className="bg-amber-400 px-2">{views} views</span>
             </p>
           </div>
-        </div>
-        <p className="mb-4">Written on {formattedDate(createdAt)} by Eksa</p>
+        </motion.div>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+          }}
+          className="mb-4"
+        >
+          Written on {formattedDate(createdAt)} by Ekorahy
+        </motion.p>
         <div className="relative">
           <TagsList tags={tags} />
-          <Image
-            className="my-8 h-[16rem] w-full rounded-2xl object-cover lg:h-[35rem]"
-            src={urlFor(currentImage).url()}
-            width={500}
-            height={500}
-            alt={`${title} image`}
-          />
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+          >
+            <Image
+              className="my-8 h-[16rem] w-full rounded-2xl object-cover lg:h-[35rem]"
+              src={urlFor(currentImage).url()}
+              width={500}
+              height={500}
+              alt={`${title} image`}
+            />
+          </motion.div>
         </div>
-        <div className="prose max-w-none">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+          }}
+          className="prose max-w-none"
+        >
           <PortableText value={body} components={bodySetting} />
-        </div>
+        </motion.div>
       </section>
       {blog.length > 1 && (
         <section className="mt-20">

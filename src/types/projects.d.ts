@@ -2,6 +2,7 @@ export interface ProjectsProps {
   currentId: string;
   name: string;
   currentImage: string;
+  category: string;
   demo_link: string;
 }
 
@@ -14,6 +15,7 @@ export interface ProjectItemProps {
   name: string;
   image: string;
   demoLink: string;
+  category: string;
   index: number;
 }
 

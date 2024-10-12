@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "professional connections",
     "feedback",
     "networking",
-    "Eksa",
+    "Ekorahy",
     "Eko Rahayu Widodo",
     "contact form",
     "communication",

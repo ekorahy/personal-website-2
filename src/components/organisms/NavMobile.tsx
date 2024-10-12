@@ -34,7 +34,7 @@ export default function NavMobile() {
       </div>
       <div
         className={clsx(
-          "fixed bottom-0 left-0 right-0 top-0 z-20 h-full w-full transform bg-zinc-50 transition-transform duration-1000 ease-in-out dark:bg-zinc-950",
+          "fixed bottom-0 left-0 right-0 top-0 z-40 h-full w-full transform bg-zinc-50 transition-transform duration-1000 ease-in-out dark:bg-zinc-950",
           {
             "-translate-x-0": isMenuOpen,
             "translate-x-full": !isMenuOpen,

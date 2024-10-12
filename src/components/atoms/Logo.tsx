@@ -47,33 +47,33 @@ export default function Logo({
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ rotate: 360, scale: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 260,
           damping: 20,
-          delay: 0.9,
         }}
       >
         <Image
           src={imageSource}
           width={width}
           height={height}
-          alt="Logo eksa"
+          alt="Logo Ekorahy"
         />
       </motion.div>
       {isWithText && (
         <motion.h1
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.6,
           }}
           className={clsx("text-xl font-bold lg:text-2xl", textStyles)}
         >
-          EKSA
+          Ekorahy
         </motion.h1>
       )}
     </Link>

@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaArrowCircleRight } from "react-icons/fa";
+import * as motion from "framer-motion/client";
 
 export default function Button({ route, name, variant }: ButtonProps) {
   let buttonStyles = "";
@@ -40,30 +41,41 @@ export default function Button({ route, name, variant }: ButtonProps) {
   }
 
   return (
-    <Link
-      href={route}
-      className={clsx(
-        "group flex items-center gap-2 overflow-hidden p-4 sm:px-8 sm:py-4 lg:text-lg",
-        buttonStyles,
-      )}
+    <motion.div
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+      }}
     >
-      {(variant === "email-primary" || variant === "email-secondary") && (
-        <BiLogoGmail
-          className={clsx(
-            "transition-transform duration-300 ease-in-out group-hover:scale-[10]",
-            iconStyles,
-          )}
-        />
-      )}{" "}
-      <span className="z-10">{name}</span>{" "}
-      {variant !== "email-primary" && variant !== "email-secondary" && (
-        <FaArrowCircleRight
-          className={clsx(
-            "transition-transform duration-300 ease-in-out group-hover:-rotate-45 group-hover:scale-[10]",
-            iconStyles,
-          )}
-        />
-      )}
-    </Link>
+      <Link
+        href={route}
+        className={clsx(
+          "group flex items-center gap-2 overflow-hidden p-4 sm:px-8 sm:py-4 lg:text-lg",
+          buttonStyles,
+        )}
+      >
+        {(variant === "email-primary" || variant === "email-secondary") && (
+          <BiLogoGmail
+            className={clsx(
+              "transition-transform duration-300 ease-in-out group-hover:scale-[10]",
+              iconStyles,
+            )}
+          />
+        )}{" "}
+        <span className="z-10">{name}</span>{" "}
+        {variant !== "email-primary" && variant !== "email-secondary" && (
+          <FaArrowCircleRight
+            className={clsx(
+              "transition-transform duration-300 ease-in-out group-hover:-rotate-45 group-hover:scale-[10]",
+              iconStyles,
+            )}
+          />
+        )}
+      </Link>
+    </motion.div>
   );
 }

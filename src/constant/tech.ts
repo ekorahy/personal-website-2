@@ -114,4 +114,64 @@ export const tech = [
     name: 'React Router',
     logo: '/tech/ic-react-router.svg',
   },
+  {
+    id: 'tech-24',
+    name: 'ESLint',
+    logo: '/tech/ic-eslint.svg',
+  },
+  {
+    id: 'tech-25',
+    name: 'Shadcn UI',
+    logo: '/tech/ic-shadcn.svg',
+  },
+  {
+    id: 'tech-26',
+    name: 'Storybook',
+    logo: '/tech/ic-storybook.svg',
+  },
+  {
+    id: 'tech-27',
+    name: 'Framer Motion',
+    logo: '/tech/ic-framermotion.svg',
+  },
+  {
+    id: 'tech-28',
+    name: 'Kotlin',
+    logo: '/tech/ic-kotlin.svg',
+  },
+  {
+    id: 'tech-29',
+    name: 'XML (View System)',
+    logo: '/tech/ic-xml.svg',
+  },
+  {
+    id: 'tech-30',
+    name: 'Android Studio',
+    logo: '/tech/ic-android-studio.svg',
+  },
+  {
+    id: 'tech-31',
+    name: 'VS Code',
+    logo: '/tech/ic-vscode.svg',
+  },
+  {
+    id: 'tech-32',
+    name: 'Postman',
+    logo: '/tech/ic-postman.svg',
+  },
+  {
+    id: 'tech-33',
+    name: 'REST API',
+    logo: '/tech/ic-rest-api.svg',
+  },
+  {
+    id: 'tech-34',
+    name: 'GraphQL',
+    logo: '/tech/ic-graphql.svg',
+  },
+  {
+    id: 'tech-35',
+    name: 'Github',
+    logo: '/tech/ic-github.svg',
+  },
 ]

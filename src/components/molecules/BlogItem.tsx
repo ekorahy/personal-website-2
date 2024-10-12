@@ -31,16 +31,17 @@ export default function BlogItem({
     <motion.li
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6 + (index + 1) * 0.3,
+        delay: (index + 1) / 10,
       }}
       onClick={handleItemClick}
     >
       <Link href={`/blog/${slug}`}>
-        <section className="h-full transform cursor-pointer border-b-4 border-amber-400 shadow transition-transform duration-300 hover:scale-105">
+        <section className="h-full transform cursor-pointer border-b-4 border-amber-400 bg-zinc-100 shadow transition-transform duration-300 hover:scale-105 dark:bg-zinc-900">
           <div className="relative h-max">
             <Image
               className="h-60 w-full object-cover"

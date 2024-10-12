@@ -13,13 +13,13 @@ export default function HeroIcon({
   return (
     <motion.div
       initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
       transition={{
-        duration: 1,
+        delay: 0.6,
         type: "spring",
         stiffness: 260,
         damping: 20,
-        delay: 0.9,
       }}
     >
       <Image

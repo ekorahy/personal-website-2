@@ -1,13 +1,24 @@
 import ButtonLink from "@/components/atoms/ButtonLink";
 import PageNotFoundImage from "@/components/atoms/PageNotFoundImage";
+import * as motion from "framer-motion/client";
 
 export default function NotFound() {
   return (
     <div className="my-20">
       <PageNotFoundImage />
-      <div className="mx-auto mt-4 w-max">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
+        className="mx-auto mt-4 w-max"
+      >
         <ButtonLink title="Back to home" route="/" variant="primary" />
-      </div>
+      </motion.div>
     </div>
   );
 }

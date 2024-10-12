@@ -6,12 +6,12 @@ export default function NavList() {
   return (
     <motion.nav
       initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6,
       }}
       className="flex w-full flex-col gap-4 px-4 lg:w-max lg:flex-row"
     >

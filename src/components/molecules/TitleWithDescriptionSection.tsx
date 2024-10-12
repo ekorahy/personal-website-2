@@ -1,5 +1,6 @@
 import { TitleWithDescriptionProps } from "@/types/component";
 import clsx from "clsx";
+import * as motion from "framer-motion/client";
 
 export default function TitleWithDescriptionSection({
   title,
@@ -20,7 +21,15 @@ export default function TitleWithDescriptionSection({
 
   return (
     <>
-      <h2
+      <motion.h2
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
         className={clsx(titleVariantClass, "text-2xl", {
           "flex w-full items-center gap-2 whitespace-nowrap": isWithDash,
         })}
@@ -34,8 +43,20 @@ export default function TitleWithDescriptionSection({
             })}
           />
         )}
-      </h2>
-      <p className={clsx("text-base lg:text-lg", descriptionVarianClass)}>{description}</p>
+      </motion.h2>
+      <motion.p
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
+        className={clsx("text-base lg:text-lg", descriptionVarianClass)}
+      >
+        {description}
+      </motion.p>
     </>
   );
 }

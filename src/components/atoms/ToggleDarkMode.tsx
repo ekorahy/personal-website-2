@@ -21,12 +21,12 @@ export default function ToggleDarkMode() {
   return (
     <motion.button
       initial={{ rotate: 180, scale: 0 }}
-      animate={{ rotate: 0, scale: 1 }}
+      whileInView={{ rotate: 0, scale: 1 }}
+      viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6,
       }}
       className="rounded-full bg-amber-400 p-4 text-xl lg:text-lg"
       onClick={toggleThemeHandler}

@@ -1,6 +1,7 @@
 import { SearchBarProps } from "@/types/blog";
 import { CiSearch } from "react-icons/ci";
 import { MdClear } from "react-icons/md";
+import * as motion from "framer-motion/client";
 
 export default function SearchBar({
   keyword,
@@ -8,10 +9,20 @@ export default function SearchBar({
   removeKeyword,
 }: SearchBarProps) {
   return (
-    <form className="relative mb-4 block w-full border border-zinc-950 focus:outline-none dark:border-zinc-50">
+    <motion.form
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+      }}
+      className="relative mb-4 block w-full focus:outline-none"
+    >
       <CiSearch className="pointer-events-none absolute left-3 top-1/2 h-6 w-6 -translate-y-1/2 transform" />
       <input
-        className="search-input h-12 w-full border-0 p-2 px-12 focus:outline-none"
+        className="search-input h-12 w-full bg-zinc-100 p-2 px-12 outline-none dark:bg-zinc-900"
         type="text"
         value={keyword}
         placeholder="Search blog ..."
@@ -25,6 +36,6 @@ export default function SearchBar({
       >
         <MdClear />
       </button>
-    </form>
+    </motion.form>
   );
 }

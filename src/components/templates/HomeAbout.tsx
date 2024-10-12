@@ -8,13 +8,13 @@ export default function HomeAbout() {
   return (
     <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
       <motion.div
-        initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 300,
           damping: 25,
-          delay: 0.6,
         }}
         className="group relative mx-auto w-max"
       >
@@ -34,24 +34,32 @@ export default function HomeAbout() {
           alt="about image"
         />
       </motion.div>
-      <motion.div
-        initial={{ x: 50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 25,
-          delay: 1,
-        }}
-        className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg"
-      >
+      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
         <TitleSection title="About me" size="2xl" />
-        <p>
-          Hi, I am Eko Rahayu Widodo, you can call me Eksa. I am a Front-end
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+          }}
+        >
+          Hi, I am Eko Rahayu Widodo, you can call me Eko. I am a Front-end
           Engineer based in Indonesia with more than a year of experience
           building websites using React Ecosystem.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+          }}
+        >
           I currently actively contribute to{" "}
           <ButtonLink
             title="Dicoding Indonesia"
@@ -65,9 +73,9 @@ export default function HomeAbout() {
           provide advice regarding best practices in writing code based on the
           technology used by students with the aim to improve the quality and
           efficiency of the code written.
-        </p>
+        </motion.p>
         <Button name="Read more" route="/about" variant="primary" />
-      </motion.div>
+      </div>
     </section>
   );
 }

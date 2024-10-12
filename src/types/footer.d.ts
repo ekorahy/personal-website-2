@@ -4,6 +4,7 @@ export interface ButtonSocialMediaItemProps {
   name: string;
   link: string;
   logo: React.ReactNode;
+  index: number;
 }
 
 export interface NavigationFooterItemProps {
@@ -19,4 +20,10 @@ export interface NavigationFooterItem {
 
 export interface NavigationFooterListProps {
   items: NavigationFooterItem[];
+}
+
+interface CustomAlertProps {
+  message: string;
+  isOpen: boolean;
+  onClose: () => void;
 }

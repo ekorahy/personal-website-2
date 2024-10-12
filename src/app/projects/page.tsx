@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Showcasing my works in software engineering.",
+  description: "Showcasing my works.",
   keywords: [
     "software engineering",
     "projects",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "programming",
     "front-end development",
-    "Eksa",
+    "Ekorahy",
     "Eko Rahayu Widodo",
   ],
 };

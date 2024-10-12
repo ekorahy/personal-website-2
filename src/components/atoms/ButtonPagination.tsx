@@ -9,17 +9,17 @@ export default function ButtonPagination({
   active,
   onClick,
 }: ButtonPaginationProps) {
-  let buttonClass = "mx-2 px-4 py-2 text-base border border-zinc-100";
+  let buttonClass = "mx-2 px-4 py-2 text-base";
 
   switch (variant) {
     case "left":
-      buttonClass += `bg-white dark:bg-black ${disabled ? "disabled:opacity-50" : "hover:bg-amber-300 "}`;
+      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 "}`;
       break;
     case "next":
-      buttonClass += `bg-white dark:bg-black ${disabled ? "disabled:opacity-50" : "hover:bg-amber-300 "}`;
+      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 "}`;
       break;
     case "value":
-      buttonClass += `border ${active ? "bg-amber-400 text-black dark:text-white" : "bg-white hover:bg-amber-300 dark:bg-black text-black dark:text-white"}`;
+      buttonClass += ` ${active ? "bg-amber-400 text-black dark:text-white" : "bg-zinc-100 hover:bg-amber-300 dark:bg-zinc-900 text-black dark:text-white"}`;
       break;
     default:
       break;

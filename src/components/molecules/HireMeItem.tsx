@@ -9,15 +9,14 @@ export default function HireMeItem({
 }: HireMeItemProps) {
   return (
     <motion.div
-      initial={{ rotate: 180, scale: 0 }}
-      whileInView={{ rotate: 0, scale: 1 }}
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 25,
-        delay: 0.6 + (index + 1) * 0.3,
-        duration: 2,
+        delay: (index + 1) / 10,
       }}
       className="flex flex-col bg-white px-4 py-12 text-center shadow-2xl shadow-zinc-100 hover:shadow hover:shadow-amber-400 dark:bg-black dark:shadow-zinc-900 hover:dark:shadow-amber-400"
     >

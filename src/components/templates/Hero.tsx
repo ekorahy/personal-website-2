@@ -16,7 +16,7 @@ export default function Hero() {
       },
     },
   };
-  
+
   const item = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -27,7 +27,6 @@ export default function Hero() {
       },
     },
   };
-  
 
   return (
     <section className="relative flex flex-col-reverse gap-8 lg:flex-row">
@@ -44,8 +43,7 @@ export default function Hero() {
           className="flex items-center gap-2"
         >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
-            Hi, I&apos;m{" "}
-            <span className="font-bold text-amber-400">Eko</span>
+            Hi, I&apos;m <span className="font-bold text-amber-400">Eko</span>
           </p>
           <div className="z-10 h-[0.1rem] w-2/4 bg-black dark:bg-white" />
         </motion.div>
@@ -93,7 +91,7 @@ export default function Hero() {
             stiffness: 300,
             damping: 25,
           }}
-          className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-12 lg:block xl:top-28"
+          className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-24 lg:block xl:top-28"
         />
       </div>
       <motion.div

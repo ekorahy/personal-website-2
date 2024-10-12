@@ -41,7 +41,7 @@ export default function About() {
               title="About"
               description="Short story about me."
               titleVariant="secondary"
-              descriptionVariant="primary"
+              descriptionVariant="secondary"
             />
           </div>
           <motion.div

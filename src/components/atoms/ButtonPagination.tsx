@@ -13,13 +13,13 @@ export default function ButtonPagination({
 
   switch (variant) {
     case "left":
-      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 "}`;
+      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 dark:hover:bg-amber-300"}`;
       break;
     case "next":
-      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 "}`;
+      buttonClass += ` bg-zinc-100 dark:bg-zinc-900 ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-amber-300 dark:hover:bg-amber-300"}`;
       break;
     case "value":
-      buttonClass += ` ${active ? "bg-amber-400 text-black dark:text-white" : "bg-zinc-100 hover:bg-amber-300 dark:bg-zinc-900 text-black dark:text-white"}`;
+      buttonClass += ` ${active ? "bg-amber-400 text-black dark:text-white" : "bg-zinc-100 hover:bg-amber-300 dark:hover:bg-amber-300 dark:bg-zinc-900 text-black dark:text-white"}`;
       break;
     default:
       break;

@@ -1,4 +1,4 @@
-export interface HeroIconProps {
+interface HeroIconProps {
   src: string; 
   title: string; 
   className: string; 

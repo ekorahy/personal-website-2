@@ -1,4 +1,3 @@
-import { ButtonPaginationProps } from "@/types/projects";
 import React from "react";
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 

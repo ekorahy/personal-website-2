@@ -1,15 +1,15 @@
-export interface LogoProps {
+interface LogoProps {
   width: number;
   height: number;
   isWithText?: boolean;
   isDark?: boolean;
 }
 
-export interface NavItemProps {
+interface NavItemProps {
   title: string;
   route: string;
 }
 
-export interface ButtonDrawerProps {
+interface ButtonDrawerProps {
   handleMenuOpen: () => void;
 }

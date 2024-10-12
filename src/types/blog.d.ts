@@ -1,4 +1,4 @@
-export interface BlogProps {
+interface BlogProps {
   currentSlug: string;
   _id: string;
   title: string;
@@ -10,11 +10,11 @@ export interface BlogProps {
   views: number;
 }
 
-export interface BlogListProps {
+interface BlogListProps {
   blog: BlogProps[];
 }
 
-export interface BlogItemProps {
+interface BlogItemProps {
   id: string;
   slug: string;
   title: string;
@@ -26,25 +26,25 @@ export interface BlogItemProps {
   index: number;
 }
 
-export interface TagListProps {
+interface TagListProps {
   tags: string[];
 }
 
-export interface TagItemProps {
+interface TagItemProps {
   tag: string;
 }
 
-export interface BlogSectionProps {
+interface BlogSectionProps {
   initialData: BlogProps[];
 }
 
-export interface SearchBarProps {
+interface SearchBarProps {
   keyword: string;
   keywordChange: (newKeyword: string) => void;
   removeKeyword: () => void;
 }
 
-export interface TagsFilterProps {
+interface TagsFilterProps {
   keyword: string;
   tags: string[];
   onTagHandler: (tag: string) => void;

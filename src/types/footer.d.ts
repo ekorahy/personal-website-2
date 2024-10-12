@@ -1,24 +1,24 @@
 import React from "react";
 
-export interface ButtonSocialMediaItemProps {
+interface ButtonSocialMediaItemProps {
   name: string;
   link: string;
   logo: React.ReactNode;
   index: number;
 }
 
-export interface NavigationFooterItemProps {
+interface NavigationFooterItemProps {
   name: string;
   route: string;
 }
 
-export interface NavigationFooterItem {
+interface NavigationFooterItem {
   id: string;
   name: string;
   route: string;
 }
 
-export interface NavigationFooterListProps {
+interface NavigationFooterListProps {
   items: NavigationFooterItem[];
 }
 

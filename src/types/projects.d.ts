@@ -1,4 +1,4 @@
-export interface ProjectsProps {
+interface ProjectsProps {
   currentId: string;
   name: string;
   currentImage: string;
@@ -6,11 +6,11 @@ export interface ProjectsProps {
   demo_link: string;
 }
 
-export interface ProjectsListProps {
+interface ProjectsListProps {
   projects: ProjectsProps[];
 }
 
-export interface ProjectItemProps {
+interface ProjectItemProps {
   id: string;
   name: string;
   image: string;
@@ -19,15 +19,15 @@ export interface ProjectItemProps {
   index: number;
 }
 
-export interface StackListProps {
+interface StackListProps {
   stack: string[];
 }
 
-export interface StackItemProps {
+interface StackItemProps {
   item: string;
 }
 
-export interface FullProjectsProps {
+interface FullProjectsProps {
   currentId: string;
   name: string;
   technologies: string[];
@@ -36,17 +36,17 @@ export interface FullProjectsProps {
   category: string;
 }
 
-export interface ProjectSectionProps {
+interface ProjectSectionProps {
   initialData: FullProjectsProps[];
 }
 
-export interface CategoryFilterProps {
+interface CategoryFilterProps {
   category: string[];
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
 }
 
-export interface ButtonPaginationProps {
+interface ButtonPaginationProps {
   variant: "left" | "value" | "next";
   value?: number;
   disabled?: boolean;

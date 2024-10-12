@@ -34,7 +34,7 @@ export default function ButtonScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-0 right-0 mx-auto max-w-7xl px-4">
+    <div className="fixed bottom-4 left-0 right-0 z-10 mx-auto max-w-7xl px-4">
       {isVisible && (
         <div className="relative">
           <div className="absolute bottom-0 right-0 flex h-[6rem] w-[6rem] items-center justify-center">

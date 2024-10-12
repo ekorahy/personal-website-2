@@ -25,7 +25,7 @@ export async function getProjects() {
 export async function getAllBlogs() {
   try {
     const query = groq`
-    *[_type == "blog"]{
+    *[_type == "blog"] | order(_createdAt asc) {
       "currentSlug": slug.current,
       _id,
       title,

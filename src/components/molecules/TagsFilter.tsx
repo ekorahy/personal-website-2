@@ -1,4 +1,3 @@
-import { TagsFilterProps } from "@/types/blog";
 import clsx from "clsx";
 
 import * as motion from "framer-motion/client";

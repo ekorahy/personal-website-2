@@ -1,4 +1,3 @@
-import { HireMeItemProps } from "@/types/hireme";
 import * as motion from "framer-motion/client";
 
 export default function HireMeItem({

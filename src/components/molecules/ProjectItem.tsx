@@ -1,5 +1,4 @@
 import { urlFor } from "@/sanity/lib/image";
-import { ProjectItemProps } from "@/types/projects";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonLink from "../atoms/ButtonLink";

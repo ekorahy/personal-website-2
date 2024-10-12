@@ -1,4 +1,3 @@
-import { ProjectsListProps } from "@/types/projects";
 import ProjectItem from "../molecules/ProjectItem";
 
 export default function ProjectsList({ projects }: ProjectsListProps) {

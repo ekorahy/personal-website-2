@@ -1,6 +1,5 @@
 "use client";
 
-import { FullProjectsProps, ProjectSectionProps } from "@/types/projects";
 import ProjectsList from "../organisms/ProjectsList";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";

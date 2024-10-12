@@ -1,4 +1,4 @@
-export interface FeatureItemProps {
+interface FeatureItemProps {
   name: string;
   emoji: string;
 }

@@ -1,4 +1,4 @@
-export interface FeedbackProps {
+interface FeedbackProps {
   image: string;
   index: number;
 }

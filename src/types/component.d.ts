@@ -7,13 +7,13 @@ type TitleSectionSizes = '2xl' | '3xl';
 type TitleSectionAlignment = 'left' | 'center';
 type TitleWithDescriptionVariants = 'primary' | 'secondary';
 
-export interface ButtonProps {
+interface ButtonProps {
   route: string;
   name: string;
   variant: ButtonVariants;
 }
 
-export interface TitleSectionProps {
+interface TitleSectionProps {
   title: string;
   isWithDash?: boolean;
   variant?: TitleSectionVariants;
@@ -21,13 +21,13 @@ export interface TitleSectionProps {
   alignment?: TitleSectionAlignment;
 }
 
-export interface ButtonLinkProps {
+interface ButtonLinkProps {
   title: string;
   route: string;
   variant: ButtonLinkVariants;
 }
 
-export interface TitleWithDescriptionProps {
+interface TitleWithDescriptionProps {
   title: string;
   description: string;
   titleVariant: TitleWithDescriptionVariants;
@@ -35,11 +35,11 @@ export interface TitleWithDescriptionProps {
   isWithDash?: boolean;
 }
 
-export interface ButtonArrowBackProps {
+interface ButtonArrowBackProps {
   title: string;
   route: string;
 }
 
-export interface EmphasisProps {
+interface EmphasisProps {
   isWithProjectsButton?: boolean;
 }

@@ -1,4 +1,3 @@
-import { TagListProps } from "@/types/blog";
 import TagItem from "../atoms/TagItem";
 import * as motion from "framer-motion/client";
 

@@ -37,7 +37,7 @@ export default function ButtonScrollToTop() {
     <div className="fixed bottom-4 left-0 right-0 mx-auto max-w-7xl px-4">
       {isVisible && (
         <div className="relative">
-          <div className="absolute bottom-0 right-0 z-30 flex h-[6rem] w-[6rem] items-center justify-center">
+          <div className="absolute bottom-0 right-0 z-40 flex h-[6rem] w-[6rem] items-center justify-center">
             <svg className="absolute">
               <circle
                 cx="50%"

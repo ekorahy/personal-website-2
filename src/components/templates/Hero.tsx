@@ -45,7 +45,7 @@ export default function Hero() {
         >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
             Hi, I am{" "}
-            <span className="bg-amber-400 px-2 py-1 text-zinc-50 dark:text-zinc-950">
+            <span className="bg-amber-400 p-1 text-zinc-50 dark:text-zinc-950">
               Eko
             </span>
           </p>

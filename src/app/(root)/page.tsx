@@ -5,8 +5,9 @@ import HireMeSection from "@/components/templates/HireMeSection";
 import HomeAbout from "@/components/templates/HomeAbout";
 import HomeBlog from "@/components/templates/HomeBlog";
 import HomeProjects from "@/components/templates/HomeProjects";
-import Technologies from "@/components/templates/Technologies";
 import { Metadata } from "next";
+import HomeFavTechStack from "@/components/templates/HomeFavTechStack";
+import Certification from "@/components/templates/Certification";
 
 export const metadata: Metadata = {
   description:
@@ -40,9 +41,9 @@ export default function Home() {
       <HomeAbout />
       <HomeProjects />
       <HomeBlog />
-      <Technologies />
+      <HomeFavTechStack />
+      <Certification />
       <Emphasis />
-      <HireMeSection />
     </article>
   );
 }

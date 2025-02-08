@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonVariants = 'primary' | 'primary-border' | 'email-primary' | 'email-secondary' | 'secondary' | 'secondary-border';
-type ButtonLinkVariants = 'primary' | 'secondary' | 'tertiary' | 'paragraf' | 'default';
+type ButtonLinkVariants = 'primary' | 'secondary' | 'tertiary' | 'paragraph' | 'default';
 type TitleSectionVariants = 'primary' | 'secondary';
 type TitleSectionSizes = '2xl' | '3xl';
 type TitleSectionAlignment = 'left' | 'center';
@@ -33,6 +33,7 @@ interface TitleWithDescriptionProps {
   titleVariant: TitleWithDescriptionVariants;
   descriptionVariant: TitleWithDescriptionVariants;
   isWithDash?: boolean;
+  alignment?: TitleSectionAlignment
 }
 
 interface ButtonArrowBackProps {

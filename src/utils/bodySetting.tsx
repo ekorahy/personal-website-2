@@ -16,7 +16,7 @@ export const bodySetting = {
   },
   marks: {
     link: ({ value, children }: any) => (
-      <ButtonLink title={children} route={value.href} variant="paragraf" />
+      <ButtonLink title={children} route={value.href} variant="paragraph" />
     ),
     strong: ({ children }: any) => (
       <strong className="font-semibold text-zinc-950 dark:text-zinc-50">

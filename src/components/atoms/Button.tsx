@@ -32,7 +32,8 @@ export default function Button({ route, name, variant }: ButtonProps) {
       iconStyles = "group-hover:text-amber-400";
       break;
     case "secondary-border":
-      buttonStyles = "w-full sm:w-max border border-zinc-950 text-zinc-50";
+      buttonStyles =
+        "w-full sm:w-max border border-zinc-950 text-zinc-50 dark:border-zinc-50";
       iconStyles = "group-hover:text-zinc-950 group-hover:dark:text-zinc-950";
       break;
     default:

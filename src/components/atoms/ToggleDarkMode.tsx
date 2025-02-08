@@ -28,7 +28,7 @@ export default function ToggleDarkMode() {
         stiffness: 300,
         damping: 25,
       }}
-      className="rounded-full bg-amber-400 p-4 text-xl lg:text-lg"
+      className="rounded-full bg-amber-400 p-4 text-xl duration-300 ease-in-out lg:text-lg"
       onClick={toggleThemeHandler}
     >
       {icon}

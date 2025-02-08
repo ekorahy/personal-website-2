@@ -8,6 +8,7 @@ export default function TitleWithDescriptionSection({
   titleVariant,
   descriptionVariant,
   isWithDash = true,
+  alignment = "left",
 }: TitleWithDescriptionProps) {
   const titleVariantClass = {
     primary: "text-amber-400",
@@ -20,7 +21,7 @@ export default function TitleWithDescriptionSection({
   }[descriptionVariant];
 
   return (
-    <>
+    <div className={alignment === "center" ? "mx-auto w-max text-center" : ""}>
       <motion.h2
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -57,6 +58,6 @@ export default function TitleWithDescriptionSection({
       >
         {description}
       </motion.p>
-    </>
+    </div>
   );
 }

@@ -174,4 +174,34 @@ export const tech = [
     name: 'Github',
     logo: '/tech/ic-github.svg',
   },
+  {
+    id: 'tech-36',
+    name: 'Dart',
+    logo: '/tech/ic-dart.svg',
+  },
+  {
+    id: 'tech-37',
+    name: 'Python',
+    logo: '/tech/ic-python.svg',
+  },
+  {
+    id: 'tech-38',
+    name: 'Flutter',
+    logo: '/tech/ic-flutter.svg',
+  },
+  {
+    id: 'tech-39',
+    name: 'Firebase',
+    logo: '/tech/ic-firebase.svg',
+  },
+  {
+    id: 'tech-40',
+    name: 'Sanity',
+    logo: '/tech/ic-sanity.svg',
+  },
+  {
+    id: 'tech-41',
+    name: 'Express.js',
+    logo: '/tech/ic-expressjs.svg',
+  },
 ]

@@ -73,7 +73,7 @@ export default function About() {
             />
           </motion.div>
         </div>
-        <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
+        <div className="[&>*]:mb-4 [&>p]:text-base [&>p]:lg:text-lg">
           {about.map((item, index) => (
             <motion.p
               key={index}

@@ -71,7 +71,7 @@ export default function BlogItem({
             <h3 className="my-2 line-clamp-3 text-lg font-bold lg:text-xl">
               {title}
             </h3>
-            <p className="mb-4 line-clamp-3 text-justify text-base lg:text-lg">
+            <p className="mb-4 line-clamp-3 text-base lg:text-lg">
               {description}
             </p>
           </div>

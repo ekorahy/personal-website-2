@@ -44,7 +44,10 @@ export default function Hero() {
           className="flex items-center gap-2"
         >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
-            Hi, I am <span className="font-bold text-amber-400">Eko</span>
+            Hi, I am{" "}
+            <span className="bg-amber-400 px-2 py-1 text-zinc-50 dark:text-zinc-950">
+              Eko
+            </span>
           </p>
           <div className="z-10 h-[0.1rem] w-2/4 bg-black dark:bg-white" />
         </motion.div>

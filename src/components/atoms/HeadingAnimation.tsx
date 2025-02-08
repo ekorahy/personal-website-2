@@ -32,7 +32,7 @@ export default function HeadingAnimation() {
         stiffness: 300,
         damping: 25,
       }}
-      className={`z-10 mb-4 mt-2 text-4xl font-bold transition-opacity duration-1000 ease-in-out lg:text-5xl ${isFading ? "opacity-0" : "opacity-100"}`}
+      className={`z-10 mb-4 mt-2 text-4xl font-bold text-amber-400 transition-opacity duration-1000 ease-in-out lg:text-5xl ${isFading ? "opacity-0" : "opacity-100"}`}
     >
       {heroHeading[currentHeadingIndex]}
     </motion.h2>

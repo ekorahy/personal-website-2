@@ -1,1 +1,1 @@
-export const heroHeading = ["Front-end Engineer", "Tech Enthusiast", "Lifelong Learner"];
+export const heroHeading = ["Software Engineer", "Tech Enthusiast", "Lifelong Learner"];

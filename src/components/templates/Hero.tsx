@@ -3,6 +3,7 @@ import HeroIcon from "../atoms/HeroIcon";
 import Button from "../atoms/Button";
 import HeadingAnimation from "../atoms/HeadingAnimation";
 import * as motion from "framer-motion/client";
+import ButtonLink from "../atoms/ButtonLink";
 
 export default function Hero() {
   const container = {
@@ -43,7 +44,7 @@ export default function Hero() {
           className="flex items-center gap-2"
         >
           <p className="z-10 whitespace-nowrap text-lg lg:text-xl">
-            Hi, I&apos;m <span className="font-bold text-amber-400">Eko</span>
+            Hi, I am <span className="font-bold text-amber-400">Eko</span>
           </p>
           <div className="z-10 h-[0.1rem] w-2/4 bg-black dark:bg-white" />
         </motion.div>
@@ -59,10 +60,16 @@ export default function Hero() {
           }}
           className="z-10 mb-8 text-lg lg:text-xl"
         >
-          Let&apos;s discuss about your{" "}
-          <span className="text-amber-400">ideas</span> and I will{" "}
-          <span className="text-amber-400">manifest</span> them for you through{" "}
-          <span className="text-amber-400">captivating digital reality</span>.
+          Based in Indonesia, with 2 years of experience in application
+          development, driven by a passion for creating seamless and
+          user-friendly solutions. With expertise in the Front-end side using{" "}
+          <ButtonLink
+            title="React Ecosystem"
+            route="https://react.dev/"
+            variant="paragraph"
+          />
+          , I focus on leveraging technology to address business challenges and
+          deliver impactful, scalable results.
         </motion.p>
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -91,7 +98,7 @@ export default function Hero() {
             stiffness: 300,
             damping: 25,
           }}
-          className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-24 lg:block xl:top-28"
+          className="absolute -left-8 hidden h-20 w-20 rounded-full bg-zinc-100 transition-transform duration-300 ease-in-out hover:scale-[10] dark:bg-zinc-900 lg:top-16 lg:block"
         />
       </div>
       <motion.div

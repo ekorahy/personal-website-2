@@ -3,6 +3,7 @@ import TitleSection from "../atoms/TitleSection";
 import Button from "../atoms/Button";
 import ButtonLink from "../atoms/ButtonLink";
 import * as motion from "framer-motion/client";
+import { about } from "@/constant/about";
 
 export default function HomeAbout() {
   return (
@@ -34,7 +35,7 @@ export default function HomeAbout() {
           alt="about image"
         />
       </motion.div>
-      <div className="[&>*]:mb-4 [&>p]:text-justify [&>p]:text-base [&>p]:lg:text-lg">
+      <div className="[&>*]:mb-4 [&>p]:text-base [&>p]:lg:text-lg">
         <TitleSection title="About me" size="2xl" />
         <motion.p
           initial={{ y: 50, opacity: 0 }}
@@ -46,11 +47,10 @@ export default function HomeAbout() {
             damping: 25,
           }}
         >
-          Hi, I am Eko Rahayu Widodo, you can call me Eko. I am a Front-end
-          Engineer based in Indonesia with more than a year of experience
-          building websites using React Ecosystem.
+          {about[0]}
         </motion.p>
         <motion.p
+          className="line-clamp-3"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -60,19 +60,7 @@ export default function HomeAbout() {
             damping: 25,
           }}
         >
-          I currently actively contribute to{" "}
-          <ButtonLink
-            title="Dicoding Indonesia"
-            route="https://www.dicoding.com/users/ekorahayu/academies"
-            variant="paragraf"
-          />{" "}
-          as an External Code Reviewer and responsible for providing assessments
-          of projects submitted by students, especially in the Front-end Web and
-          React.js learning paths, as well as some basic classes from several
-          other learning paths, in addition to providing assessments I also
-          provide advice regarding best practices in writing code based on the
-          technology used by students with the aim to improve the quality and
-          efficiency of the code written.
+          {about[1]}
         </motion.p>
         <Button name="Read more" route="/about" variant="primary" />
       </div>

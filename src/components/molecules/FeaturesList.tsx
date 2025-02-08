@@ -15,15 +15,20 @@ export default function FeaturesList() {
 
     if (!container || !list) return;
 
-    const clonedList = list.cloneNode(true) as HTMLUListElement;
-    clonedList.setAttribute("aria-hidden", "true");
-    container.appendChild(clonedList);
+    // Duplicate items to create an infinite loop effect
+    const totalWidth = list.scrollWidth;
+    list.style.transform = `translateX(0px)`;
 
+    let start = 0;
     let animationFrameId: number;
 
     function animate() {
-      if (!list || !clonedList) return;
-
+      if (!list) return; // Ensure list is not null
+      start -= 1; // Adjust speed by changing step size
+      if (Math.abs(start) >= totalWidth / 2) {
+        start = 0; // Reset position when halfway scrolled
+      }
+      list.style.transform = `translateX(${start}px)`;
       animationFrameId = requestAnimationFrame(animate);
     }
 
@@ -39,24 +44,17 @@ export default function FeaturesList() {
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{
-        type: "linear",
-        stiffness: 300,
-        damping: 25,
-      }}
+      transition={{ type: "linear", stiffness: 300, damping: 25 }}
       ref={containerRef}
-      className="inline-flex w-full flex-nowrap overflow-hidden"
+      className="relative w-full overflow-hidden whitespace-nowrap"
       style={{
         maskImage:
           "linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%)",
       }}
     >
-      <ul
-        ref={listRef}
-        className="flex animate-infinite-scroll items-center justify-center gap-4 whitespace-nowrap"
-      >
-        {features.map(({ id, name, emoji }) => (
-          <FeatureItem key={id} name={name} emoji={emoji} />
+      <ul ref={listRef} className="flex items-center justify-center gap-4">
+        {[...features, ...features].map(({ id, name, emoji }, index) => (
+          <FeatureItem key={id + "-" + index} name={name} emoji={emoji} />
         ))}
       </ul>
     </motion.div>

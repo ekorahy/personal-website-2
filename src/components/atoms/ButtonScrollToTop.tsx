@@ -34,10 +34,10 @@ export default function ButtonScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-0 right-0 mx-auto max-w-7xl px-4">
+    <div className="fixed bottom-4 left-0 right-0 z-40 mx-auto max-w-7xl px-4">
       {isVisible && (
         <div className="relative">
-          <div className="absolute bottom-0 right-0 z-40 flex h-[6rem] w-[6rem] items-center justify-center">
+          <div className="absolute bottom-0 right-0 flex h-[6rem] w-[6rem] items-center justify-center">
             <svg className="absolute">
               <circle
                 cx="50%"
@@ -67,7 +67,7 @@ export default function ButtonScrollToTop() {
             <button
               title="Scroll to Top"
               onClick={scrollToTop}
-              className="z-10 flex transform items-center justify-center rounded-full bg-zinc-100 p-4 text-lg shadow-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-zinc-200 dark:bg-zinc-900 hover:dark:bg-zinc-800"
+              className="flex transform items-center justify-center rounded-full bg-zinc-100 p-4 text-lg shadow-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-zinc-200 dark:bg-zinc-900 hover:dark:bg-zinc-800"
             >
               <FaArrowUp className="text-xl text-amber-400" />
             </button>

@@ -33,8 +33,9 @@ interface StackItemProps {
 }
 
 interface FullProjectsProps {
-  currentId: string;
+  id: Id;
   name: string;
+  image: string;
   technologies: string[];
   currentImage: string;
   demo_link: string;

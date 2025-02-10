@@ -1,95 +1,38 @@
-import { groq } from "next-sanity";
-import { client, writeClient } from "./client";
+import { defineQuery } from "next-sanity";
+import { writeClient } from "./client";
 
-export async function getProjects() {
-  try {
-    const query = groq`
-    *[_type == "projects"] | order(_createdAt asc) {
-      "currentId": id.current,
-      name,
-      "currentImage": image.asset._ref,
-      demo_link,
-      technologies,
-      description,
-      category,
-    }
-  `;
+export const PROJECTS_WITH_LIMIT_QUERY = defineQuery(
+  `*[_type == "projects"] | order(created_at desc)[0...$limit]`
+)
 
-    const projects = await client.fetch(query, {}, { cache: 'no-store' })
-    return projects;
-  } catch (error) {
-    throw error;
-  }
-}
+export const BLOG_WITH_LIMIT_QUERY = defineQuery(
+  `*[_type == "blog"] | order(created_at desc)[0...$limit] {
+    ...,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)
+  }`
+)
 
-export async function getAllBlogs() {
-  try {
-    const query = groq`
-    *[_type == "blog"] | order(_createdAt asc) {
-      "currentSlug": slug.current,
-      _id,
-      title,
-      "currentImage": image.asset._ref,
-      description,
-      tags,
-      "createdAt": created_at,
-      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-      views,
-    }
-    `;
+export const PROJECTS_QUERY = defineQuery(
+  `*[_type == "projects"] | order(created_at desc)`
+)
 
-    const blog = await client.fetch(query, {}, { cache: 'no-store' })
-    return blog
-  } catch (error) {
-    throw error;
-  }
-}
+export const BLOGS_QUERY = defineQuery(
+  `*[_type == "blog"] | order(created_at desc) {
+    ...,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)  
+  }`
+)
 
-export async function getProjectDetail(projectId: string) {
-  try {
-    const query = groq`
-    *[_type == "projects" && id.current == $projectId]{
-      "currentId": id.current,
-      name,
-      technologies,
-      "currentImage": image.asset._ref,
-      demo_link,
-      body,
-      description,
-      category,
-      created_at,
-    }[0]
-  `;
+export const PROJECT_DETAIL_QUERY = defineQuery(
+  `*[_type == "projects" && id.current == $id][0]`
+)
 
-    const projectDetail = await client.fetch(query, { projectId }, { cache: 'no-store' })
-    return projectDetail;
-  } catch (error) {
-    throw error;
-  }
-}
-
-export async function getBlogDetail(slug: string) {
-  try {
-    const query = groq`
-      *[_type == "blog" && slug.current == $slug]{
-        "currentSlug": slug.current,
-        title,
-        "currentImage": image.asset._ref,
-        description,
-        tags,
-        "createdAt": created_at,
-        body,
-        "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-        views,
-      }[0]
-    `;
-
-    const blogDetail = await client.fetch(query, { slug }, { cache: 'no-store' })
-    return blogDetail;
-  } catch (error) {
-    throw error;
-  }
-}
+export const BLOG_DETAIL_QUERY = defineQuery(
+  `*[_type == "blog" && slug.current == $slug][0] {
+    ...,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)
+  }`
+)
 
 export async function incrementViews(blogId: string) {
   try {

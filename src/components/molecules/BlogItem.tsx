@@ -9,19 +9,19 @@ import { incrementViews } from "@/sanity/lib/querying";
 import { motion } from "framer-motion";
 
 export default function BlogItem({
-  id,
+  _id,
   slug,
   title,
   image,
   description,
-  createdAt,
+  created_at,
   estimatedReadingTime,
   views,
   index,
 }: BlogItemProps) {
   const handleItemClick = async () => {
     try {
-      await incrementViews(id);
+      await incrementViews(_id);
     } catch (error) {
       throw error;
     }
@@ -39,7 +39,7 @@ export default function BlogItem({
       }}
       onClick={handleItemClick}
     >
-      <Link href={`/blog/${slug}`}>
+      <Link href={`/blog/${slug.current}`}>
         <section className="h-full transform cursor-pointer border-b-4 border-amber-400 bg-zinc-100 shadow transition-transform duration-300 hover:scale-105 dark:bg-zinc-900">
           <div className="relative h-max">
             <Image
@@ -50,7 +50,7 @@ export default function BlogItem({
               alt={`${title} image`}
             />
             <span className="absolute bottom-4 right-4 rounded-full bg-black/30 px-4 py-1 text-white backdrop-blur">
-              {formattedDate(createdAt)}
+              {formattedDate(created_at)}
             </span>
           </div>
           <div className="p-4">

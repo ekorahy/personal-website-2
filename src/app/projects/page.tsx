@@ -1,7 +1,8 @@
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import ArticleSection from "@/components/templates/ArticleSection";
 import ProjectsSection from "@/components/templates/ProjectsSection";
-import { getProjects } from "@/sanity/lib/querying";
+import { sanityFetch } from "@/sanity/lib/live";
+import { PROJECTS_QUERY } from "@/sanity/lib/querying";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,7 +29,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Projects() {
-  const projects = await getProjects();
+  const { data: projects } = await sanityFetch({
+    query: PROJECTS_QUERY,
+  });
 
   return (
     <ArticleSection>

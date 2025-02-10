@@ -1,4 +1,4 @@
-import { createClient } from 'next-sanity'
+import { createClient, defineLive } from 'next-sanity'
 import { apiVersion, dataset, projectId, token } from '../env'
 
 export const client = createClient({
@@ -6,12 +6,13 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: true,
+  token,
 })
 
 export const writeClient = createClient({
   apiVersion,
   dataset,
   projectId,
-  useCdn: false,
+  useCdn: true,
   token,
 })

@@ -4,7 +4,7 @@ import TagsList from "@/components/molecules/TagsList";
 import BlogList from "@/components/organisms/BlogList";
 import ArticleSection from "@/components/templates/ArticleSection";
 import { urlFor } from "@/sanity/lib/image";
-import { getAllBlogs, getBlogDetail } from "@/sanity/lib/querying";
+import { BLOG_DETAIL_QUERY, BLOGS_QUERY } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
 import formattedDate from "@/utils/formattedDate";
 import { getOtherBlog } from "@/utils/otherBlog";
@@ -13,13 +13,17 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { IoMdEye, IoMdTime } from "react-icons/io";
 import * as motion from "framer-motion/client";
+import { sanityFetch } from "@/sanity/lib/live";
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const blogDetail = await getBlogDetail(params.slug);
+  const { data: blogDetail } = await sanityFetch({
+    query: BLOG_DETAIL_QUERY,
+    params: { slug: params.slug },
+  });
 
   if (!blogDetail) {
     return {
@@ -37,24 +41,25 @@ export async function generateMetadata({
 export default async function DetailBlog({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const detailBlog = await getBlogDetail(params.slug);
-  const blog = await getAllBlogs();
+  const { slug } = await params;
+  const { data: blogDetail } = await sanityFetch({
+    query: BLOG_DETAIL_QUERY,
+    params: { slug: slug },
+  });
 
-  if (!detailBlog) {
+  const { data: blog } = await sanityFetch({
+    query: BLOGS_QUERY,
+    params: { slug: slug },
+  });
+
+  if (!blogDetail) {
     return <p>Blog not found!</p>;
   }
 
-  const {
-    title,
-    currentImage,
-    tags,
-    createdAt,
-    body,
-    estimatedReadingTime,
-    views,
-  } = detailBlog;
+  const { title, image, tags, created_at, body, estimatedReadingTime, views } =
+    blogDetail;
   const otherBlog = getOtherBlog(blog, title);
 
   return (
@@ -103,7 +108,7 @@ export default async function DetailBlog({
           }}
           className="mb-4"
         >
-          Written on {formattedDate(createdAt)} by Ekorahy
+          Written on {formattedDate(created_at)} by Ekorahy
         </motion.p>
         <div className="relative">
           <TagsList tags={tags} />
@@ -119,7 +124,7 @@ export default async function DetailBlog({
           >
             <Image
               className="my-8 h-[16rem] w-full rounded-2xl object-cover lg:h-[35rem]"
-              src={urlFor(currentImage).url()}
+              src={urlFor(image).url()}
               width={500}
               height={500}
               alt={`${title} image`}

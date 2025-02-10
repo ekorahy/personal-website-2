@@ -1,11 +1,11 @@
 interface BlogProps {
-  currentSlug: string;
   _id: string;
+  slug: Id;
   title: string;
-  currentImage: string;
+  image: string;
   tags: string[];
   description: string;
-  createdAt: string;
+  created_at: string;
   estimatedReadingTime: number;
   views: number;
 }
@@ -15,12 +15,12 @@ interface BlogListProps {
 }
 
 interface BlogItemProps {
-  id: string;
-  slug: string;
+  _id: string;
+  slug: Id;
   title: string;
   image: string;
   description: string;
-  createdAt: string;
+  created_at: string;
   estimatedReadingTime: number;
   views: number;
   index: number;

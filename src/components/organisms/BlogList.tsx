@@ -7,27 +7,27 @@ export default function BlogList({ blog }: BlogListProps) {
         (
           {
             _id,
-            currentSlug,
+            slug,
             title,
-            currentImage,
+            image,
             description,
-            createdAt,
+            created_at,
             estimatedReadingTime,
             views,
           },
-          idx,
+          index,
         ) => (
           <BlogItem
-            id={_id}
-            key={currentSlug}
-            slug={currentSlug}
+            _id={_id}
+            slug={slug}
+            key={index}
             title={title}
-            image={currentImage}
+            image={image}
             description={description}
-            createdAt={createdAt}
+            created_at={created_at}
             estimatedReadingTime={estimatedReadingTime}
             views={views}
-            index={idx}
+            index={index}
           />
         ),
       )}

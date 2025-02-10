@@ -1,14 +1,16 @@
-import { getProjects } from "@/sanity/lib/querying";
+import { PROJECTS_WITH_LIMIT_QUERY } from "@/sanity/lib/querying";
 import ProjectsList from "../organisms/ProjectsList";
 import TitleSection from "../atoms/TitleSection";
 import ButtonLink from "../atoms/ButtonLink";
-import { sliceProjects } from "@/utils/sliceProjects";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 import * as motion from "framer-motion/client";
+import { sanityFetch } from "@/sanity/lib/live";
 
 export default async function HomeProjects() {
-  const projects = await getProjects();
-  const slicedProjects = sliceProjects(projects);
+  const { data: projects } = await sanityFetch({
+    query: PROJECTS_WITH_LIMIT_QUERY,
+    params: { limit: 2 },
+  });
 
   return (
     <section>
@@ -37,7 +39,7 @@ export default async function HomeProjects() {
       {projects.length === 0 ? (
         <EmptyDataImage />
       ) : (
-        <ProjectsList projects={slicedProjects} />
+        <ProjectsList projects={projects} />
       )}
       {projects.length !== 0 && (
         <motion.div

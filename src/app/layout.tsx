@@ -5,7 +5,7 @@ import { raleway } from "@/fonts/fonts";
 import Main from "@/components/templates/Main";
 import Footer from "@/components/templates/Footer";
 import { ThemeProvider } from "@/components/atoms/ThemeProvider";
-import ButtonScrollToTop from "@/components/atoms/ButtonScrollToTop";
+import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata: Metadata = {
   title: {
@@ -28,8 +28,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           <Main>{children}</Main>
+          <SanityLive />
           <Footer />
-          
         </ThemeProvider>
       </body>
     </html>

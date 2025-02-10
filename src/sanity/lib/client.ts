@@ -6,12 +6,13 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: true,
+  token,
 })
 
 export const writeClient = createClient({
   apiVersion,
   dataset,
   projectId,
-  useCdn: false,
+  useCdn: true,
   token,
 })

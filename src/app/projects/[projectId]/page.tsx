@@ -6,7 +6,7 @@ import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescrip
 import ProjectsList from "@/components/organisms/ProjectsList";
 import ArticleSection from "@/components/templates/ArticleSection";
 import { urlFor } from "@/sanity/lib/image";
-import { getProjectDetail, getProjects } from "@/sanity/lib/querying";
+import { PROJECT_DETAIL_QUERY, PROJECTS_QUERY } from "@/sanity/lib/querying";
 import { bodySetting } from "@/utils/bodySetting";
 import { getOtherProjects } from "@/utils/otherProjects";
 import { Metadata } from "next";
@@ -14,13 +14,17 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
 import formattedDate from "@/utils/formattedDate";
+import { sanityFetch } from "@/sanity/lib/live";
 
 export async function generateMetadata({
   params,
 }: {
   params: { projectId: string };
 }): Promise<Metadata> {
-  const projectDetail = await getProjectDetail(params.projectId);
+  const { data: projectDetail } = await sanityFetch({
+    query: PROJECT_DETAIL_QUERY,
+    params: { id: params.projectId },
+  });
 
   if (!projectDetail) {
     return {
@@ -38,24 +42,25 @@ export async function generateMetadata({
 export default async function DetailProject({
   params,
 }: {
-  params: { projectId: string };
+  params: Promise<{ projectId: string }>;
 }) {
-  const projectDetail = await getProjectDetail(params.projectId);
-  const projects = await getProjects();
+  const { projectId } = await params;
+  const { data: projectDetail } = await sanityFetch({
+    query: PROJECT_DETAIL_QUERY,
+    params: { id: projectId },
+  });
+
+  const { data: projects } = await sanityFetch({
+    query: PROJECTS_QUERY,
+  });
 
   if (!projectDetail) {
     return <p>Data not found!</p>;
   }
 
-  const {
-    name,
-    category,
-    technologies,
-    currentImage,
-    demo_link,
-    body,
-    created_at,
-  } = projectDetail;
+  const { name, category, technologies, image, demo_link, body, created_at } =
+    projectDetail;
+
   const otherProjects = getOtherProjects(projects, name);
 
   return (
@@ -115,7 +120,7 @@ export default async function DetailProject({
           >
             <Image
               className="mx-auto h-60 w-full overflow-hidden rounded-xl object-cover shadow sm:h-80 md:h-96 lg:mt-10 lg:h-64 lg:w-3/4"
-              src={urlFor(currentImage).url()}
+              src={urlFor(image).url()}
               width={500}
               height={500}
               alt={`${name} image`}

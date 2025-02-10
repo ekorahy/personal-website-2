@@ -1,14 +1,17 @@
-import { getAllBlogs } from "@/sanity/lib/querying";
+import { BLOG_WITH_LIMIT_QUERY } from "@/sanity/lib/querying";
 import BlogList from "../organisms/BlogList";
 import TitleSection from "../atoms/TitleSection";
 import ButtonLink from "../atoms/ButtonLink";
 import { sliceBlog } from "@/utils/sliceProjects";
 import EmptyDataImage from "../atoms/EmptyDataImage";
 import * as motion from "framer-motion/client";
+import { sanityFetch } from "@/sanity/lib/live";
 
 export default async function HomeBlog() {
-  const blog = await getAllBlogs();
-  const slicedBlog = sliceBlog(blog);
+  const { data: blog } = await sanityFetch({
+    query: BLOG_WITH_LIMIT_QUERY,
+    params: { limit: 3 },
+  });
 
   return (
     <section>
@@ -30,7 +33,7 @@ export default async function HomeBlog() {
           </motion.div>
         )}
       </div>
-      {blog.length === 0 ? <EmptyDataImage /> : <BlogList blog={slicedBlog} />}
+      {blog.length === 0 ? <EmptyDataImage /> : <BlogList blog={blog} />}
       {blog.length !== 0 && (
         <motion.div
           initial={{ scale: 0 }}

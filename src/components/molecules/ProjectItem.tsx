@@ -36,7 +36,7 @@ export default function ProjectItem({
         />
         <Link
           className="absolute bottom-0 left-0 right-0 top-0 hidden items-center justify-center group-hover:flex"
-          href={`/projects/${id}`}
+          href={`/projects/${id.current}`}
         >
           <h3 className="group/title line-clamp-1 flex items-center gap-2 overflow-hidden rounded-full bg-zinc-950/40 px-8 py-4 text-xl font-bold text-zinc-50 backdrop-blur">
             {category === "Android App" ? (
@@ -51,7 +51,7 @@ export default function ProjectItem({
       <div className="flex items-center gap-4">
         <ButtonLink
           title="Detail"
-          route={`/projects/${id}`}
+          route={`/projects/${id.current}`}
           variant="default"
         />
         <ButtonLink

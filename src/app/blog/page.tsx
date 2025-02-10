@@ -1,7 +1,8 @@
 import TitleWithDescriptionSection from "@/components/molecules/TitleWithDescriptionSection";
 import ArticleSection from "@/components/templates/ArticleSection";
 import BlogSection from "@/components/templates/BlogSection";
-import { getAllBlogs } from "@/sanity/lib/querying";
+import { sanityFetch } from "@/sanity/lib/live";
+import { BLOGS_QUERY } from "@/sanity/lib/querying";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,7 +29,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const blog = await getAllBlogs();
+  const { data: blog } = await sanityFetch({
+    query: BLOGS_QUERY,
+  });
 
   return (
     <ArticleSection>

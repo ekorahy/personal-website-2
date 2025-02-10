@@ -1,7 +1,12 @@
+interface Id {
+  current: string;
+  _type: string;
+}
+
 interface ProjectsProps {
-  currentId: string;
+  id: Id;
   name: string;
-  currentImage: string;
+  image: string;
   category: string;
   demo_link: string;
 }
@@ -11,7 +16,7 @@ interface ProjectsListProps {
 }
 
 interface ProjectItemProps {
-  id: string;
+  id: Id;
   name: string;
   image: string;
   demoLink: string;
@@ -28,8 +33,9 @@ interface StackItemProps {
 }
 
 interface FullProjectsProps {
-  currentId: string;
+  id: Id;
   name: string;
+  image: string;
   technologies: string[];
   currentImage: string;
   demo_link: string;
